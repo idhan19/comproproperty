@@ -1,91 +1,77 @@
 "use client";
 import React from 'react';
-import { Search, MapPin, Home, DollarSign } from 'lucide-react';
+import { Award, FileCheck, ArrowRight, Download } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative min-h-[90vh] flex items-center justify-center bg-zinc-900 overflow-hidden">
-            {/* Background Image */}
+        <div className="relative min-h-[90vh] flex items-center bg-zinc-950 overflow-hidden">
+            {/* Industrial Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a20_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0"></div>
+
+            {/* Background Image Overlay */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
                 style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-2495db98dada?q=80&w=2088&auto=format&fit=crop")',
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop")',
                 }}
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
+                <div className="absolute inset-0 bg-blue-950/80 mix-blend-multiply"></div>
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center pt-20">
-                <span className="text-emerald-400 font-semibold tracking-wider uppercase mb-4 animate-fade-in-up">Selamat Datang di PropertyVista</span>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight max-w-4xl font-serif">
-                    Rumah Impian Anda <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-emerald-500">Menanti</span>
-                </h1>
-                <p className="text-zinc-300 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
-                    Temukan properti premium berkwalitas tinggi yang sempurna untuk keluarga Anda. Investasi terbaik kehidupan masa depan dimulai dari sini.
-                </p>
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+                <div className="max-w-4xl">
+                    {/* Certifications Badge */}
 
-                {/* Search Box */}
-                <div className="w-full max-w-4xl bg-white/10 backdrop-blur-md p-3 rounded-3xl border border-white/20 shadow-2xl flex flex-col md:flex-row gap-2">
-                    <div className="flex-1 bg-white dark:bg-zinc-900 rounded-2xl md:rounded-l-2xl md:rounded-r-none px-6 py-4 flex items-center gap-3 border-b md:border-b-0 md:border-r border-zinc-100 dark:border-zinc-800">
-                        <MapPin className="text-emerald-500" />
-                        <div className="text-left w-full">
-                            <label className="block text-xs text-zinc-500 font-medium mb-0.5">Lokasi</label>
-                            <select className="w-full bg-transparent font-semibold text-zinc-800 dark:text-zinc-100 outline-none cursor-pointer appearance-none">
-                                <option>Semua Lokasi</option>
-                                <option>Jakarta Selatan</option>
-                                <option>Bali</option>
-                                <option>Surabaya</option>
-                            </select>
-                        </div>
+
+                    <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight font-sans">
+                        PT PONCO <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-700">MUNARO UTAMA</span>
+                    </h1>
+
+                    <div className="flex items-start gap-4 mb-10 border-l-4 border-red-600 pl-6">
+                        <p className="text-zinc-300 text-lg md:text-2xl leading-relaxed max-w-3xl font-light">
+                            "Menjadi perusahaan Properti & jasa konstruksi Terkemuka dan Bermanfa'at bagi ummat manusia"
+                        </p>
                     </div>
 
-                    <div className="flex-1 bg-white dark:bg-zinc-900 px-6 py-4 flex items-center gap-3 border-b md:border-b-0 md:border-r border-zinc-100 dark:border-zinc-800">
-                        <Home className="text-emerald-500" />
-                        <div className="text-left w-full">
-                            <label className="block text-xs text-zinc-500 font-medium mb-0.5">Tipe Properti</label>
-                            <select className="w-full bg-transparent font-semibold text-zinc-800 dark:text-zinc-100 outline-none cursor-pointer appearance-none">
-                                <option>Semua Tipe</option>
-                                <option>Rumah</option>
-                                <option>Apartemen</option>
-                                <option>Villa</option>
-                            </select>
-                        </div>
+                    <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Link href="#projects" className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 uppercase tracking-wide border border-red-600 hover:border-red-500 shadow-lg shadow-red-900/20">
+                                Our Projects
+                                <ArrowRight size={20} />
+                            </Link>
+                        </motion.div>
+                        <motion.a
+                            href="/profile-file.pdf"
+                            download
+                            whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 58, 138, 0.3)" }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-transparent text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 uppercase tracking-wide border border-blue-700/50 hover:border-blue-500 cursor-pointer"
+                        >
+                            Download Profile
+                            <Download size={20} />
+                        </motion.a>
                     </div>
-
-                    <div className="flex-1 bg-white dark:bg-zinc-900 px-6 py-4 flex items-center gap-3">
-                        <DollarSign className="text-emerald-500" />
-                        <div className="text-left w-full">
-                            <label className="block text-xs text-zinc-500 font-medium mb-0.5">Harga</label>
-                            <select className="w-full bg-transparent font-semibold text-zinc-800 dark:text-zinc-100 outline-none cursor-pointer appearance-none">
-                                <option>Semua Harga</option>
-                                <option>500jt - 1M</option>
-                                <option>1M - 3M</option>
-                                <option>&gt; 3M</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl px-8 py-4 md:py-0 font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25">
-                        <Search size={20} />
-                        Cari
-                    </button>
                 </div>
 
-                {/* Stats */}
-                <div className="mt-16 grid grid-cols-3 gap-8 md:gap-16 text-white border-t border-white/10 pt-8 w-full max-w-3xl">
-                    <div>
-                        <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-1">500+</div>
-                        <div className="text-zinc-400 text-sm md:text-base">Properti Terjual</div>
-                    </div>
-                    <div>
-                        <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-1">15+</div>
-                        <div className="text-zinc-400 text-sm md:text-base">Tahun Pengalaman</div>
-                    </div>
-                    <div>
-                        <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-1">5000+</div>
-                        <div className="text-zinc-400 text-sm md:text-base">Klien Bahagia</div>
-                    </div>
+                {/* Technical Stats Strip */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+                    {[
+                        { label: "Experience", value: "15+", sub: "Years" },
+                        { label: "Projects", value: "500+", sub: "Completed" },
+                        { label: "Towers", value: "200+", sub: "Built" },
+                        { label: "Safety", value: "100%", sub: "Compliance" }
+                    ].map((stat, i) => (
+                        <div key={i} className="p-6 border-r border-white/10 last:border-r-0 hover:bg-white/5 transition-colors">
+                            <div className="text-3xl md:text-4xl font-bold text-white mb-1 font-mono">{stat.value}</div>
+                            <div className="text-xs text-blue-300 uppercase tracking-widest font-semibold">{stat.label}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

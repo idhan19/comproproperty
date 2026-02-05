@@ -5,52 +5,48 @@ import { Linkedin, Mail } from 'lucide-react';
 
 const team = [
     {
-        name: "Alex Johnson",
-        role: "CEO & Founder",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
+        name: "M. Saoma Gofur, S.Pd",
+        role: "Direktur Utama ",
+        image: "/gofur.jpeg"
     },
     {
-        name: "Sarah Tan",
-        role: "Chief Architect",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+        name: "Sarah Nadia, M.Kn",
+        role: "Komisaris",
+        image: "/Sarah1.png"
     },
     {
-        name: "Michael Chen",
-        role: "Head of Construction",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
+        name: "Alex Herius",
+        role: "Direktur",
+        image: "/Alex.jpeg"
     }
 ];
 
 const LeadershipTeam = () => {
     return (
-        <section className="py-24 bg-white dark:bg-zinc-950">
+        <section id="about" className="py-24 bg-zinc-50 border-t border-zinc-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold font-serif text-emerald-950 dark:text-emerald-50 mb-3">
-                        Tim <span className="text-amber-500">Kepemimpinan</span>
+                    <span className="text-red-600 font-bold tracking-widest uppercase text-sm mb-2 block font-mono">Organizational Structure</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-blue-950 mb-6 font-sans">
+                        Board of Directors
                     </h2>
-                    <p className="text-zinc-600 dark:text-zinc-400">
-                        Wajah-wajah di balik visi dan dedikasi kami.
-                    </p>
+                    <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto py-8">
                     {team.map((member, index) => (
-                        <div key={index} className="group text-center">
-                            <div className="relative w-64 h-64 mx-auto mb-6 rounded-3xl overflow-hidden shadow-lg">
+                        <div key={index} className="group bg-gradient-to-br from-white to-blue-50 p-6 border border-zinc-200 shadow-xl shadow-blue-900/10 hover:shadow-2xl hover:border-blue-300 transition-all duration-300 rounded-xl overflow-hidden relative">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                            <div className="relative w-full aspect-[3/4] mb-6 overflow-hidden rounded-lg shadow-inner bg-zinc-200">
                                 <Image
                                     src={member.image}
                                     alt={member.name}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 gap-4">
-                                    <a href="#" className="p-2 bg-white rounded-full text-emerald-900 hover:bg-amber-400 transition-colors"><Linkedin size={20} /></a>
-                                    <a href="#" className="p-2 bg-white rounded-full text-emerald-900 hover:bg-amber-400 transition-colors"><Mail size={20} /></a>
-                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">{member.name}</h3>
-                            <p className="text-emerald-600 font-medium text-sm">{member.role}</p>
+                            <h3 className="text-xl font-bold text-blue-950 mb-2 font-sans text-center group-hover:text-blue-700 transition-colors">{member.name}</h3>
+                            <div className="text-red-600 font-bold uppercase tracking-wider text-xs mb-2 text-center bg-red-50 py-1 px-3 rounded-full mx-auto w-fit">{member.role}</div>
                         </div>
                     ))}
                 </div>
