@@ -27,7 +27,7 @@ const ProjectPortfolio = () => {
                     </motion.div>
 
                     <motion.a
-                        href="/CS%20PDF%202025-11-07%2022.43.5111.pdf"
+                        href="/profile-File.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, x: 50 }}

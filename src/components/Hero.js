@@ -47,8 +47,8 @@ const Hero = () => {
                             </Link>
                         </motion.div>
                         <motion.a
-                            href="/profile-file.pdf"
-                            download
+                            href="/profile-File.pdf"
+                            download="Company Profile.pdf"
                             whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 58, 138, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-transparent text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 uppercase tracking-wide border border-blue-700/50 hover:border-blue-500 cursor-pointer"

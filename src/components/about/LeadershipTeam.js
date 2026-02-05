@@ -5,7 +5,7 @@ import { Linkedin, Mail } from 'lucide-react';
 
 const team = [
     {
-        name: "M. Saoma Gofur, S.Pd",
+        name: "M.Saoma Gofur, Lc",
         role: "Direktur Utama ",
         image: "/gofur.jpeg"
     },

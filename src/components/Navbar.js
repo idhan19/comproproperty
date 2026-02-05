@@ -44,7 +44,7 @@ const Navbar = () => {
 
                     <div className="hidden md:flex items-center">
                         <a
-                            href="https://wa.me/6285893441409"
+                            href="https://wa.me/6281316807308"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30"
@@ -72,7 +72,7 @@ const Navbar = () => {
                         <Link href="#kontak" className="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 hover:text-blue-600 hover:bg-zinc-50 dark:text-zinc-300 dark:hover:bg-zinc-800">Contact</Link>
                         <div className="pt-4 pb-2">
                             <a
-                                href="https://wa.me/6285893441409"
+                                href="https://wa.me/6281316807308"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors block text-center"
