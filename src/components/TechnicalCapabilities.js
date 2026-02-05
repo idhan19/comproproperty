@@ -48,7 +48,7 @@ const TechnicalCapabilities = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-blue-950 mb-6 font-sans">
                         Technical Capabilities
                     </h2>
-                    <dgvddiv className="w-24 h-1 bg-red-600 mx-auto"></div>
+                    <div className="w-24 h-1 bg-red-600 mx-auto"></div>
                     <p className="mt-6 text-zinc-600 max-w-2xl mx-auto leading-relaxed text-lg">
                         Delivering precision engineering and robust construction solutions for Government and Corporate sectors.
                     </p>
