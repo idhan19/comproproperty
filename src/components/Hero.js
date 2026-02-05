@@ -60,19 +60,7 @@ const Hero = () => {
                 </div>
 
                 {/* Technical Stats Strip */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-white/10 bg-black/20 backdrop-blur-sm">
-                    {[
-                        { label: "Experience", value: "15+", sub: "Years" },
-                        { label: "Projects", value: "500+", sub: "Completed" },
-                        { label: "Towers", value: "200+", sub: "Built" },
-                        { label: "Safety", value: "100%", sub: "Compliance" }
-                    ].map((stat, i) => (
-                        <div key={i} className="p-6 border-r border-white/10 last:border-r-0 hover:bg-white/5 transition-colors">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-1 font-mono">{stat.value}</div>
-                            <div className="text-xs text-blue-300 uppercase tracking-widest font-semibold">{stat.label}</div>
-                        </div>
-                    ))}
-                </div>
+
             </div>
         </div>
     );
