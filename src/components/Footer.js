@@ -42,7 +42,7 @@ const Footer = () => {
 
                     <div>
                         <h4 className="font-bold text-white text-lg mb-6">Clients PT. Ponco Munaro Utama  :</h4>
-                        <ul className="space-y-4">
+                        <ul className="space-y-4 list-disc">
                             <li><a href="#" className="hover:text-white transition-colors">Rumaji Group</a></li>
                             <li><a href="#services" className="hover:text-white transition-colors">PT. Puri Angkasa Permata Group</a></li>
                             <li><a href="#projects" className="hover:text-white transition-colors">PT.Saka</a></li>
@@ -50,9 +50,9 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className='md:mt-14'>
                         <h4 className="font-bold text-white text-lg mb-6">   </h4>
-                        <ul className="space-y-4">
+                        <ul className="space-y-4 list-disc">
                             <li><a href="#" className="hover:text-white transition-colors">Delta Group</a></li>
                             <li><a href="#services" className="hover:text-white transition-colors">PT. Cijantung Anugerah Sukses Mandiri</a></li>
                             <li><a href="#projects" className="hover:text-white transition-colors">RS BRAWIJAYA Saharjo Tebet</a></li>

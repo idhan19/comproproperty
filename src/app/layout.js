@@ -18,8 +18,11 @@ const playfair = Playfair_Display({ // [!code ++]
 }); // [!code ++]
 
 export const metadata = {
-  title: "PropertyVista - Rumah Impian Anda Menanti", // [!code ++]
-  description: "Temukan properti premium berkualitas tinggi untuk keluarga Anda.", // [!code ++]
+  title: "PT PONCO MUNARO UTAMA",
+  description: "Temukan properti premium berkualitas tinggi untuk keluarga Anda.",
+  icons: {
+    icon: '/logo navbar.png',
+  },
 };
 
 export default function RootLayout({ children }) {

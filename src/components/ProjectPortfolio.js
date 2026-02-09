@@ -27,15 +27,8 @@ const ProjectPortfolio = () => {
                     </motion.div>
 
                     <motion.a
-                        href="/profile-File.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        href="/profile"
+                        target='_blank'
                         className="border border-white/20 hover:bg-white/10 text-white px-8 py-3 rounded-sm font-bold uppercase text-sm tracking-wider transition-all flex items-center gap-2 inline-flex"
                     >
                         View All Projects
