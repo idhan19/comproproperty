@@ -2,7 +2,7 @@
 import React from 'react';
 
 const FloatingWhatsApp = () => {
-    const phoneNumber = "6281316807308";
+    const phoneNumber = "6282120369004";
     const message = "Halo PT. PONCO MUNARO UTAMA, saya tertarik untuk berkonsultasi mengenai layanan [Konstruksi/Sumur Bor/Listrik]. Mohon informasi lebih lanjut mengenai prosedur dan estimasi biayanya. Terima kasih.";
 
     return (
