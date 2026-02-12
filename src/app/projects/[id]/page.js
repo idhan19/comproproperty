@@ -79,10 +79,7 @@ export default function ProjectDetail() {
                                     <MapPin size={18} className="text-red-500" />
                                     <span>{project.location}</span>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <Calendar size={18} className="text-red-500" />
-                                    <span>{project.year || "2024"}</span>
-                                </div>
+
                             </div>
                         </motion.div>
                     </div>
