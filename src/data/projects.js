@@ -7,7 +7,7 @@ export const projects = [
         description: "Pengeboran sumur dalam dan instalasi sistem pompa untuk menjamin ketersediaan air bersih yang stabil bagi kebutuhan industri dan domestik.",
         detailedDescription: "Proyek pengadaan jaringan PDAM ini mencakup survei hidrogeologi, pengeboran sumur dalam hingga kedalaman optimal, instalasi casing dan screen berkualitas tinggi, serta pemasangan sistem pompa submersible yang efisien. Kami juga membangun sistem distribusi air yang terintegrasi untuk memastikan pasokan air bersih yang handal.",
         location: "Perumahan Puri Griasadi Ciseeng Bogor",
-        gallery: ["/PDAMproject1.jpeg", "/PDAMproject2.jpeg", "/PDAMproject3.jpeg"]
+        gallery: ["/PDAMProject1.jpeg", "/PDAMProject2.jpeg", "/PDAMProject3.jpeg"]
     },
     {
         id: "electric-pole",
