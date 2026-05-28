@@ -1,5 +1,5 @@
 export default function robots() {
-  const baseUrl = 'https://www.poncomunaro.com'; // ganti dengan domain kamu
+  const baseUrl = 'https://www.ptponcoutama.com'; // ganti dengan domain kamu
 
   return {
     rules: {

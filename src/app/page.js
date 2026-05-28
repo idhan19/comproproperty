@@ -4,12 +4,12 @@ export const metadata = {
   title: "PT PONCO MUNARO UTAMA | Kontraktor Listrik & Infrastruktur Terpercaya",
   description: "PT PONCO MUNARO UTAMA adalah perusahaan kontraktor listrik dan infrastruktur terpercaya di Indonesia. Spesialis instalasi listrik, PDAM, gardu trafo, dan panel listrik.",
   alternates: {
-    canonical: 'https://www.poncomunaro.com', // ganti dengan domain kamu
+    canonical: 'https://www.ptponcoutama.com', // ganti dengan domain kamu
   },
   openGraph: {
     title: "PT PONCO MUNARO UTAMA | Kontraktor Listrik & Infrastruktur Terpercaya",
     description: "Perusahaan kontraktor listrik dan infrastruktur terpercaya di Indonesia.",
-    url: 'https://www.poncomunaro.com',
+    url: 'https://www.ptponcoutama.com',
     siteName: 'PT PONCO MUNARO UTAMA',
     type: 'website',
   },
