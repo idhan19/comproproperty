@@ -1,0 +1,12 @@
+export default function robots() {
+  const baseUrl = 'https://www.poncomunaro.com'; // ganti dengan domain kamu
+
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: [], // Tidak ada halaman yang diblokir
+    },
+    sitemap: `${baseUrl}/sitemap.xml`,
+  };
+}
