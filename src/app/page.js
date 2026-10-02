@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import ProjectPortfolio from "@/components/ProjectPortfolio";
+import FeaturedProjects from "@/components/projects/FeaturedProjects";
 import LeadershipTeam from "@/components/about/LeadershipTeam";
 import Footer from "@/components/Footer";
 import { SITE_URL, seo } from "@/data/site";
@@ -23,7 +23,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <ProjectPortfolio />
+      <FeaturedProjects />
       <LeadershipTeam />
       <Footer />
     </main>

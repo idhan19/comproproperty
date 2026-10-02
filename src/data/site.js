@@ -196,75 +196,252 @@ export const materialLogistik = {
     "Kami siap menjadi mitra pengadaan material dan logistik untuk mendukung kelancaran proyek Anda.",
 };
 
+// Nama kategori proyek = judul layanan.
+const K = {
+  konstruksi: "Konstruksi Bangunan",
+  me: "Mekanikal & Elektrikal",
+  air: "Infrastruktur Air Bersih",
+  telko: "Telekomunikasi",
+  tanah: "Pekerjaan Tanah & Pengembangan Lahan",
+};
+
+// `tahun`: null berarti belum dikonfirmasi klien dan tidak ditampilkan.
+// `foto`: null berarti belum ada dokumentasi; kartu memakai ikon kategori.
+// `unggulan`: tampil di beranda. `published: false`: disembunyikan dari website.
+// Slug lama (pdam-network, electric-pole, transformer-installation,
+// cubicle-installation, electrical-installation) dipertahankan agar link lama tetap jalan.
 export const projects = [
+  // Proyek unggulan (beranda)
   {
-    slug: "pdam-network",
-    judul: "Pengadaan jaringan PDAM",
-    kategori: "SUMUR BOR",
-    foto: "/PDAM1.jpeg",
+    slug: "trafo-1mw-smelting-karawang",
+    kategori: K.me,
+    judul: "Pemasangan Trafo 1 MW & Panel",
+    lokasi: "Pabrik Smelting, Karawang",
     deskripsi:
-      "Pengeboran sumur dalam dan instalasi sistem pompa untuk menjamin ketersediaan air bersih yang stabil bagi kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Proyek pengadaan jaringan PDAM ini mencakup survei hidrogeologi, pengeboran sumur dalam hingga kedalaman optimal, instalasi casing dan screen berkualitas tinggi, serta pemasangan sistem pompa submersible yang efisien. Kami juga membangun sistem distribusi air yang terintegrasi untuk memastikan pasokan air bersih yang handal.",
-    lokasi: "Perumahan Puri Griasadi Ciseeng Bogor",
-    galeri: ["/PDAMProject1.jpeg", "/PDAMProject2.jpeg", "/PDAMProject3.jpeg"],
-  },
-  {
-    slug: "electric-pole",
-    judul: "Pengadaan Tiang Listrik",
-    kategori: "Electrical Engineering",
-    foto: "/tianglistrik.jpeg",
-    deskripsi: "Pengadaan tiang listrik untuk kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Penyediaan tiang listrik beton dan besi berkualitas standar PLN untuk mendukung infrastruktur kelistrikan. Meliputi tiang tegangan rendah (TR) dan tegangan menengah (TM) dengan spesifikasi yang tahan terhadap kondisi cuaca ekstrem.",
-    lokasi: "Perumahan Hawtha Inat Tajur Halang Bogor",
-    galeri: ["/tiang1.jpeg", "/tiang2.jpeg", "/tiang3.jpeg"],
-  },
-  {
-    slug: "transformer-installation",
-    judul: "Pemasangan Trafo dan Panel",
-    kategori: "Electrical Engineering",
-    foto: "/trafopanel.jpeg",
-    deskripsi: "Pemasangan trafo dan panel untuk kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Instalasi transformator distribusi dan panel distribusi tegangan rendah (LVMDP) serta panel kapasitor bank. Kami memastikan setiap instalasi memenuhi standar keamanan (PUIL) dan sertifikasi layak operasi (SLO).",
-    lokasi: "Alun - Alun Kota Depok",
-    galeri: ["/Trafo1.jpeg", "/Trafo2.jpeg", "/Trafo3.jpeg"],
+      'Pemasangan transformator berkapasitas 1 MW beserta panel distribusi [KONFIRMASI KLIEN: "Ipmdp" di profil maksudnya LVMDP?] untuk kebutuhan daya fasilitas produksi pabrik smelting.',
+    tahun: null,
+    foto: null,
+    unggulan: true,
   },
   {
     slug: "cubicle-installation",
+    kategori: K.me,
     judul: "Pemasangan Kubikel",
-    kategori: "Electrical Engineering",
+    lokasi: "Pabrik Smelting, Karawang",
+    deskripsi: "Pemasangan kubikel untuk sistem distribusi daya listrik di area pabrik smelting.",
+    tahun: null,
     foto: "/kubikel.jpeg",
-    deskripsi: "Pemasangan kubikel untuk kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Pemasangan kubikel tegangan menengah (MVMDP) 20kV untuk perlindungan dan switching jaringan distribusi listrik. Menggunakan komponen berkualitas dari merek terkemuka.",
-    lokasi: "Pabrik Smelting Karawang",
     galeri: ["/kubikel1.jpeg", "/kubikel2.jpeg", "/kubikel3.jpeg"],
+    unggulan: true,
+  },
+  {
+    slug: "transformer-installation",
+    kategori: K.me,
+    judul: "Pemasangan Gardu Trafo & Panel",
+    lokasi: "Alun-Alun Kota Depok",
+    deskripsi:
+      "Pemasangan gardu trafo dan panel listrik untuk kebutuhan kelistrikan kawasan Alun-Alun Kota Depok.",
+    tahun: null,
+    foto: "/trafopanel.jpeg",
+    galeri: ["/Trafo1.jpeg", "/Trafo2.jpeg", "/Trafo3.jpeg"],
+    unggulan: true,
+  },
+  {
+    slug: "tower-bts-sst",
+    kategori: K.telko,
+    judul: "Pembangunan Tower BTS SST",
+    lokasi: "Jawa Tengah & Jawa Timur",
+    mitra: "PT Helgalara Arutala Indonesia",
+    deskripsi:
+      "Pembangunan tower BTS tipe SST-42, SST-52, dan SST-62 bersama PT Helgalara Arutala Indonesia.",
+    tahun: null,
+    foto: null,
+    unggulan: true,
+  },
+  {
+    slug: "sumur-bor-rs-brawijaya-saharjo",
+    kategori: K.air,
+    judul: "Pembuatan Sumur Bor",
+    lokasi: "RS Brawijaya Saharjo, Jakarta Selatan",
+    deskripsi: "Pembuatan sumur bor untuk mendukung pasokan air bersih rumah sakit.",
+    tahun: null,
+    foto: null,
+    unggulan: true,
+  },
+  {
+    slug: "pdam-network",
+    kategori: K.air,
+    judul: "Pengadaan Jaringan Air PDAM",
+    lokasi: "Perumahan Puri Griasadi Ciseeng, Bogor",
+    deskripsi: "Pengadaan jaringan air PDAM untuk kawasan perumahan.",
+    tahun: null,
+    foto: "/PDAM1.jpeg",
+    galeri: ["/PDAMProject1.jpeg", "/PDAMProject2.jpeg", "/PDAMProject3.jpeg"],
+    unggulan: true,
+  },
+
+  // Mekanikal & Elektrikal: jaringan listrik jalur udara
+  {
+    slug: "jaringan-listrik-bumi-griasadi-ciseeng",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Bumi Griasadi Ciseeng",
+    lokasi: "Perumahan Bumi Griasadi Ciseeng, Bogor",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Bumi Griasadi Ciseeng.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "jaringan-listrik-bumi-griasadi-cihoe",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Bumi Griasadi Cihoe",
+    lokasi: "Perumahan Bumi Griasadi Cihoe",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Bumi Griasadi Cihoe.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "jaringan-listrik-puri-griasadi-ciseeng",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi Ciseeng",
+    lokasi: "Perumahan Puri Griasadi Ciseeng, Bogor",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Ciseeng.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "jaringan-listrik-puri-griasadi-3-cijeruk",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi 3 Cijeruk",
+    lokasi: "Perumahan Puri Griasadi 3 Cijeruk",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi 3 Cijeruk.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "electric-pole",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Hawtha Inat Tajur Halang",
+    lokasi: "Perumahan Hawtha Inat Tajur Halang, Bogor",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Hawtha Inat Tajur Halang.",
+    tahun: null,
+    foto: "/tianglistrik.jpeg",
+    galeri: ["/tiang1.jpeg", "/tiang2.jpeg", "/tiang3.jpeg"],
   },
   {
     slug: "electrical-installation",
-    judul: "Pemasangan instalasi listrik",
-    kategori: "Telecommunication Infrastructure",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi Cikande",
+    lokasi: "Perumahan Puri Griasadi Cikande, Banten",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Cikande.",
+    tahun: null,
     foto: "/instalasilistrik.jpeg",
-    deskripsi: "Pemasangan instalasi listrik untuk kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Instalasi kelistrikan menyeluruh mulai dari penerangan, stop kontak, hingga sistem daya untuk mesin industri. Kami mengutamakan kerapian jalur kabel, keseimbangan beban, dan keamanan instalasi.",
-    lokasi: "Perumahan Puri Griasadi Cikande Banten",
     galeri: ["/INSLISTRIK1.jpeg", "/INSLISTRIK2.jpeg", "/INSLISTRIK3.jpeg"],
   },
   {
+    slug: "jaringan-listrik-puri-griasadi-tamansari",
+    kategori: K.me,
+    judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi Tamansari",
+    lokasi: "Perumahan Puri Griasadi Tamansari",
+    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Tamansari.",
+    tahun: null,
+    foto: null,
+  },
+
+  // Konstruksi Bangunan
+  {
+    slug: "rumah-subsidi-bumi-griasadi-ciseeng",
+    kategori: K.konstruksi,
+    judul: "Pembangunan Rumah Subsidi Perumahan Bumi Griasadi Ciseeng",
+    lokasi: "Perumahan Bumi Griasadi Ciseeng, Bogor",
+    deskripsi: "Pembangunan rumah subsidi di kawasan Perumahan Bumi Griasadi Ciseeng.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "kafe-food-court-tempat-nongkrong",
+    kategori: K.konstruksi,
+    judul: "Pembangunan Kafe & Food Court Tempat Nongkrong",
+    lokasi: "Ciputat, Tangerang Selatan",
+    deskripsi: "Pembangunan bangunan usaha kafe dan food court Tempat Nongkrong.",
+    tahun: null,
+    foto: null,
+  },
+
+  // Infrastruktur Air Bersih
+  {
+    slug: "sumur-bor-puri-permata-ciampea",
+    kategori: K.air,
+    judul: "Sumur Bor Perumahan Puri Permata Ciampea",
+    lokasi: "Perumahan Puri Permata Ciampea",
+    deskripsi: "Pembuatan sumur bor untuk pasokan air bersih kawasan Perumahan Puri Permata Ciampea.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "sumur-bor-puri-griasadi-tamansari",
+    kategori: K.air,
+    judul: "Sumur Bor Perumahan Puri Griasadi Tamansari",
+    lokasi: "Perumahan Puri Griasadi Tamansari",
+    deskripsi: "Pembuatan sumur bor untuk pasokan air bersih kawasan Perumahan Puri Griasadi Tamansari.",
+    tahun: null,
+    foto: null,
+  },
+
+  // Pekerjaan Tanah & Pengembangan Lahan
+  {
+    slug: "cut-and-fill-puri-griasadi-3-cijeruk",
+    kategori: K.tanah,
+    judul: "Cut and Fill Perumahan Puri Griasadi 3 Cijeruk",
+    lokasi: "Perumahan Puri Griasadi 3 Cijeruk",
+    deskripsi: "Pekerjaan cut and fill untuk pematangan lahan Perumahan Puri Griasadi 3 Cijeruk.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "pengadaan-lahan-puri-angkasa-permata",
+    kategori: K.tanah,
+    judul: "Pengadaan Lahan untuk PT Puri Angkasa Permata",
+    lokasi: null,
+    mitra: "PT Puri Angkasa Permata",
+    deskripsi: "Pengadaan lahan untuk kebutuhan pengembangan perumahan PT Puri Angkasa Permata.",
+    tahun: null,
+    foto: null,
+  },
+  {
+    slug: "perizinan-perumahan-bogor",
+    kategori: K.tanah,
+    judul: "Pengurusan Perizinan Perumahan Subsidi & Komersil",
+    lokasi: "Bogor",
+    deskripsi: "Pendampingan pengurusan perizinan untuk proyek perumahan subsidi dan komersil di Bogor.",
+    tahun: null,
+    foto: null,
+  },
+
+  // Disembunyikan sampai klien mengonfirmasi lokasi dan dokumentasinya.
+  {
     slug: "genset-procurement",
+    kategori: K.me,
     judul: "Pengadaan Genset",
-    kategori: "Telecommunication Infrastructure",
-    foto: "/Genset.jpeg",
-    deskripsi: "Pengadaan Genset untuk kebutuhan industri dan domestik.",
-    deskripsiLengkap:
-      "Penyediaan unit generator set (Genset) kapasitas besar (silent/open type) sebagai sumber daya cadangan. Termasuk instalasi sistem ATS/AMF (Automatic Transfer Switch/Automatic Main Failure) untuk perpindahan daya otomatis.",
     lokasi: "Data Center & Rumah Sakit",
+    deskripsi: "Pengadaan genset untuk kebutuhan data center dan rumah sakit.",
+    tahun: null,
+    foto: "/Genset.jpeg",
     galeri: ["/Genset1.jpeg", "/Genset2.jpeg", "/Genset3.jpeg"],
+    published: false,
   },
 ];
+
+export const publishedProjects = projects.filter((project) => project.published !== false);
+export const featuredProjects = publishedProjects.filter((project) => project.unggulan);
+
+export function getProject(slug) {
+  return publishedProjects.find((project) => project.slug === slug);
+}
+
+/** Ikon layanan untuk kategori proyek (dipakai saat proyek belum punya foto). */
+export function categoryIcon(kategori) {
+  return services.find((service) => service.title === kategori)?.icon ?? "Layers";
+}
 
 export const directors = [
   { name: "M.Saoma Gofur, Lc", role: "Direktur Utama", photo: "/gofur.jpeg" },

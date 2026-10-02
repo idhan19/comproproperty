@@ -40,6 +40,17 @@ Branch: `update-konten-ui`
 - Metadata title, description, canonical, dan Open Graph khusus halaman ini. Halaman ditambahkan ke sitemap.
 - Komponen `WithPlaceholders` menyorot teks `[KONFIRMASI KLIEN: ...]` dengan latar kuning agar mudah ditemukan saat review preview.
 
+## Fase 4: Data Proyek
+
+- Data proyek ditulis ulang dengan field `slug`, `kategori`, `judul`, `lokasi`, `mitra` (opsional), `deskripsi`, `tahun`, `foto`, `galeri`, `unggulan`, `published`. Kategori sama persis dengan nama layanan Fase 2.
+- 6 proyek unggulan tampil di beranda. Total 20 proyek tayang di halaman baru `/projects` (Semua Proyek) dengan filter kategori.
+- Slug lama dipertahankan sehingga redirect tidak diperlukan: `pdam-network`, `electric-pole`, `transformer-installation`, `cubicle-installation`, `electrical-installation`.
+- Pemetaan foto lama: kubikel ke Pemasangan Kubikel (Smelting Karawang); trafo ke Gardu Trafo & Panel (Alun-Alun Depok); PDAM ke Jaringan Air PDAM; tiang listrik ke jaringan listrik Hawtha Inat Tajur Halang; instalasi listrik ke jaringan listrik Puri Griasadi Cikande. Proyek baru tanpa dokumentasi menampilkan ikon kategori dengan teks "Dokumentasi menyusul".
+- "Pengadaan Genset" disembunyikan (`published: false`). URL `/projects/genset-procurement` kini 404 sampai proyek ini ditampilkan lagi.
+- `/projects/[slug]` kini server component dengan halaman statis (`generateStaticParams`) serta title, description, dan og:image per proyek.
+- Dihapus karena tidak didukung data: deskripsi detail lama (survei hidrogeologi, standar PUIL/SLO, MVMDP 20kV, tiang TR/TM, dll.), serta teks "Completed on time and within budget", "High-quality materials", "Full safety compliance (K3)", "Industrial Partner", dan status "Completed".
+- Lokasi hanya ditulis sebatas yang ada di brief atau data lama. Kabupaten/kota tidak ditambahkan bila tidak disebutkan (contoh: Cihoe, Cijeruk, Tamansari, Ciampea).
+
 ## Daftar [KONFIRMASI KLIEN]
 
 Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` untuk menemukannya.
@@ -48,3 +59,8 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 |---|---|---|
 | 1 | `/layanan/material-logistik`, slot foto | Foto armada/material milik perusahaan |
 | 2 | `/layanan/material-logistik`, kartu Supplier Batu Bara | Legalitas perdagangan batu bara sebelum tayang |
+| 3 | Proyek "Pemasangan Trafo 1 MW & Panel" | Apakah "Ipmdp" di company profile maksudnya LVMDP? |
+| 4 | Semua proyek, field `tahun` | Tahun pelaksanaan setiap proyek (sekarang `null`, tidak ditampilkan) |
+| 5 | Proyek "Pengadaan Lahan untuk PT Puri Angkasa Permata" | Lokasi proyek (sekarang kosong) |
+| 6 | Proyek "Pengadaan Genset" (`published: false`) | Lokasi dan dokumentasi sebelum ditampilkan |
+| 7 | Proyek tanpa foto (14 dari 20) | Dokumentasi foto proyek |
