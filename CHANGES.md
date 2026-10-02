@@ -51,6 +51,19 @@ Branch: `update-konten-ui`
 - Dihapus karena tidak didukung data: deskripsi detail lama (survei hidrogeologi, standar PUIL/SLO, MVMDP 20kV, tiang TR/TM, dll.), serta teks "Completed on time and within budget", "High-quality materials", "Full safety compliance (K3)", "Industrial Partner", dan status "Completed".
 - Lokasi hanya ditulis sebatas yang ada di brief atau data lama. Kabupaten/kota tidak ditambahkan bila tidak disebutkan (contoh: Cihoe, Cijeruk, Tamansari, Ciampea).
 
+## Fase 5: Tentang Kami, Struktur, Legalitas, Klien
+
+- Section Tentang Kami (`#about`) baru: deskripsi perusahaan, visi (ejaan dirapikan), 3 butir misi, tombol "Unduh Company Profile", Direksi & Komisaris (dengan foto), serta Tim Manajemen (nama dan jabatan, tanpa foto).
+- Nama direksi diperbarui: "Sarah Nadia, S.H., M.Kn."; gelar M. Saoma Gofur ditandai untuk konfirmasi.
+- Section baru "Legalitas dan Sertifikasi" (`#legalitas`). Yang tampil hanya kartu ISO 9001 (tanpa tahun versi standar). Kartu Badan Hukum, NIB, dan KBLI sudah ada di data tetapi `published: false`. Sudah diverifikasi: nomor AHU, NIB, dan KBLI tidak muncul di HTML.
+- Klien & Mitra kini section tersendiri (`#klien`) berupa grid nama tanpa tautan. Sebelumnya nama klien di footer menautkan ke `#services`, `#projects`, dan `#about`. PT Helgalara Arutala Indonesia ditambahkan dengan tanda konfirmasi. Field `logo` sudah disiapkan bila logo klien tersedia.
+- Tombol unduh company profile kini mengarah ke `/company-profile-pmu.pdf`. Logika redirect di `next.config.mjs`:
+  - Selama file revisi belum ada, `/company-profile-pmu.pdf` diarahkan (307) ke `/profile-File.pdf`. Sudah dites.
+  - Setelah `public/company-profile-pmu.pdf` ditambahkan dan di-build ulang, `/profile-File.pdf` otomatis diarahkan (308) ke file baru. File lama boleh dihapus setelah itu.
+- Footer ditulis ulang dalam Bahasa Indonesia: profil singkat, navigasi, daftar layanan, dan kontak (telepon, email, WhatsApp bisa diklik).
+- `public/file profile.pdf` (50 MB, tidak dipakai di mana pun) dihapus.
+- `/profile` kini juga memuat Tim Manajemen dan Legalitas.
+
 ## Daftar [KONFIRMASI KLIEN]
 
 Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` untuk menemukannya.
@@ -64,3 +77,9 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 | 5 | Proyek "Pengadaan Lahan untuk PT Puri Angkasa Permata" | Lokasi proyek (sekarang kosong) |
 | 6 | Proyek "Pengadaan Genset" (`published: false`) | Lokasi dan dokumentasi sebelum ditampilkan |
 | 7 | Proyek tanpa foto (14 dari 20) | Dokumentasi foto proyek |
+| 8 | Visi (`about.visi`) | Teks resmi visi; hanya ejaan yang dirapikan dari company profile |
+| 9 | Direksi: M. Saoma Gofur | Gelar yang benar: Lc atau S.Pd |
+| 10 | Legalitas: ISO 9001 | Versi standar pada sertifikat (sekarang ditulis "ISO 9001" saja) |
+| 11 | Legalitas: Badan Hukum, NIB, KBLI (`published: false`) | Izin klien untuk menampilkan data ini di website |
+| 12 | Klien: PT Helgalara Arutala Indonesia | Izin menampilkan nama |
+| 13 | `public/company-profile-pmu.pdf` | File company profile revisi (sementara memakai file lama lewat redirect) |

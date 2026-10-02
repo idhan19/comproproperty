@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
-import LeadershipTeam from "@/components/about/LeadershipTeam";
+import About from "@/components/about/About";
+import Legalitas from "@/components/about/Legalitas";
+import Clients from "@/components/about/Clients";
 import Footer from "@/components/Footer";
 import { SITE_URL, seo } from "@/data/site";
 
@@ -24,7 +26,9 @@ export default function Home() {
       <Hero />
       <Services />
       <FeaturedProjects />
-      <LeadershipTeam />
+      <About />
+      <Legalitas />
+      <Clients />
       <Footer />
     </main>
   );

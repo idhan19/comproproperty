@@ -5,7 +5,7 @@ import { ArrowLeft, MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
-import WithPlaceholders from '@/components/WithPlaceholders';
+import WithPlaceholders, { stripPlaceholders } from '@/components/WithPlaceholders';
 import ProjectCard, { ProjectMedia } from '@/components/projects/ProjectCard';
 import { SITE_URL, getProject, publishedProjects, waLink } from '@/data/site';
 
@@ -16,18 +16,13 @@ export function generateStaticParams() {
     return publishedProjects.map((project) => ({ slug: project.slug }));
 }
 
-/** Deskripsi untuk meta tag, tanpa placeholder konfirmasi. */
-function metaDescription(project) {
-    return project.deskripsi.replace(/\s*\[KONFIRMASI KLIEN:[^\]]*\]/g, '');
-}
-
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const project = getProject(slug);
     if (!project) return {};
 
     const url = `${SITE_URL}/projects/${project.slug}`;
-    const description = metaDescription(project);
+    const description = stripPlaceholders(project.deskripsi);
     return {
         title: project.judul,
         description,

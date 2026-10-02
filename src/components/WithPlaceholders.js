@@ -1,5 +1,10 @@
 const PLACEHOLDER = /(\[KONFIRMASI KLIEN:[^\]]*\])/;
 
+/** Teks tanpa placeholder, untuk atribut seperti alt dan meta description. */
+export function stripPlaceholders(text) {
+    return text.replace(/\s*\[KONFIRMASI KLIEN:[^\]]*\]/g, '');
+}
+
 /**
  * Menampilkan teks dan menyorot setiap "[KONFIRMASI KLIEN: ...]" agar mudah
  * ditemukan saat meninjau Preview Deployment. Hapus placeholder di

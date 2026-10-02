@@ -1,13 +1,13 @@
-"use client";
-import React from 'react';
-import { Instagram, Mail, Phone, MapPin, Facebook } from 'lucide-react';
-import { clients, company, seo } from '@/data/site';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { company, navLinks, services, waLink } from '@/data/site';
 
 const socialIcons = {
-    Instagram: <Instagram size={20} />,
-    Facebook: <Facebook size={20} />,
+    Instagram: <Instagram size={20} aria-hidden="true" />,
+    Facebook: <Facebook size={20} aria-hidden="true" />,
     TikTok: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
         </svg>
     ),
@@ -15,71 +15,90 @@ const socialIcons = {
 
 const Footer = () => {
     return (
-        <footer id="kontak" className="bg-blue-950 text-blue-100 pt-20 pb-10">
+        <footer id="kontak" className="bg-navy-950 pt-20 pb-10 text-navy-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="bg-blue-600 p-1.5 rounded-lg">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M9 22V12H15V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <span className="font-bold text-xl tracking-tight text-white">PT. PONCO MUNARO UTAMA</span>
+                <div className="mb-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
+                    <div className="lg:col-span-4">
+                        <div className="mb-6 flex items-center gap-3">
+                            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5">
+                                <Image src={company.logo} alt="" width={40} height={40} />
+                            </span>
+                            <span className="text-lg font-bold text-white">{company.name}</span>
                         </div>
-                        <p className="text-blue-200/80 mb-8 leading-relaxed">
-                            {seo.description}
+                        <p className="mb-8 leading-relaxed">
+                            Jasa konstruksi, mekanikal elektrikal, infrastruktur air bersih, telekomunikasi, pekerjaan tanah, serta tracking armada dan supplier material.
                         </p>
-                        <div className="flex space-x-4">
+                        <div className="flex gap-3">
                             {company.social.map((item) => (
-                                <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.name} className="bg-blue-900/50 p-2 rounded-lg hover:bg-blue-800 transition-colors">
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`${item.name} ${company.name}`}
+                                    className="rounded-lg bg-white/10 p-2.5 text-white transition-colors hover:bg-brand-600"
+                                >
                                     {socialIcons[item.name]}
                                 </a>
                             ))}
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="font-bold text-white text-lg mb-6">Clients PT. Ponco Munaro Utama  :</h4>
-                        <ul className="space-y-4 list-disc">
-                            {clients.slice(0, 4).map((client) => (
-                                <li key={client.name}>{client.name}</li>
+                    <nav aria-label="Navigasi footer" className="lg:col-span-2">
+                        <h2 className="mb-5 font-bold text-white">Navigasi</h2>
+                        <ul className="space-y-3">
+                            {navLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link href={link.href} className="transition-colors hover:text-white">{link.label}</Link>
+                                </li>
+                            ))}
+                            <li>
+                                <Link href="/projects" className="transition-colors hover:text-white">Semua Proyek</Link>
+                            </li>
+                            <li>
+                                <Link href="/profile" className="transition-colors hover:text-white">Company Profile</Link>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div className="lg:col-span-3">
+                        <h2 className="mb-5 font-bold text-white">Layanan</h2>
+                        <ul className="space-y-3">
+                            {services.map((service) => (
+                                <li key={service.slug}>
+                                    <Link href={service.href ?? '/#services'} className="transition-colors hover:text-white">
+                                        {service.title}
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </div>
 
-                    <div className='md:mt-14'>
-                        <h4 className="font-bold text-white text-lg mb-6">   </h4>
-                        <ul className="space-y-4 list-disc">
-                            {clients.slice(4).map((client) => (
-                                <li key={client.name}>{client.name}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-
-                    <div>
-                        <h4 className="font-bold text-white text-lg mb-6">Contact Us</h4>
+                    <div className="lg:col-span-3">
+                        <h2 className="mb-5 font-bold text-white">Kontak</h2>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
-                                <MapPin className="text-red-500 mt-1 flex-shrink-0" size={18} />
+                                <MapPin className="mt-1 shrink-0 text-brand" size={18} aria-hidden="true" />
                                 <span>{company.address}</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Phone className="text-red-500 flex-shrink-0" size={18} />
-                                <span>{company.phone}</span>
+                                <Phone className="shrink-0 text-brand" size={18} aria-hidden="true" />
+                                <a href={`tel:+62${company.phone.slice(1)}`} className="hover:text-white">{company.phone}</a>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Mail className="text-red-500 flex-shrink-0" size={18} />
-                                <span>{company.email}</span>
+                                <Mail className="shrink-0 text-brand" size={18} aria-hidden="true" />
+                                <a href={`mailto:${company.email}`} className="break-all hover:text-white">{company.email}</a>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <MessageCircle className="shrink-0 text-brand" size={18} aria-hidden="true" />
+                                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-blue-900 pt-8 text-center text-sm text-blue-400/60">
-                    <p>&copy; {new Date().getFullYear()} PT. Ponco Munaro Utama. All rights reserved.</p>
+                <div className="border-t border-white/10 pt-8 text-center text-sm text-navy-100/70">
+                    <p>&copy; {new Date().getFullYear()} {company.name}. Hak cipta dilindungi.</p>
                 </div>
             </div>
         </footer>

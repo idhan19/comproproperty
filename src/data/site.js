@@ -25,6 +25,15 @@ export const company = {
   ],
 };
 
+// Pakai "/#..." agar anchor tetap berfungsi dari halaman selain beranda.
+export const navLinks = [
+  { label: "Beranda", href: "/" },
+  { label: "Layanan", href: "/#services" },
+  { label: "Proyek", href: "/#projects" },
+  { label: "Tentang Kami", href: "/#about" },
+  { label: "Kontak", href: "/#kontak" },
+];
+
 export const whatsapp = {
   number: "6282120369004",
   messages: {
@@ -63,7 +72,9 @@ export const about = {
   ],
 };
 
-export const companyProfilePdf = "/profile-File.pdf";
+// Selama /company-profile-pmu.pdf belum ada di folder public, URL ini
+// diarahkan ke file lama lewat redirect di next.config.mjs.
+export const companyProfilePdf = "/company-profile-pmu.pdf";
 
 export const servicesIntro =
   "Layanan kami mencakup konstruksi, mekanikal elektrikal, infrastruktur, hingga pasokan material untuk pengembang perumahan, industri, dan instansi.";
@@ -444,17 +455,80 @@ export function categoryIcon(kategori) {
 }
 
 export const directors = [
-  { name: "M.Saoma Gofur, Lc", role: "Direktur Utama", photo: "/gofur.jpeg" },
-  { name: "Sarah Nadia, M.Kn", role: "Komisaris", photo: "/Sarah1.png" },
+  {
+    name: "M. Saoma Gofur [KONFIRMASI KLIEN: gelar Lc atau S.Pd]",
+    role: "Direktur Utama",
+    photo: "/gofur.jpeg",
+  },
+  { name: "Sarah Nadia, S.H., M.Kn.", role: "Komisaris", photo: "/Sarah1.png" },
   { name: "Alex Herius", role: "Direktur", photo: "/Alex.jpeg" },
 ];
 
+// Tim manajemen: nama dan jabatan saja, tanpa foto.
+export const management = [
+  { name: "Mukhlis Abdillah", role: "Manager Teknik" },
+  { name: "Rohmatullah", role: "Manager Operasional" },
+  { name: "Maryono", role: "Manager Marketing" },
+  { name: "Syarah Anita", role: "Manager Keuangan" },
+];
+
+// Legalitas & sertifikasi: kartu ringkas tanpa foto dokumen.
+// Jangan menampilkan KTP, NIK, NPWP pribadi, atau isi akta notaris.
+// Jangan menulis klaim SBU atau sertifikat standar terverifikasi.
+// Kartu `published: false` tidak ada di company profile publik dan baru
+// ditampilkan setelah klien setuju.
+export const legalitas = [
+  {
+    icon: "BadgeCheck",
+    title: "ISO 9001",
+    subtitle: "Sistem Manajemen Mutu",
+    details: [
+      "No. KSM/0077/QSM",
+      "Ruang lingkup: Construction of Mechanical and Electrical Installations",
+      "Berlaku hingga 17 Juni 2027",
+    ],
+    note: "[KONFIRMASI KLIEN: versi standar pada sertifikat]",
+  },
+  {
+    icon: "Scale",
+    title: "Badan Hukum",
+    subtitle: "Pengesahan Kementerian Hukum dan HAM",
+    details: ["SK Menkumham No. AHU-0016615.AH.01.01.Tahun 2024", "Tanggal 1 Maret 2024"],
+    published: false,
+  },
+  {
+    icon: "FileCheck",
+    title: "Nomor Induk Berusaha",
+    subtitle: "OSS RBA",
+    details: ["NIB 0603240092835"],
+    published: false,
+  },
+  {
+    icon: "ClipboardList",
+    title: "Bidang Usaha (KBLI)",
+    subtitle: "Klasifikasi Baku Lapangan Usaha Indonesia",
+    details: [
+      "Konstruksi Gedung Hunian, Perkantoran, Industri, Penginapan, dan Gedung Lainnya",
+      "Konstruksi Prapabrikasi",
+      "Konstruksi Bangunan Sipil Elektrikal",
+      "Instalasi Mekanikal",
+      "Perdagangan Eceran",
+      "Real Estat",
+    ],
+    published: false,
+  },
+];
+
+export const publishedLegalitas = legalitas.filter((item) => item.published !== false);
+
+// Klien & mitra: grid nama tanpa tautan. Tambahkan `logo` bila tersedia.
 export const clients = [
   { name: "Rumaji Group" },
-  { name: "PT. Puri Angkasa Permata Group" },
-  { name: "PT.Saka" },
-  { name: "PT. Anugerah Mulya Nusaindo" },
+  { name: "PT Puri Angkasa Permata Group" },
+  { name: "PT Saka" },
+  { name: "PT Anugerah Mulya Nusaindo" },
   { name: "Delta Group" },
-  { name: "PT. Cijantung Anugerah Sukses Mandiri" },
-  { name: "RS BRAWIJAYA Saharjo Tebet" },
+  { name: "PT Cijantung Anugerah Sukses Mandiri" },
+  { name: "RS Brawijaya Saharjo Tebet" },
+  { name: "PT Helgalara Arutala Indonesia", note: "[KONFIRMASI KLIEN: izin menampilkan nama]" },
 ];

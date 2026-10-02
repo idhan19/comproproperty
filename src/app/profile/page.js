@@ -1,7 +1,10 @@
 import { Download, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { SITE_URL, about, clients, company, companyProfilePdf, directors, seo, services, waLink } from '@/data/site';
+import WithPlaceholders from '@/components/WithPlaceholders';
+import {
+    SITE_URL, about, clients, company, companyProfilePdf, directors, management, publishedLegalitas, seo, services, waLink,
+} from '@/data/site';
 
 const description =
     'Profil PT Ponco Munaro Utama: visi, misi, lini layanan, direksi, klien, dan kontak perusahaan jasa konstruksi di Kabupaten Bogor.';
@@ -71,17 +74,49 @@ export default function ProfilePage() {
                     <ul className="grid gap-4 sm:grid-cols-3">
                         {directors.map((person) => (
                             <li key={person.name} className="rounded-2xl bg-surface p-5">
-                                <p className="font-bold text-navy">{person.name}</p>
+                                <p className="font-bold text-navy"><WithPlaceholders text={person.name} /></p>
                                 <p className="text-sm text-brand-600 font-semibold mt-1">{person.role}</p>
                             </li>
                         ))}
                     </ul>
                 </Section>
 
+                <Section title="Tim Manajemen">
+                    <ul className="grid gap-4 sm:grid-cols-2">
+                        {management.map((person) => (
+                            <li key={person.name}>
+                                <p className="font-bold text-navy">{person.name}</p>
+                                <p className="text-sm text-navy/70">{person.role}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </Section>
+
+                {publishedLegalitas.length > 0 && (
+                    <Section title="Legalitas dan Sertifikasi">
+                        <div className="space-y-6">
+                            {publishedLegalitas.map((item) => (
+                                <div key={item.title}>
+                                    <h3 className="font-bold text-navy text-lg">{item.title}: {item.subtitle}</h3>
+                                    <ul className="mt-2 space-y-1 text-navy/80">
+                                        {item.details.map((detail) => (
+                                            <li key={detail}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                    {item.note && <p className="mt-2"><WithPlaceholders text={item.note} /></p>}
+                                </div>
+                            ))}
+                        </div>
+                    </Section>
+                )}
+
                 <Section title="Klien dan Mitra">
                     <ul className="grid gap-3 sm:grid-cols-2 text-navy/80">
                         {clients.map((client) => (
-                            <li key={client.name}>{client.name}</li>
+                            <li key={client.name}>
+                                {client.name}
+                                {client.note && <> <WithPlaceholders text={client.note} /></>}
+                            </li>
                         ))}
                     </ul>
                 </Section>
