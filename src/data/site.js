@@ -405,7 +405,8 @@ export const projects = [
     lokasi: "Perumahan Bumi Griasadi Ciseeng, Bogor",
     deskripsi: "Pembangunan rumah subsidi di kawasan Perumahan Bumi Griasadi Ciseeng.",
     tahun: null,
-    foto: null,
+    // Dari folder klien "Rumah Subsidi Bogor"; lokasi persis menunggu konfirmasi.
+    foto: "/dokumentasi/konstruksi/rumah-subsidi-bogor-1.jpg",
   },
   {
     slug: "kafe-food-court-tempat-nongkrong",
