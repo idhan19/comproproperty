@@ -99,7 +99,7 @@ Atas masukan bahwa latar putih terlalu polos, setiap bagian beranda kini memakai
 | Klien | Gradasi navy muda ke merah muda, pola grid |
 | Kontak (footer) | Gradasi navy gelap, garis aksen merah ke kuning di atas |
 
-- Komponen baru  untuk pola dan cahaya dekoratif ().
+- Komponen baru `SectionBackdrop` untuk pola dan cahaya dekoratif (`aria-hidden`).
 - Kartu tetap putih agar teks terbaca. Placeholder foto proyek memakai gradasi navy ke merah agar tidak tenggelam di latar navy.
 
 ## Fase 7: Pengecekan akhir
