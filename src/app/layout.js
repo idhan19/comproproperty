@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"; // [!code ++]
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { company } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata = {
   title: "PT PONCO MUNARO UTAMA",
   description: "Temukan properti premium berkualitas tinggi untuk keluarga Anda.",
   icons: {
-    icon: '/logo navbar.png',
+    icon: company.logo,
   },
 };
 

@@ -1,13 +1,11 @@
 "use client";
 import React from 'react';
+import { waLink } from '@/data/site';
 
 const FloatingWhatsApp = () => {
-    const phoneNumber = "6282120369004";
-    const message = "Halo PT. PONCO MUNARO UTAMA, saya tertarik untuk berkonsultasi mengenai layanan [Konstruksi/Sumur Bor/Listrik]. Mohon informasi lebih lanjut mengenai prosedur dan estimasi biayanya. Terima kasih.";
-
     return (
         <a
-            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
+            href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 transition-transform duration-300 hover:scale-110 drop-shadow-xl"

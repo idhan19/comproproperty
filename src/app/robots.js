@@ -1,5 +1,7 @@
+import { SITE_URL } from '@/data/site';
+
 export default function robots() {
-  const baseUrl = 'https://www.ptponcoutama.com'; // ganti dengan domain kamu
+  const baseUrl = SITE_URL;
 
   return {
     rules: {

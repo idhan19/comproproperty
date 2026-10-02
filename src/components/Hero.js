@@ -3,6 +3,7 @@ import React from 'react';
 import { Award, FileCheck, ArrowRight, Download } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { companyProfilePdf, hero } from '@/data/site';
 
 const Hero = () => {
     return (
@@ -32,7 +33,7 @@ const Hero = () => {
 
                     <div className="flex items-start gap-4 mb-10 border-l-4 border-red-600 pl-6">
                         <p className="text-zinc-300 text-lg md:text-2xl leading-relaxed max-w-3xl font-light">
-                            "Menjadi perusahaan Properti & jasa konstruksi Terkemuka dan Bermanfa'at bagi ummat manusia"
+                            &ldquo;{hero.tagline}&rdquo;
                         </p>
                     </div>
 
@@ -47,7 +48,7 @@ const Hero = () => {
                             </Link>
                         </motion.div>
                         <motion.a
-                            href="/profile-File.pdf"
+                            href={companyProfilePdf}
                             download="Company Profile.pdf"
                             whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 58, 138, 0.3)" }}
                             whileTap={{ scale: 0.95 }}

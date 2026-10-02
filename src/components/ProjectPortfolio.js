@@ -4,7 +4,7 @@ import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { projects } from '@/data/projects';
+import { projects } from '@/data/site';
 
 const ProjectPortfolio = () => {
     return (
@@ -39,7 +39,7 @@ const ProjectPortfolio = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.slug}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -47,23 +47,23 @@ const ProjectPortfolio = () => {
                             whileHover={{ y: -10 }}
                             className="group bg-blue-900/40 border border-blue-800/50 hover:border-red-600/50 transition-all duration-500 overflow-hidden rounded-xl shadow-lg hover:shadow-red-900/20 relative"
                         >
-                            <Link href={`/projects/${project.id}`} className="block h-full">
+                            <Link href={`/projects/${project.slug}`} className="block h-full">
                                 <div className="relative h-64 overflow-hidden">
                                     <Image
-                                        src={project.image}
-                                        alt={project.title}
+                                        src={project.foto}
+                                        alt={project.judul}
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute top-4 left-4 bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-sm shadow-md">
-                                        {project.category}
+                                        {project.kategori}
                                     </div>
                                 </div>
 
                                 <div className="p-8">
                                     <div className="flex justify-between items-start mb-4">
                                         <h3 className="text-white text-2xl font-bold leading-tight group-hover:text-blue-200 transition-colors">
-                                            {project.title}
+                                            {project.judul}
                                         </h3>
                                         <motion.div
                                             whileHover={{ scale: 1.2, rotate: 45 }}
@@ -79,20 +79,20 @@ const ProjectPortfolio = () => {
                                     </div>
 
                                     <p className="text-zinc-400 mb-6 text-sm leading-relaxed border-b border-white/10 pb-6">
-                                        {project.description}
+                                        {project.deskripsi}
                                     </p>
 
                                     <div className="space-y-3">
-                                        {project.location && (
+                                        {project.lokasi && (
                                             <div className="flex items-center text-sm text-zinc-300">
                                                 <MapPin size={16} className="text-red-500 mr-3" />
-                                                {project.location}
+                                                {project.lokasi}
                                             </div>
                                         )}
-                                        {project.year && (
+                                        {project.tahun && (
                                             <div className="flex items-center text-sm text-zinc-300">
                                                 <Calendar size={16} className="text-red-500 mr-3" />
-                                                {project.year}
+                                                {project.tahun}
                                             </div>
                                         )}
                                     </div>

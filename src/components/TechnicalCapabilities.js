@@ -1,34 +1,15 @@
 "use client";
 import React from 'react';
-import { Zap, Factory, Settings, Radio, PenTool, Truck } from 'lucide-react';
+import { Zap, Factory, Settings, Radio } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { services } from '@/data/site';
 
-const capabilities = [
-    {
-        icon: <Zap className="w-10 h-10 text-red-600" />,
-        title: "Mechanical & Electrical",
-        description: "Specialized in high-voltage installations, transformer setups (up to 1MW), and industrial panel configurations. Ensuring power stability for critical infrastructures.",
-        features: ["High Voltage Installation", "Transformer Integration", "Industrial Panel Wiring"]
-    },
-    {
-        icon: <Factory className="w-10 h-10 text-blue-800" />,
-        title: "Industrial Construction",
-        description: "End-to-end industrial building construction designed for heavy-duty operations. From reinforced foundations to steel structure assembly.",
-        features: ["Steel Structure Assembly", "Factory Foundation", "Warehouse Systems"]
-    },
-    {
-        icon: <Radio className="w-10 h-10 text-blue-800" />,
-        title: "Telecommunications",
-        description: "Expert construction of BTS Towers (SST-42 to SST-62). delivering robust connectivity infrastructure across Java.",
-        features: ["BTS Tower Construction", "Site Acquisition", "Maintenance Services"]
-    },
-    {
-        icon: <Settings className="w-10 h-10 text-red-600" />,
-        title: "Civil Engineering",
-        description: "Comprehensive civil works aimed at public and private sector development, ensuring longevity and safety compliance.",
-        features: ["Public Infrastructure", "Roads & Bridges", "Drainage Systems"]
-    }
-];
+const icons = {
+    Zap: <Zap className="w-10 h-10 text-red-600" />,
+    Factory: <Factory className="w-10 h-10 text-blue-800" />,
+    Radio: <Radio className="w-10 h-10 text-blue-800" />,
+    Settings: <Settings className="w-10 h-10 text-red-600" />,
+};
 
 const TechnicalCapabilities = () => {
     return (
@@ -55,7 +36,7 @@ const TechnicalCapabilities = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {capabilities.map((cap, index) => (
+                    {services.map((cap, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
@@ -72,7 +53,7 @@ const TechnicalCapabilities = () => {
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                     className="shrink-0 p-4 bg-white border border-zinc-100 shadow-sm rounded-sm group-hover:bg-blue-50 transition-colors"
                                 >
-                                    {cap.icon}
+                                    {icons[cap.icon]}
                                 </motion.div>
                                 <div>
                                     <h3 className="text-2xl font-bold text-blue-950 mb-3 group-hover:text-blue-800 transition-colors">{cap.title}</h3>
@@ -80,7 +61,7 @@ const TechnicalCapabilities = () => {
                                         {cap.description}
                                     </p>
                                     <ul className="space-y-2">
-                                        {cap.features.map((feature, idx) => (
+                                        {cap.points.map((feature, idx) => (
                                             <li key={idx} className="flex items-center text-sm font-medium text-zinc-500">
                                                 <div className="w-1.5 h-1.5 bg-red-500 mr-3 rounded-full"></div>
                                                 {feature}

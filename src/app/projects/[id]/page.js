@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Calendar, CheckCircle, ArrowUpRight } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { projects } from '@/data/site';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -13,7 +13,7 @@ export default function ProjectDetail() {
     const router = useRouter();
     const { id } = params;
 
-    const project = projects.find(p => p.id === id);
+    const project = projects.find(p => p.slug === id);
 
     if (!project) {
         return (
@@ -39,8 +39,8 @@ export default function ProjectDetail() {
             <section className="relative h-[60vh] min-h-[400px]">
                 <div className="absolute inset-0">
                     <Image
-                        src={project.image}
-                        alt={project.title}
+                        src={project.foto}
+                        alt={project.judul}
                         fill
                         className="object-cover"
                         priority
@@ -69,15 +69,15 @@ export default function ProjectDetail() {
                             transition={{ duration: 0.6 }}
                         >
                             <span className="bg-red-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-sm mb-4 inline-block">
-                                {project.category}
+                                {project.kategori}
                             </span>
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                                {project.title}
+                                {project.judul}
                             </h1>
                             <div className="flex flex-wrap gap-6 text-zinc-300">
                                 <div className="flex items-center gap-2">
                                     <MapPin size={18} className="text-red-500" />
-                                    <span>{project.location}</span>
+                                    <span>{project.lokasi}</span>
                                 </div>
 
                             </div>
@@ -95,7 +95,7 @@ export default function ProjectDetail() {
                             <div>
                                 <h3 className="text-2xl font-bold text-blue-950 dark:text-blue-50 mb-4">Project Overview</h3>
                                 <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-lg">
-                                    {project.detailedDescription || project.description}
+                                    {project.deskripsiLengkap || project.deskripsi}
                                 </p>
                             </div>
 
@@ -130,7 +130,7 @@ export default function ProjectDetail() {
                                     <div className="h-px bg-white/10"></div>
                                     <div>
                                         <span className="block text-blue-300 text-sm mb-1 uppercase tracking-wider">Scope</span>
-                                        <span className="font-semibold block text-lg">{project.category}</span>
+                                        <span className="font-semibold block text-lg">{project.kategori}</span>
                                     </div>
                                     <div className="h-px bg-white/10"></div>
                                     <div>
@@ -152,7 +152,7 @@ export default function ProjectDetail() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h3 className="text-3xl font-bold text-blue-950 dark:text-blue-50 mb-12 text-center">Project Gallery</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {project.gallery && project.gallery.map((img, index) => (
+                        {project.galeri && project.galeri.map((img, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.9 }}

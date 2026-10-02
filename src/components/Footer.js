@@ -1,6 +1,17 @@
 "use client";
 import React from 'react';
 import { Instagram, Mail, Phone, MapPin, Facebook } from 'lucide-react';
+import { about, clients, company } from '@/data/site';
+
+const socialIcons = {
+    Instagram: <Instagram size={20} />,
+    Facebook: <Facebook size={20} />,
+    TikTok: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+        </svg>
+    ),
+};
 
 const Footer = () => {
     return (
@@ -18,44 +29,32 @@ const Footer = () => {
                             <span className="font-bold text-xl tracking-tight text-white">PT. PONCO MUNARO UTAMA</span>
                         </div>
                         <p className="text-blue-200/80 mb-8 leading-relaxed">
-                            "Menjadi perusahaan Properti & jasa konstruksi
-                            Terkemuka dan Bermanfa'at bagi ummat manusia,
-                            yang mampu memberikan kepuasan kepada
-                            pelanggan melalui produk serta pelayanan yang
-                            berkualitas dan inovatif untuk Membangun
-                            negeri."
+                            &ldquo;{about.visi}&rdquo;
                         </p>
                         <div className="flex space-x-4">
-                            <a href="https://www.instagram.com/ponco_munaroutama?igsh=MWNyNm4waWxkbndpdg==" target="_blank" rel="noopener noreferrer" className="bg-blue-900/50 p-2 rounded-lg hover:bg-blue-800 transition-colors">
-                                <Instagram size={20} />
-                            </a>
-                            <a href="https://www.tiktok.com/@pmu.group?_r=1&_t=ZS-93doxd0RGuz" target="_blank" rel="noopener noreferrer" className="bg-blue-900/50 p-2 rounded-lg hover:bg-blue-800 transition-colors">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-                                </svg>
-                            </a>
-                            <a href="https://www.facebook.com/share/14PBa7pUUCp/" target="_blank" rel="noopener noreferrer" className="bg-blue-900/50 p-2 rounded-lg hover:bg-blue-800 transition-colors">
-                                <Facebook size={20} />
-                            </a>
+                            {company.social.map((item) => (
+                                <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.name} className="bg-blue-900/50 p-2 rounded-lg hover:bg-blue-800 transition-colors">
+                                    {socialIcons[item.name]}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-white text-lg mb-6">Clients PT. Ponco Munaro Utama  :</h4>
                         <ul className="space-y-4 list-disc">
-                            <li><a href="#" className="hover:text-white transition-colors">Rumaji Group</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">PT. Puri Angkasa Permata Group</a></li>
-                            <li><a href="#projects" className="hover:text-white transition-colors">PT.Saka</a></li>
-                            <li><a href="#about" className="hover:text-white transition-colors">PT. Anugerah Mulya Nusaindo</a></li>
+                            {clients.slice(0, 4).map((client) => (
+                                <li key={client.name}>{client.name}</li>
+                            ))}
                         </ul>
                     </div>
 
                     <div className='md:mt-14'>
                         <h4 className="font-bold text-white text-lg mb-6">   </h4>
                         <ul className="space-y-4 list-disc">
-                            <li><a href="#" className="hover:text-white transition-colors">Delta Group</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">PT. Cijantung Anugerah Sukses Mandiri</a></li>
-                            <li><a href="#projects" className="hover:text-white transition-colors">RS BRAWIJAYA Saharjo Tebet</a></li>
+                            {clients.slice(4).map((client) => (
+                                <li key={client.name}>{client.name}</li>
+                            ))}
                         </ul>
                     </div>
 
@@ -65,15 +64,15 @@ const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                                <span>Jl.Jampang Hambulu Kp. Tegal, Desa/Kelurahan Tegal, Kec. Kemang, Kab.Bogor, Provinsi Jawa Barat, Kode Pos 16310</span>
+                                <span>{company.address}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-red-500 flex-shrink-0" size={18} />
-                                <span>082120369004</span>
+                                <span>{company.phone}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="text-red-500 flex-shrink-0" size={18} />
-                                <span>poncomunaroutama@gmail.com</span>
+                                <span>{company.email}</span>
                             </li>
                         </ul>
                     </div>
