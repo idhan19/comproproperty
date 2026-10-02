@@ -56,7 +56,7 @@ export default function About() {
                     <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {directors.map((person, index) => (
                             <Reveal key={person.name} as="article" animation="flip-in-y" delay={index * 140}>
-                                <div className="group overflow-hidden rounded-2xl border border-navy-100 bg-white transition duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-navy/10">
+                                <div className="group overflow-hidden rounded-2xl border border-brand-600/40 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-brand-600 hover:shadow-xl hover:shadow-brand-700/10">
                                     <div className="relative aspect-[4/5] overflow-hidden bg-surface">
                                         <Image
                                             src={person.photo}
