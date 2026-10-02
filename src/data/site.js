@@ -152,7 +152,31 @@ export const materialLogistik = {
   subtitle: "Solusi Terintegrasi untuk Kebutuhan Material dan Logistik Proyek",
   intro:
     "Kami menyediakan layanan tracking armada dan pengadaan material untuk mendukung kebutuhan proyek konstruksi, industri, pertambangan, infrastruktur, dan pengurugan. Dengan dukungan jaringan supplier dan armada yang terkoordinasi, kami berkomitmen menyediakan material sesuai kebutuhan, kuantitas, kualitas, lokasi, dan jadwal pengiriman.",
-  imagePlaceholder: "[KONFIRMASI KLIEN: foto armada/material]",
+  image: {
+    src: "/dokumentasi/material/armada-material-1.jpg",
+    alt: "Deretan dump truck bermuatan material di lokasi sumber material",
+  },
+  // Dokumentasi lapangan. Keterangan lokasi/tanggal diambil dari cap pada foto/video.
+  videos: [
+    {
+      src: "/video/muat-material-1.mp4",
+      poster: "/video/muat-material-1-poster.jpg",
+      keterangan: "Pemuatan material ke dump truck dengan ekskavator",
+    },
+    {
+      src: "/video/muat-material-2.mp4",
+      poster: "/video/muat-material-2-poster.jpg",
+      keterangan: "Aktivitas armada di lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten",
+    },
+  ],
+  dokumentasi: [
+    { src: "/dokumentasi/material/armada-material-2.jpg", keterangan: "Armada dump truck bermuatan material" },
+    { src: "/dokumentasi/material/sumber-material-bayah-1.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
+    { src: "/dokumentasi/material/sumber-material-bayah-2.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
+    { src: "/dokumentasi/material/sumber-material-bayah-3.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
+    { src: "/dokumentasi/material/sumber-material-bayah-4.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
+    { src: "/dokumentasi/material/sampel-material-lebak.jpg", keterangan: "Sampel material, Kabupaten Lebak (1 September 2026)" },
+  ],
   items: [
     {
       icon: "MapPinned",
@@ -292,7 +316,16 @@ export const projects = [
     deskripsi: "Pengadaan jaringan air PDAM untuk kawasan perumahan.",
     tahun: null,
     foto: "/PDAMProject2.jpeg",
-    galeri: ["/PDAMProject1.jpeg", "/PDAMProject3.jpeg"],
+    galeri: [
+      "/PDAMProject1.jpeg",
+      "/PDAMProject3.jpeg",
+      // Dokumentasi Agustus 2024 (kegiatan yang sama dengan foto PDAMProject).
+      "/dokumentasi/pdam/pdam-ciseeng-1.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-2.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-3.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-4.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-5.jpg",
+    ],
     unggulan: true,
   },
 
@@ -356,10 +389,12 @@ export const projects = [
     slug: "jaringan-listrik-puri-griasadi-tamansari",
     kategori: K.me,
     judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi Tamansari",
-    lokasi: "Perumahan Puri Griasadi Tamansari",
+    // Kab. Bogor: dari cap lokasi foto (Kec. Tamansari, Kabupaten Bogor).
+    lokasi: "Perumahan Puri Griasadi Tamansari, Bogor",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Tamansari.",
     tahun: null,
     foto: "/Trafo1.jpeg",
+    galeri: ["/dokumentasi/listrik/tamansari-tiang.jpg", "/dokumentasi/listrik/tamansari-kwh-meter.jpg"],
   },
 
   // Konstruksi Bangunan
@@ -458,9 +493,60 @@ export function categoryIcon(kategori) {
   return services.find((service) => service.title === kategori)?.icon ?? "Layers";
 }
 
+// Dokumentasi lapangan yang belum dipetakan ke proyek tertentu. Tampil di
+// halaman /projects. Keterangan lokasi dan tanggal hanya diambil dari cap
+// pada foto; nama proyek tidak ditebak. Pindahkan ke `galeri` proyek terkait
+// setelah klien mengonfirmasi.
+export const dokumentasi = [
+  {
+    src: "/dokumentasi/listrik/gardu-pabuaran-kemang-1.jpg",
+    kategori: K.me,
+    keterangan: "Gardu trafo dan panel, Jl. Raya Pabuaran, Kec. Kemang, Kab. Bogor (21 Agustus 2026)",
+  },
+  {
+    src: "/dokumentasi/listrik/gardu-pabuaran-kemang-2.jpg",
+    kategori: K.me,
+    keterangan: "Panel gardu trafo, Jl. Raya Pabuaran, Kec. Kemang, Kab. Bogor (21 Agustus 2026)",
+  },
+  {
+    src: "/dokumentasi/listrik/jaringan-kemang.jpg",
+    kategori: K.me,
+    keterangan: "Pekerjaan jaringan listrik, Kec. Kemang, Kab. Bogor (19 Mei 2026)",
+  },
+  {
+    src: "/dokumentasi/listrik/tiang-ciseeng.jpg",
+    kategori: K.me,
+    keterangan: "Pengiriman tiang listrik, Jl. Cibeuteung Muara, Kec. Ciseeng, Kab. Bogor (1 Mei 2026)",
+  },
+  {
+    src: "/dokumentasi/listrik/pemasangan-jaringan-1.jpg",
+    kategori: K.me,
+    keterangan: "Pemasangan jaringan listrik di kawasan perumahan",
+  },
+  {
+    src: "/dokumentasi/listrik/pemasangan-jaringan-2.jpg",
+    kategori: K.me,
+    keterangan: "Pekerjaan jaringan listrik di kawasan perumahan",
+  },
+  {
+    src: "/dokumentasi/konstruksi/rangka-baja-kemang.jpg",
+    kategori: K.konstruksi,
+    keterangan: "Pekerjaan rangka baja bangunan, Parakan Jaya, Kec. Kemang, Kab. Bogor (4 Juni 2025)",
+  },
+  {
+    src: "/dokumentasi/air/jaringan-air-ciseeng.jpg",
+    kategori: K.air,
+    keterangan: "Pekerjaan jaringan air di kawasan perumahan, Kec. Ciseeng, Kab. Bogor (30 Juli 2025)",
+  },
+  { src: "/dokumentasi/air/sumur-bor-1.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
+  { src: "/dokumentasi/air/sumur-bor-2.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
+  { src: "/dokumentasi/air/sumur-bor-3.jpg", kategori: K.air, keterangan: "Mesin bor sumur di lokasi pekerjaan" },
+  { src: "/dokumentasi/air/sumur-bor-4.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
+];
+
 export const directors = [
   {
-    name: "M. Saoma Gofur [KONFIRMASI KLIEN: gelar Lc atau S.Pd]",
+    name: "M. Saoma Gofur ",
     role: "Direktur Utama",
     photo: "/gofur.jpeg",
   },
@@ -491,7 +577,6 @@ export const legalitas = [
       "Ruang lingkup: Construction of Mechanical and Electrical Installations",
       "Berlaku hingga 17 Juni 2027",
     ],
-    note: "[KONFIRMASI KLIEN: versi standar pada sertifikat]",
   },
   {
     icon: "Scale",
@@ -534,7 +619,7 @@ export const clients = [
   { name: "Delta Group" },
   { name: "PT Cijantung Anugerah Sukses Mandiri" },
   { name: "RS Brawijaya Saharjo Tebet" },
-  { name: "PT Helgalara Arutala Indonesia", note: "[KONFIRMASI KLIEN: izin menampilkan nama]" },
+  { name: "PT Helgalara Arutala Indonesia" },
 ];
 
 // Strip statistik di bawah hero. Jumlah proyek dan lini layanan dihitung dari

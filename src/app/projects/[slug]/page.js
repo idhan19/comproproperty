@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Gallery from '@/components/Gallery';
 import PageHeader from '@/components/PageHeader';
 import WithPlaceholders, { stripPlaceholders } from '@/components/WithPlaceholders';
 import ProjectCard, { ProjectMedia } from '@/components/projects/ProjectCard';
@@ -106,19 +106,7 @@ export default async function ProjectDetailPage({ params }) {
                 <section className="bg-surface py-16 md:py-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <h2 className="mb-10 text-2xl font-bold text-navy md:text-3xl">Dokumentasi Proyek</h2>
-                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                            {project.galeri.map((src, index) => (
-                                <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                                    <Image
-                                        src={src}
-                                        alt={`Dokumentasi proyek ${project.judul}, foto ${index + 1}`}
-                                        fill
-                                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                                        className="object-cover"
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        <Gallery items={project.galeri} altPrefix={`Dokumentasi proyek ${project.judul}`} />
                     </div>
                 </section>
             )}

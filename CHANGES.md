@@ -126,6 +126,27 @@ Catatan teknis:
 - Semua animasi dimatikan bila pengunjung mengaktifkan "kurangi gerakan" (`prefers-reduced-motion`). Marquee berubah menjadi daftar biasa.
 - Diuji di Edge sungguhan (waktu nyata) di lebar 1280 dan 375 px: 34 dari 34 elemen animasi muncul setelah di-scroll, angka statistik berakhir di nilai yang benar.
 
+## Revisi: Dokumentasi foto dan video dari klien
+
+Sumber: folder unduhan Google Drive (Supplier Pasir Silika & Tanah Clay, video drive, Mechanical Electrical, Sumur Bor/PAM Mandiri/PDAM), 67 file. Pencocokan memakai cap lokasi/tanggal pada foto (GPS Map Camera, Timemark) dan kesamaan kegiatan dengan foto yang sudah ada. Data EXIF GPS kosong.
+
+| Aset | Bukti | Dipasang di |
+|---|---|---|
+| 4 foto lokasi sumber material | Cap: Kec. Bayah, Kab. Lebak, Banten, 12 Agu 2026 | Galeri `/layanan/material-logistik` |
+| 2 foto armada dump truck bermuatan material | Folder supplier | Foto utama dan galeri halaman material (menggantikan placeholder) |
+| 1 foto sampel material | Cap: Kab. Lebak, 1 Sep 2026 | Galeri halaman material |
+| 2 video pemuatan material (H.264, 7 dan 8 MB) | Cap video: Kec. Bayah, Kab. Lebak | Section Dokumentasi Lapangan halaman material |
+| 5 foto inspeksi PDAM (Agu 2024) | Kegiatan dan orang yang sama dengan `PDAMProject1-3` (spanduk BTN, papan tulis) | Galeri proyek Jaringan Air PDAM Puri Griasadi Ciseeng |
+| 2 foto tiang dan kWh meter | Cap: Jl. Tangkil, Sukaluyu, Kec. Tamansari, Kab. Bogor (Jun dan Sep 2026) | Galeri proyek Jaringan Listrik Puri Griasadi Tamansari; lokasi proyek dilengkapi "Bogor" |
+| 12 foto lain | Lokasi dari cap, proyek belum jelas | Section baru "Dokumentasi Lapangan" di `/projects`, per kategori layanan |
+
+- Foto diperkecil ke maks. 1600 px (JPEG kualitas 80, tanpa EXIF): dari 4-8 MB menjadi 100-550 KB. Total aset baru: foto 8,5 MB, video 15 MB.
+- Keterangan foto hanya memuat lokasi dan tanggal dari cap. Nama proyek tidak ditebak.
+- Komponen baru: `Gallery` (grid + lightbox, navigasi panah/keyboard, Esc untuk menutup) dan `VideoCard` (video dimuat saat diputar). Galeri halaman detail proyek kini juga memakai lightbox.
+- Tidak dipakai: 2 video promosi jual mesin bor (berisi harga, produk di luar daftar layanan), video yang tampak tambang batu bara, video malam yang gelap, dan foto duplikat.
+- Perbaikan: kelas kaca (`glass-dark`, `glass-light`) dipindah ke `@layer components` agar `absolute` dari Tailwind tidak tertimpa (sebelumnya tombol lightbox dan menu mobile salah posisi).
+- Folder aset mentah ditambahkan ke `.gitignore`.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.
@@ -143,7 +164,7 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 
 | No | Lokasi | Yang perlu dikonfirmasi |
 |---|---|---|
-| 1 | `/layanan/material-logistik`, slot foto | Foto armada/material milik perusahaan |
+| 1 | ~~`/layanan/material-logistik`, slot foto~~ | Selesai: diisi foto armada dari dokumentasi klien |
 | 2 | `/layanan/material-logistik`, kartu Supplier Batu Bara | Legalitas perdagangan batu bara sebelum tayang |
 | 3 | Proyek "Pemasangan Trafo 1 MW & Panel" | Apakah "Ipmdp" di company profile maksudnya LVMDP? |
 | 4 | Semua proyek, field `tahun` | Tahun pelaksanaan setiap proyek (sekarang `null`, tidak ditampilkan) |
@@ -160,3 +181,6 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 | 15 | Atribusi foto proyek (lihat Fase 6) | Pemindahan foto berdasarkan cap lokasi: Tamansari, Cijeruk, Tower BTS, PDAM |
 | 16 | `PDAM1.jpeg`, `INSLISTRIK1.jpeg` | Foto ini milik proyek mana? (sekarang tidak dipakai) |
 | 17 | Proyek Genset | Foto yang ada berisi panel/MCB, bukan genset |
+| 18 | Dokumentasi Lapangan di `/projects` | Proyek untuk: gardu trafo Jl. Raya Pabuaran Kemang (Agu 2026), rangka baja Parakan Jaya Kemang (Jun 2025), tiang listrik Cibeuteung Muara Ciseeng (Mei 2026), jaringan listrik Kemang (Mei 2026), jaringan air Ciseeng (Jul 2025), foto sumur bor dan pemasangan jaringan tanpa cap lokasi |
+| 19 | Dokumentasi material | Jenis material pada foto sumber material Bayah dan sampel Lebak (pasir silika, tanah clay, atau limestone?) |
+| 20 | Video tambang (drive `VID-20260911-WA0008`) | Tampak seperti tambang batu bara; tidak dipakai sampai legalitas perdagangan batu bara dikonfirmasi |

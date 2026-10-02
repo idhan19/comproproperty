@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, Camera, Check, ChevronRight, MessageCircle } from 'lucide-react';
+import { ArrowDown, Check, ChevronRight, MessageCircle } from 'lucide-react';
+import Gallery from '@/components/Gallery';
+import VideoCard from '@/components/VideoCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Icon from '@/components/Icon';
@@ -70,12 +73,18 @@ export default function MaterialLogistikPage() {
             {/* Pengantar */}
             <section className="py-20 md:py-24">
                 <div className="max-w-7xl mx-auto grid items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-                    <p className="text-lg leading-relaxed text-navy/80 md:text-xl">{page.intro}</p>
-                    {/* Slot foto: ganti dengan foto armada/material milik klien (next/image). */}
-                    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-navy/20 bg-surface p-6 text-center">
-                        <Camera size={36} className="text-navy/40" aria-hidden="true" />
-                        <WithPlaceholders text={page.imagePlaceholder} />
-                    </div>
+                    <Reveal animation="fade-right">
+                        <p className="text-lg leading-relaxed text-navy/80 md:text-xl">{page.intro}</p>
+                    </Reveal>
+                    <Reveal animation="zoom-in" className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl shadow-navy/10">
+                        <Image
+                            src={page.image.src}
+                            alt={page.image.alt}
+                            fill
+                            sizes="(min-width: 1024px) 50vw, 100vw"
+                            className="object-cover"
+                        />
+                    </Reveal>
                 </div>
             </section>
 
@@ -114,6 +123,25 @@ export default function MaterialLogistikPage() {
                             </Reveal>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Dokumentasi lapangan: video dan foto dari lokasi sumber material */}
+            <section className="bg-gradient-to-b from-white to-surface py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <SectionHeading
+                        eyebrow="Dokumentasi"
+                        title="Dokumentasi Lapangan"
+                        description="Aktivitas pemuatan dan pengangkutan material dari lokasi sumber material."
+                    />
+                    <div className="mx-auto mb-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+                        {page.videos.map((video, index) => (
+                            <Reveal key={video.src} animation="fade-up" delay={index * 120}>
+                                <VideoCard {...video} />
+                            </Reveal>
+                        ))}
+                    </div>
+                    <Gallery items={page.dokumentasi} altPrefix="Dokumentasi material dan logistik" />
                 </div>
             </section>
 
