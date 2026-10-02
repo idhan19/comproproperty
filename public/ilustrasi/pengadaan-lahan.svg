@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ilustrasi pengadaan dan pematangan lahan">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343a5e"/>
+      <stop offset="1" stop-color="#171a2c"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6e8f1" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#e6e8f1" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- grid denah halus -->
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800 M0 450 H800"/>
+    <path d="M50 0 V500 M100 0 V500 M150 0 V500 M200 0 V500 M250 0 V500 M300 0 V500 M350 0 V500 M400 0 V500 M450 0 V500 M500 0 V500 M550 0 V500 M600 0 V500 M650 0 V500 M700 0 V500 M750 0 V500"/>
+  </g>
+
+  <!-- bidang tanah isometrik dengan kavling -->
+  <path d="M400 150 L680 290 L400 430 L120 290 Z" fill="url(#land)" stroke="#e6e8f1" stroke-width="2"/>
+  <g stroke="#e6e8f1" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="6 6">
+    <path d="M470 185 L190 325 M540 220 L260 360 M610 255 L330 395"/>
+    <path d="M330 185 L610 325 M260 220 L540 360 M190 255 L470 395"/>
+  </g>
+  <!-- patok batas -->
+  <g fill="#fe0000">
+    <rect x="396" y="136" width="8" height="18" rx="2"/>
+    <rect x="676" y="276" width="8" height="18" rx="2"/>
+    <rect x="396" y="416" width="8" height="18" rx="2"/>
+    <rect x="116" y="276" width="8" height="18" rx="2"/>
+  </g>
+
+  <!-- pin lokasi -->
+  <g transform="translate(400 250)">
+    <ellipse cx="0" cy="40" rx="26" ry="9" fill="#000000" opacity="0.25"/>
+    <path d="M0 40 C-34 2 -40 -18 -40 -34 A40 40 0 0 1 40 -34 C40 -18 34 2 0 40 Z" fill="#fe0000"/>
+    <circle cx="0" cy="-34" r="15" fill="#ffffff"/>
+  </g>
+
+  <!-- pepohonan -->
+  <g fill="#e6e8f1" opacity="0.55">
+    <circle cx="120" cy="170" r="22"/><rect x="117" y="186" width="6" height="22"/>
+    <circle cx="690" cy="160" r="26"/><rect x="687" y="180" width="6" height="24"/>
+    <circle cx="650" cy="420" r="18"/><rect x="647" y="432" width="6" height="18"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ilustrasi pembuatan sumur bor">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343a5e"/>
+      <stop offset="1" stop-color="#262a45"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.15" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6e8f1" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#e6e8f1" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- lapisan tanah (potongan melintang) -->
+  <rect y="270" width="800" height="70" fill="#23263f"/>
+  <rect y="340" width="800" height="60" fill="#1f2239"/>
+  <rect y="400" width="800" height="100" fill="#171a2c"/>
+  <rect y="430" width="800" height="50" fill="url(#water)"/>
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="90" cy="300" r="5"/><circle cx="210" cy="318" r="3"/><circle cx="560" cy="296" r="4"/>
+    <circle cx="690" cy="322" r="6"/><circle cx="140" cy="370" r="4"/><circle cx="620" cy="378" r="3"/>
+  </g>
+  <rect y="268" width="800" height="3" fill="#fe0000" opacity="0.7"/>
+
+  <!-- pipa bor ke lapisan air -->
+  <rect x="393" y="200" width="14" height="250" fill="#e6e8f1"/>
+  <g stroke="#343a5e" stroke-width="2">
+    <line x1="393" y1="300" x2="407" y2="300"/><line x1="393" y1="350" x2="407" y2="350"/><line x1="393" y1="400" x2="407" y2="400"/>
+  </g>
+  <path d="M387 450 L400 470 L413 450 Z" fill="#e6e8f1"/>
+
+  <!-- menara bor -->
+  <g stroke="#f5f6f8" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M340 268 L392 70 L408 70 L460 268"/>
+    <path d="M356 210 L444 210 M368 160 L432 160 M380 115 L420 115"/>
+    <path d="M356 210 L432 160 M444 210 L368 160 M368 160 L420 115 M432 160 L380 115" stroke-width="3" opacity="0.7"/>
+  </g>
+  <rect x="384" y="58" width="32" height="16" rx="4" fill="#fe0000"/>
+
+  <!-- mesin dan pompa -->
+  <rect x="460" y="226" width="86" height="44" rx="8" fill="#fe0000"/>
+  <rect x="472" y="236" width="30" height="10" rx="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="530" cy="248" r="10" fill="#ffffff" opacity="0.85"/>
+  <rect x="300" y="248" width="56" height="22" rx="5" fill="#e6e8f1"/>
+
+  <!-- tetes air -->
+  <g transform="translate(610 120)">
+    <circle r="54" fill="#ffffff" opacity="0.08"/>
+    <path d="M0 -32 C14 -12 24 2 24 14 A24 24 0 0 1 -24 14 C-24 2 -14 -12 0 -32 Z" fill="#f5f6f8"/>
+    <path d="M-10 14 A10 10 0 0 0 4 24" stroke="#343a5e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

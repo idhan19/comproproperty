@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ilustrasi bangunan kafe dan food court">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343a5e"/>
+      <stop offset="1" stop-color="#171a2c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.55" r="0.55">
+      <stop offset="0" stop-color="#fddf6b" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#fddf6b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f6f8"/>
+      <stop offset="1" stop-color="#d9dcea"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- lampu gantung -->
+  <path d="M40 92 Q220 140 400 96 T760 92" stroke="#e6e8f1" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <g fill="#fddf6b">
+    <circle cx="100" cy="108" r="5"/><circle cx="180" cy="120" r="5"/><circle cx="260" cy="118" r="5"/>
+    <circle cx="340" cy="106" r="5"/><circle cx="460" cy="104" r="5"/><circle cx="540" cy="116" r="5"/>
+    <circle cx="620" cy="118" r="5"/><circle cx="700" cy="104" r="5"/>
+  </g>
+
+  <!-- bangunan -->
+  <rect x="150" y="160" width="500" height="250" rx="6" fill="url(#wall)"/>
+  <rect x="140" y="150" width="520" height="20" rx="4" fill="#262a45"/>
+  <!-- papan nama dengan ikon cangkir -->
+  <rect x="330" y="176" width="140" height="40" rx="8" fill="#262a45"/>
+  <g transform="translate(400 196)">
+    <path d="M-14 -8 H10 V4 A10 10 0 0 1 0 14 H-4 A10 10 0 0 1 -14 4 Z" fill="#fddf6b"/>
+    <path d="M10 -4 H14 A5 5 0 0 1 14 6 H10" stroke="#fddf6b" stroke-width="3" fill="none"/>
+  </g>
+  <!-- kanopi bergaris -->
+  <g>
+    <path d="M160 228 H640 L620 262 H180 Z" fill="#fe0000"/>
+    <g fill="#ffffff" opacity="0.9">
+      <path d="M212 228 h32 l-4 34 h-32 z"/><path d="M308 228 h32 l-2 34 h-32 z"/>
+      <path d="M404 228 h32 v34 h-32 z"/><path d="M500 228 h32 l2 34 h-32 z"/>
+      <path d="M596 228 h32 l4 34 h-32 z" opacity="0.7"/>
+    </g>
+  </g>
+  <!-- jendela kaca bercahaya -->
+  <g fill="#fddf6b" opacity="0.75">
+    <rect x="186" y="276" width="110" height="80" rx="4"/>
+    <rect x="504" y="276" width="110" height="80" rx="4"/>
+  </g>
+  <rect x="356" y="280" width="88" height="130" rx="4" fill="#343a5e"/>
+  <line x1="400" y1="280" x2="400" y2="410" stroke="#fddf6b" stroke-width="2" opacity="0.6"/>
+
+  <!-- meja dan payung -->
+  <g>
+    <g transform="translate(90 330)">
+      <path d="M-40 0 Q0 -36 40 0 Z" fill="#e6e8f1"/>
+      <rect x="-2" y="0" width="4" height="60" fill="#e6e8f1"/>
+      <rect x="-24" y="48" width="48" height="6" rx="3" fill="#c9cde0"/>
+    </g>
+    <g transform="translate(710 330)">
+      <path d="M-40 0 Q0 -36 40 0 Z" fill="#fe0000"/>
+      <rect x="-2" y="0" width="4" height="60" fill="#e6e8f1"/>
+      <rect x="-24" y="48" width="48" height="6" rx="3" fill="#c9cde0"/>
+    </g>
+  </g>
+
+  <rect y="408" width="800" height="92" fill="#1d2036"/>
+  <rect y="408" width="800" height="3" fill="#fe0000" opacity="0.7"/>
+</svg>

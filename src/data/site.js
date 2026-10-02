@@ -497,6 +497,26 @@ export const projects = [
   },
 ];
 
+// Gambar sementara untuk proyek yang belum punya foto: ilustrasi vektor
+// (bukan foto) di public/ilustrasi, ditampilkan dengan label "Ilustrasi".
+// Begitu `foto` proyek diisi, ilustrasi otomatis tidak dipakai lagi.
+const ILUSTRASI = {
+  "trafo-1mw-smelting-karawang": "/ilustrasi/gardu-trafo.svg",
+  "sumur-bor-rs-brawijaya-saharjo": "/ilustrasi/sumur-bor.svg",
+  "sumur-bor-puri-permata-ciampea": "/ilustrasi/sumur-bor.svg",
+  "sumur-bor-puri-griasadi-tamansari": "/ilustrasi/sumur-bor.svg",
+  "jaringan-listrik-bumi-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
+  "jaringan-listrik-bumi-griasadi-cihoe": "/ilustrasi/jaringan-listrik.svg",
+  "jaringan-listrik-puri-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
+  "electrical-installation": "/ilustrasi/jaringan-listrik.svg",
+  "kafe-food-court-tempat-nongkrong": "/ilustrasi/kafe.svg",
+  "pengadaan-lahan-puri-angkasa-permata": "/ilustrasi/pengadaan-lahan.svg",
+  "perizinan-perumahan-bogor": "/ilustrasi/perizinan.svg",
+};
+for (const project of projects) {
+  if (!project.foto && ILUSTRASI[project.slug]) project.ilustrasi = ILUSTRASI[project.slug];
+}
+
 export const publishedProjects = projects.filter((project) => project.published !== false);
 export const featuredProjects = publishedProjects.filter((project) => project.unggulan);
 

@@ -5,7 +5,10 @@ import Icon from '@/components/Icon';
 import WithPlaceholders from '@/components/WithPlaceholders';
 import { categoryIcon } from '@/data/site';
 
-/** Area foto proyek. Tanpa foto, tampilkan ikon kategori (bukan gambar stok). */
+/**
+ * Area gambar proyek: foto dokumentasi bila ada; bila belum, ilustrasi vektor
+ * sementara berlabel "Ilustrasi" (bukan foto stok); terakhir ikon kategori.
+ */
 export function ProjectMedia({ project, sizes, priority = false, className = '' }) {
     if (project.foto) {
         return (
@@ -17,6 +20,24 @@ export function ProjectMedia({ project, sizes, priority = false, className = '' 
                 priority={priority}
                 className={`object-cover ${className}`}
             />
+        );
+    }
+    if (project.ilustrasi) {
+        return (
+            <>
+                {/* SVG tidak perlu dioptimasi next/image. */}
+                <Image
+                    src={project.ilustrasi}
+                    alt={`Ilustrasi pekerjaan ${project.kategori}`}
+                    fill
+                    unoptimized
+                    priority={priority}
+                    className={`object-cover ${className}`}
+                />
+                <span className="absolute bottom-3 right-3 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur">
+                    Ilustrasi
+                </span>
+            </>
         );
     }
     return (

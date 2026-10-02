@@ -155,6 +155,13 @@ Sumber: folder unduhan Google Drive (Supplier Pasir Silika & Tanah Clay, video d
 - **Rumah Subsidi Bogor:** 1 foto lapangan dipasang ke proyek Rumah Subsidi Bumi Griasadi Ciseeng. 4 brosur pemasaran Rumaji (render, harga, QR) tidak dipakai karena merupakan materi iklan developer, bukan dokumentasi pekerjaan.
 - Proyek tanpa foto berkurang dari 13 menjadi 11.
 
+## Revisi: Ilustrasi sementara untuk proyek tanpa foto
+
+- 6 ilustrasi vektor (SVG, warna brand) di `public/ilustrasi/`: jaringan listrik perumahan, sumur bor, gardu trafo dan panel industri, kafe dan food court, pengadaan lahan, perizinan.
+- Dipasang ke 11 proyek tanpa foto lewat peta `ILUSTRASI` di `site.js`. Kartu menampilkan label "Ilustrasi" agar tidak dikira dokumentasi asli.
+- Sengaja tidak memakai foto stok atau gambar AI realistis, karena bisa dikira foto proyek (melanggar aturan tidak mengarang data).
+- Begitu `foto` proyek diisi, ilustrasinya otomatis tidak dipakai lagi.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.

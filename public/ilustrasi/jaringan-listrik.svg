@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ilustrasi jaringan listrik jalur udara di kawasan perumahan">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343a5e"/>
+      <stop offset="1" stop-color="#171a2c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.45">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="house" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f6f8"/>
+      <stop offset="1" stop-color="#d9dcea"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+  <circle cx="660" cy="95" r="34" fill="#ffffff" opacity="0.12"/>
+
+  <!-- bukit latar -->
+  <path d="M0 360 Q160 300 320 345 T640 330 T800 340 V500 H0 Z" fill="#262a45"/>
+
+  <!-- kabel (lengkung) -->
+  <g fill="none" stroke="#e6e8f1" stroke-width="2.2" opacity="0.85">
+    <path d="M118 158 Q245 205 372 150"/>
+    <path d="M118 172 Q245 220 372 164"/>
+    <path d="M428 150 Q555 205 682 158"/>
+    <path d="M428 164 Q555 220 682 172"/>
+    <path d="M682 158 Q760 190 820 170"/>
+    <path d="M-20 170 Q50 195 118 158"/>
+  </g>
+
+  <!-- tiang -->
+  <g fill="#f5f6f8">
+    <rect x="114" y="140" width="9" height="270" rx="3"/>
+    <rect x="396" y="132" width="9" height="278" rx="3"/>
+    <rect x="678" y="140" width="9" height="270" rx="3"/>
+    <rect x="88" y="150" width="62" height="6" rx="3"/>
+    <rect x="368" y="142" width="64" height="6" rx="3"/>
+    <rect x="652" y="150" width="62" height="6" rx="3"/>
+  </g>
+  <g fill="#fe0000">
+    <circle cx="96" cy="150" r="5"/><circle cx="142" cy="150" r="5"/>
+    <circle cx="376" cy="142" r="5"/><circle cx="424" cy="142" r="5"/>
+    <circle cx="660" cy="150" r="5"/><circle cx="706" cy="150" r="5"/>
+  </g>
+  <!-- kotak trafo kecil pada tiang tengah -->
+  <rect x="384" y="190" width="34" height="44" rx="6" fill="#e6e8f1"/>
+  <path d="M401 198 l-7 14 h8 l-4 13 l12 -17 h-8 l5 -10 z" fill="#fe0000"/>
+
+  <!-- deretan rumah -->
+  <g>
+    <g transform="translate(150 318)">
+      <path d="M0 40 L45 0 L90 40 Z" fill="#c9cde0"/>
+      <rect x="8" y="40" width="74" height="52" fill="url(#house)"/>
+      <rect x="20" y="56" width="18" height="16" rx="2" fill="#343a5e"/>
+      <rect x="52" y="56" width="18" height="36" rx="2" fill="#262a45"/>
+    </g>
+    <g transform="translate(250 312)">
+      <path d="M0 46 L52 0 L104 46 Z" fill="#c9cde0"/>
+      <rect x="9" y="46" width="86" height="52" fill="url(#house)"/>
+      <rect x="22" y="62" width="20" height="16" rx="2" fill="#fddf6b" opacity="0.85"/>
+      <rect x="60" y="62" width="20" height="36" rx="2" fill="#262a45"/>
+    </g>
+    <g transform="translate(470 318)">
+      <path d="M0 40 L45 0 L90 40 Z" fill="#c9cde0"/>
+      <rect x="8" y="40" width="74" height="52" fill="url(#house)"/>
+      <rect x="20" y="56" width="18" height="16" rx="2" fill="#fddf6b" opacity="0.85"/>
+      <rect x="52" y="56" width="18" height="36" rx="2" fill="#262a45"/>
+    </g>
+    <g transform="translate(570 312)">
+      <path d="M0 46 L52 0 L104 46 Z" fill="#c9cde0"/>
+      <rect x="9" y="46" width="86" height="52" fill="url(#house)"/>
+      <rect x="22" y="62" width="20" height="16" rx="2" fill="#343a5e"/>
+      <rect x="60" y="62" width="20" height="36" rx="2" fill="#262a45"/>
+    </g>
+  </g>
+
+  <!-- tanah -->
+  <rect y="408" width="800" height="92" fill="#1d2036"/>
+  <rect y="408" width="800" height="3" fill="#fe0000" opacity="0.7"/>
+</svg>
