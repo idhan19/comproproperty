@@ -37,31 +37,45 @@ const Navbar = () => {
 
     const close = () => setIsOpen(false);
 
+
+    // Di atas header gelap (semua halaman diawali hero/header navy) kaca gelap
+    // dengan teks putih; setelah scroll kaca terang dengan teks navy.
+    const glass = isScrolled ? 'glass-light' : 'glass-dark';
+    const text = isScrolled ? 'text-navy' : 'text-white';
+    const linkClass = isScrolled
+        ? 'text-navy/75 hover:text-navy hover:bg-white/80 hover:shadow-[inset_0_1px_0_rgb(255_255_255),0_1px_3px_rgb(38_42_69/0.12)]'
+        : 'text-white/80 hover:text-white hover:bg-white/15 hover:shadow-[inset_0_1px_0_rgb(255_255_255/0.3)]';
+
     return (
         <>
-            <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled ? 'px-2 pt-2' : 'px-3 pt-3 sm:px-4 sm:pt-4'}`}>
+            <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+                {/* Kapsul kaca: menyempit dan mengecil saat scroll, mirip Dynamic Island. */}
                 <nav
                     aria-label="Navigasi utama"
-                    className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/60 bg-white/70 px-4 shadow-lg shadow-navy/5 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 sm:px-6 ${isScrolled ? 'h-14' : 'h-16 md:h-[4.5rem]'}`}
+                    className={`${glass} pointer-events-auto mx-auto flex items-center justify-between gap-3 rounded-full pl-2 pr-2 sm:pl-2.5 ${
+                        isScrolled ? 'h-14 max-w-5xl' : 'h-16 max-w-7xl md:h-[4.25rem]'
+                    }`}
                 >
-                    <Link href="/" className="flex min-w-0 items-center gap-2.5" onClick={close}>
-                        <Image
-                            src={company.logo}
-                            alt=""
-                            width={44}
-                            height={44}
-                            priority
-                            className={`shrink-0 transition-all duration-300 ${isScrolled ? 'h-9 w-9' : 'h-11 w-11'}`}
-                        />
-                        <span className="truncate text-sm font-bold text-navy sm:text-base">{company.name}</span>
+                    <Link href="/" className="flex min-w-0 items-center gap-2.5 rounded-full pr-2" onClick={close}>
+                        {/* Logo di "ikon aplikasi" putih agar merah logo tetap kontras di atas kaca gelap. */}
+                        <span
+                            className={`flex shrink-0 items-center justify-center rounded-full bg-white shadow-[inset_0_-1px_0_rgb(38_42_69/0.08),0_1px_3px_rgb(0_0_0/0.15)] transition-all duration-300 ${
+                                isScrolled ? 'h-10 w-10' : 'h-11 w-11 md:h-12 md:w-12'
+                            }`}
+                        >
+                            <Image src={company.logo} alt="" width={36} height={36} priority className="h-[70%] w-[70%] object-contain" />
+                        </span>
+                        <span className={`truncate text-sm font-semibold tracking-tight transition-colors duration-300 sm:text-base ${text}`}>
+                            {company.name}
+                        </span>
                     </Link>
 
-                    <ul className="hidden items-center gap-1 lg:flex">
+                    <ul className="hidden items-center gap-0.5 lg:flex">
                         {navLinks.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="rounded-full px-4 py-2 text-sm font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy"
+                                    className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${linkClass}`}
                                 >
                                     {link.label}
                                 </Link>
@@ -73,7 +87,7 @@ const Navbar = () => {
                         href={waLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 lg:inline-flex"
+                        className="hidden items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.3),0_6px_16px_-6px_rgb(168_0_0/0.6)] transition hover:bg-brand-700 lg:inline-flex"
                     >
                         <MessageCircle size={16} aria-hidden="true" />
                         Konsultasi
@@ -86,39 +100,43 @@ const Navbar = () => {
                         aria-label="Buka menu"
                         aria-expanded={isOpen}
                         aria-controls="menu-mobile"
-                        className="-mr-2 rounded-full p-2 text-navy transition-colors hover:bg-navy/5 lg:hidden"
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors lg:hidden ${
+                            isScrolled ? 'text-navy hover:bg-white/80' : 'text-white hover:bg-white/15'
+                        }`}
                     >
-                        <Menu size={24} aria-hidden="true" />
+                        <Menu size={22} aria-hidden="true" />
                     </button>
                 </nav>
             </header>
 
-            {/* Drawer mobile */}
+            {/* Menu mobile: panel kaca melayang seperti sheet iOS. */}
             <div
                 className={`fixed inset-0 z-[60] lg:hidden ${isOpen ? 'visible' : 'invisible'}`}
                 aria-hidden={!isOpen}
             >
                 <div
                     onClick={close}
-                    className={`absolute inset-0 bg-navy-950/40 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+                    className={`absolute inset-0 bg-navy-950/30 backdrop-blur-[2px] transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
                 />
                 <div
                     id="menu-mobile"
                     role="dialog"
                     aria-modal="true"
                     aria-label="Menu"
-                    className={`absolute inset-y-0 right-0 flex w-[85%] max-w-sm flex-col bg-white/90 p-6 shadow-2xl backdrop-blur-xl transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`glass-light absolute inset-x-3 top-3 flex origin-top-right flex-col rounded-[2rem] p-3 transition-all duration-300 ${
+                        isOpen ? 'scale-100 opacity-100' : 'pointer-events-none scale-95 opacity-0'
+                    }`}
                 >
-                    <div className="mb-8 flex items-center justify-between">
-                        <span className="font-bold text-navy">Menu</span>
+                    <div className="mb-2 flex items-center justify-between pl-4">
+                        <span className="text-sm font-semibold uppercase tracking-wider text-navy/60">Menu</span>
                         <button
                             ref={closeButtonRef}
                             type="button"
                             onClick={close}
                             aria-label="Tutup menu"
-                            className="rounded-full p-2 text-navy transition-colors hover:bg-navy/5"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-navy shadow-[inset_0_1px_0_rgb(255_255_255)] transition-colors hover:bg-white"
                         >
-                            <X size={24} aria-hidden="true" />
+                            <X size={20} aria-hidden="true" />
                         </button>
                     </div>
                     <ul className="space-y-1">
@@ -128,7 +146,7 @@ const Navbar = () => {
                                     href={link.href}
                                     onClick={close}
                                     tabIndex={isOpen ? 0 : -1}
-                                    className="block rounded-xl px-4 py-3 text-lg font-medium text-navy transition-colors hover:bg-navy/5"
+                                    className="block rounded-2xl px-4 py-3 text-lg font-medium text-navy transition-colors hover:bg-white/80"
                                 >
                                     {link.label}
                                 </Link>
@@ -140,7 +158,7 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         tabIndex={isOpen ? 0 : -1}
-                        className="mt-auto flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-brand-700"
+                        className="mt-3 flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.3)] transition-colors hover:bg-brand-700"
                     >
                         <MessageCircle size={18} aria-hidden="true" />
                         Konsultasi via WhatsApp
