@@ -33,7 +33,7 @@ export default function About() {
                             </figure>
                         </Reveal>
                         <Reveal animation="fade-up" delay={150}>
-                            <div className="rounded-2xl border border-navy-100 bg-white p-8 md:p-10">
+                            <div className="rounded-2xl border border-brand-600/40 bg-white p-8 transition duration-300 hover:border-brand-600 hover:shadow-xl hover:shadow-brand-700/10 md:p-10">
                                 <p className="mb-5 text-sm font-semibold uppercase tracking-wider text-brand-600">Misi</p>
                                 <ol className="space-y-4">
                                     {about.misi.map((item, index) => (
