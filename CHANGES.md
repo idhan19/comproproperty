@@ -85,6 +85,17 @@ Branch: `update-konten-ui`
   - Duplikat dihapus dari galeri: `Trafo2` (= `trafopanel`), `kubikel1` (= `kubikel`), `tiang2` (= `tianglistrik`).
   - Foto "Genset" (proyek disembunyikan) berisi panel/MCB, bukan unit genset.
 
+## Fase 7: Pengecekan akhir
+
+- `npm run build` dan `npm run lint` lolos tanpa error dan warning.
+- Crawl otomatis di build produksi lokal:
+  - 27 URL internal (beranda, layanan, semua proyek, 20 detail proyek, profile, PDF) seluruhnya 200. `/company-profile-pmu.pdf` 307 ke file lama sesuai rencana.
+  - 409 rujukan anchor dicek. `#services`, `#projects`, `#about`, `#kontak` (serta `#legalitas`, `#klien`) tersedia di beranda. Navbar memakai `/#...` sehingga tetap berfungsi dari halaman lain.
+  - Tidak ada em dash di teks website.
+  - Teks berbahasa Inggris yang tersisa hanya istilah dari brief ("cut and fill", "tracking", "supplier", dll.) dan ruang lingkup sertifikat ISO ("Construction of Mechanical and Electrical Installations").
+- `sitemap.xml` berisi 24 URL. `robots.txt` mengizinkan semua dan menunjuk ke sitemap.
+- Dependensi `framer-motion` tidak dipakai lagi, tetapi belum dihapus dari `package.json` (opsional: `npm uninstall framer-motion`).
+
 ## Daftar [KONFIRMASI KLIEN]
 
 Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` untuk menemukannya.
