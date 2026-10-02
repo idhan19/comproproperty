@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { directors } from '@/data/site';
+import { about, directors } from '@/data/site';
 
 const LeadershipTeam = () => {
     return (
@@ -13,6 +13,10 @@ const LeadershipTeam = () => {
                         Board of Directors
                     </h2>
                     <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
+                    <div className="max-w-3xl mx-auto mt-10">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 mb-3">Visi</h3>
+                        <p className="text-xl text-blue-950 leading-relaxed">&ldquo;{about.visi}&rdquo;</p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto py-8">

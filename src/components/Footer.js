@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { Instagram, Mail, Phone, MapPin, Facebook } from 'lucide-react';
-import { about, clients, company } from '@/data/site';
+import { clients, company, seo } from '@/data/site';
 
 const socialIcons = {
     Instagram: <Instagram size={20} />,
@@ -29,7 +29,7 @@ const Footer = () => {
                             <span className="font-bold text-xl tracking-tight text-white">PT. PONCO MUNARO UTAMA</span>
                         </div>
                         <p className="text-blue-200/80 mb-8 leading-relaxed">
-                            &ldquo;{about.visi}&rdquo;
+                            {seo.description}
                         </p>
                         <div className="flex space-x-4">
                             {company.social.map((item) => (

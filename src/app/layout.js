@@ -1,28 +1,30 @@
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"; // [!code ++]
+import { Geist } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { company } from "@/data/site";
+import { SITE_URL, company, seo } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({ // [!code ++]
-  variable: "--font-serif", // [!code ++]
-  subsets: ["latin"], // [!code ++]
-}); // [!code ++]
-
 export const metadata = {
-  title: "PT PONCO MUNARO UTAMA",
-  description: "Temukan properti premium berkualitas tinggi untuk keluarga Anda.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: seo.title,
+    template: `%s | ${company.name}`,
+  },
+  description: seo.description,
   icons: {
     icon: company.logo,
+  },
+  openGraph: {
+    siteName: company.name,
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -32,9 +34,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="google-site-verification" content="lAdQS0Qwbl_Hy-5NOalDJslQRnWm1myKm45S5_YO_oE" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`} // [!code ++]
-      >
+      <body className={`${geistSans.variable} antialiased`}>
         {children}
         <FloatingWhatsApp />
       </body>

@@ -1,9 +1,8 @@
 "use client";
 import React from 'react';
-import { Award, FileCheck, ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { companyProfilePdf, hero } from '@/data/site';
+import { hero, waLink } from '@/data/site';
 
 const Hero = () => {
     return (
@@ -26,37 +25,30 @@ const Hero = () => {
                     {/* Certifications Badge */}
 
 
-                    <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight font-sans">
-                        PT PONCO <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-700">MUNARO UTAMA</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight font-sans">
+                        {hero.headline}
                     </h1>
 
                     <div className="flex items-start gap-4 mb-10 border-l-4 border-red-600 pl-6">
                         <p className="text-zinc-300 text-lg md:text-2xl leading-relaxed max-w-3xl font-light">
-                            &ldquo;{hero.tagline}&rdquo;
+                            {hero.subheadline}
                         </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                        <a
+                            href={waLink()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 border border-red-600"
                         >
-                            <Link href="#projects" className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 uppercase tracking-wide border border-red-600 hover:border-red-500 shadow-lg shadow-red-900/20">
-                                Our Projects
-                                <ArrowRight size={20} />
-                            </Link>
-                        </motion.div>
-                        <motion.a
-                            href={companyProfilePdf}
-                            download="Company Profile.pdf"
-                            whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 58, 138, 0.3)" }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-transparent text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 uppercase tracking-wide border border-blue-700/50 hover:border-blue-500 cursor-pointer"
-                        >
-                            Download Profile
-                            <Download size={20} />
-                        </motion.a>
+                            Konsultasi via WhatsApp
+                            <MessageCircle size={20} />
+                        </a>
+                        <Link href="#projects" className="bg-transparent text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 border border-blue-700/50 hover:border-blue-500">
+                            Lihat Proyek
+                            <ArrowRight size={20} />
+                        </Link>
                     </div>
                 </div>
 

@@ -14,7 +14,7 @@ export const company = {
     "Jl. Jampang Hambulu, Kp. Tegal, Desa Tegal, Kec. Kemang, Kab. Bogor, Jawa Barat 16310",
   phone: "082120369004",
   email: "poncomunaroutama@gmail.com",
-  logo: "/logo navbar.png",
+  logo: "/logo-navbar.png",
   social: [
     {
       name: "Instagram",
@@ -28,7 +28,7 @@ export const company = {
 export const whatsapp = {
   number: "6282120369004",
   messages: {
-    umum: "Halo PT. PONCO MUNARO UTAMA, saya tertarik untuk berkonsultasi mengenai layanan [Konstruksi/Sumur Bor/Listrik]. Mohon informasi lebih lanjut mengenai prosedur dan estimasi biayanya. Terima kasih.",
+    umum: "Halo PT Ponco Munaro Utama, saya tertarik berkonsultasi mengenai layanan [Konstruksi/Listrik/Sumur Bor/Material & Logistik]. Mohon informasi prosedur dan estimasi biayanya. Terima kasih.",
   },
 };
 
@@ -38,17 +38,27 @@ export function waLink(message = whatsapp.messages.umum) {
 }
 
 export const seo = {
-  title: "PT PONCO MUNARO UTAMA | Kontraktor Listrik & Infrastruktur Terpercaya",
+  title:
+    "PT Ponco Munaro Utama | Kontraktor Konstruksi, Mekanikal Elektrikal & Supplier Material",
   description:
-    "PT PONCO MUNARO UTAMA adalah perusahaan kontraktor listrik dan infrastruktur terpercaya di Indonesia. Spesialis instalasi listrik, PDAM, gardu trafo, dan panel listrik.",
+    "PT Ponco Munaro Utama adalah perusahaan jasa konstruksi di Kabupaten Bogor yang melayani pembangunan perumahan, instalasi mekanikal elektrikal, infrastruktur air bersih, tower telekomunikasi, pekerjaan tanah, serta tracking armada dan supplier material.",
+  ogImageAlt: "PT Ponco Munaro Utama, kontraktor konstruksi, mekanikal elektrikal, dan supplier material",
 };
 
 export const hero = {
-  tagline: "Menjadi perusahaan Properti & jasa konstruksi Terkemuka dan Bermanfa'at bagi ummat manusia",
+  headline: "Mitra Konstruksi dan Infrastruktur untuk Proyek Anda",
+  subheadline:
+    "Dari pembangunan perumahan, jaringan listrik, sumur bor, hingga pasokan material dan logistik proyek, semuanya kami kerjakan dalam satu atap.",
 };
 
 export const about = {
-  visi: "Menjadi perusahaan Properti & jasa konstruksi Terkemuka dan Bermanfa'at bagi ummat manusia, yang mampu memberikan kepuasan kepada pelanggan melalui produk serta pelayanan yang berkualitas dan inovatif untuk Membangun negeri.",
+  // Teks resmi visi dari company profile, hanya ejaan yang dirapikan.
+  visi: "Menjadi perusahaan properti dan jasa konstruksi terkemuka dan bermanfaat bagi umat manusia, yang mampu memberikan kepuasan kepada pelanggan melalui produk serta pelayanan yang berkualitas dan inovatif untuk membangun negeri.",
+  misi: [
+    "Memenuhi kebutuhan masyarakat dan institusi akan perumahan yang modern, berkualitas, dan ekonomis.",
+    "Memberikan lingkungan kerja yang aman dan nyaman, meningkatkan kesejahteraan, serta memberikan kesempatan berkembang kepada karyawan.",
+    "Menciptakan hubungan kerja sama yang kuat dengan pelanggan dan mitra kerja.",
+  ],
 };
 
 export const companyProfilePdf = "/profile-File.pdf";

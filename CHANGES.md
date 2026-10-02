@@ -11,6 +11,19 @@ Branch: `update-konten-ui`
 - Error lint lama (tanda kutip tanpa escape di Hero dan Footer, `<img>` di Navbar) diperbaiki.
 - `turbopack.root` diset di `next.config.mjs` untuk menghilangkan warning lockfile ganda di folder induk.
 
+## Fase 1: Positioning & SEO
+
+- Title, meta description, headline, dan subheadline hero diganti sesuai brief. Tombol hero: "Konsultasi via WhatsApp" dan "Lihat Proyek".
+- Metadata global di `layout.js`: `metadataBase`, template judul `%s | PT Ponco Munaro Utama`, `og:locale id_ID`, twitter card `summary_large_image`.
+- `og:image` dan `twitter:image` 1200x630 dibuat otomatis saat build (`src/lib/og.js`) dari logo dan warna brand.
+- Pesan WhatsApp prefilled diganti sesuai brief.
+- Visi dipindah dari hero ke section Tentang Kami (`#about`). Footer kini memakai deskripsi perusahaan, bukan visi.
+- `public/logo navbar.png` diganti nama menjadi `public/logo-navbar.png`.
+- `/profile` kini halaman teks yang dirender di server (visi, misi, layanan, direksi, klien, kontak) dengan tombol unduh PDF.
+- `sitemap.xml` diperbarui (sebelumnya mencantumkan `/projects` yang belum ada). `robots.txt` sudah ada.
+- Token warna brand ditambahkan di `globals.css`. Merah logo diambil langsung dari file logo: `#FE0000` (bukan `#E1262D`). Karena kontrasnya terhadap putih hanya 4,0:1, tombol dan teks kecil memakai `#D10000` (5,7:1). Logo tidak memuat navy, jadi navy `#262A45` dan kuning `#FDDF6B` diambil dari brief.
+- Font Geist Mono dan Playfair Display yang tidak terpakai dihapus.
+
 ## Daftar [KONFIRMASI KLIEN]
 
 (diisi per fase)
