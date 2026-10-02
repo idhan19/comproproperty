@@ -147,6 +147,14 @@ Sumber: folder unduhan Google Drive (Supplier Pasir Silika & Tanah Clay, video d
 - Perbaikan: kelas kaca (`glass-dark`, `glass-light`) dipindah ke `@layer components` agar `absolute` dari Tailwind tidak tertimpa (sebelumnya tombol lightbox dan menu mobile salah posisi).
 - Folder aset mentah ditambahkan ke `.gitignore`.
 
+## Revisi: Foto tambahan dari klien (folder per kategori)
+
+- **Supplier Tanah Clay dan Pasir Silika:** 3 dari 8 foto adalah duplikat foto yang sudah terpasang (dicek dengan hash gambar). 5 foto baru masuk galeri halaman Material dengan keterangan sesuai label folder klien.
+- **Pengadaan PAM Mandiri & PDAM:** 2 foto adalah jepretan lain dari inspeksi PDAM Agustus 2024 dan masuk galeri proyek PDAM Ciseeng. 3 foto baru (uji tekanan pipa, pemasangan boks meter) masuk Dokumentasi Lapangan. 1 foto identik dengan `tianglistrik.jpeg`, sehingga atribusi lama di proyek Hawtha Inat diperbaiki (lihat konfirmasi no. 23).
+- **Cut And Fill:** 4 foto dipasang ke proyek Cut and Fill Puri Griasadi 3 Cijeruk (sampul + galeri).
+- **Rumah Subsidi Bogor:** 1 foto lapangan dipasang ke proyek Rumah Subsidi Bumi Griasadi Ciseeng. 4 brosur pemasaran Rumaji (render, harga, QR) tidak dipakai karena merupakan materi iklan developer, bukan dokumentasi pekerjaan.
+- Proyek tanpa foto berkurang dari 13 menjadi 11.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.
@@ -185,3 +193,5 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 | 19 | Dokumentasi material | Jenis material pada foto sumber material Bayah dan sampel Lebak (pasir silika, tanah clay, atau limestone?) |
 | 20 | Video tambang (drive `VID-20260911-WA0008`) | Tampak seperti tambang batu bara; tidak dipakai sampai legalitas perdagangan batu bara dikonfirmasi |
 | 21 | Foto proyek Rumah Subsidi Bumi Griasadi Ciseeng | Foto dari folder "Rumah Subsidi Bogor" dipasang ke proyek ini (satu-satunya proyek rumah subsidi). Benar Bumi Griasadi Ciseeng, atau perumahan lain (brosur di folder menyebut Puri Griasadi Kemang dan Griasadi 6)? |
+| 22 | Foto proyek Cut and Fill Puri Griasadi 3 Cijeruk | Foto dari folder "Cut And Fill" dipasang ke proyek ini (satu-satunya proyek cut and fill). Benar lokasinya Cijeruk? |
+| 23 | Proyek Jaringan Listrik Hawtha Inat Tajur Halang | `tianglistrik.jpeg` (sampul lama) ternyata ada di folder PAM/PDAM klien dan isinya inspeksi berompi PDAM, jadi dipindah ke galeri PDAM Ciseeng. Sampul kini `tiang1.jpeg`. Apakah `tiang1` dan `tiang3` benar dari Hawtha Inat? |

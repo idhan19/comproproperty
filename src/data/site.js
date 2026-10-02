@@ -176,6 +176,11 @@ export const materialLogistik = {
     { src: "/dokumentasi/material/sumber-material-bayah-3.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
     { src: "/dokumentasi/material/sumber-material-bayah-4.jpg", keterangan: "Lokasi sumber material, Kec. Bayah, Kab. Lebak, Banten (12 Agustus 2026)" },
     { src: "/dokumentasi/material/sampel-material-lebak.jpg", keterangan: "Sampel material, Kabupaten Lebak (1 September 2026)" },
+    { src: "/dokumentasi/material/sumber-clay-silika-4.jpg", keterangan: "Tim kami di lokasi sumber tanah clay dan pasir silika" },
+    { src: "/dokumentasi/material/sumber-clay-silika-2.jpg", keterangan: "Ekskavator di lokasi sumber tanah clay dan pasir silika" },
+    { src: "/dokumentasi/material/sumber-clay-silika-1.jpg", keterangan: "Lokasi sumber tanah clay dan pasir silika" },
+    { src: "/dokumentasi/material/sumber-clay-silika-3.jpg", keterangan: "Lokasi sumber tanah clay dan pasir silika" },
+    { src: "/dokumentasi/material/sumber-clay-silika-5.jpg", keterangan: "Peninjauan lokasi sumber tanah clay dan pasir silika" },
   ],
   items: [
     {
@@ -325,6 +330,9 @@ export const projects = [
       "/dokumentasi/pdam/pdam-ciseeng-3.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-4.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-5.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-6.jpg",
+      "/dokumentasi/pdam/pdam-ciseeng-7.jpg",
+      "/tianglistrik.jpeg",
     ],
     unggulan: true,
   },
@@ -373,8 +381,9 @@ export const projects = [
     lokasi: "Perumahan Hawtha Inat Tajur Halang, Bogor",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Hawtha Inat Tajur Halang.",
     tahun: null,
-    foto: "/tianglistrik.jpeg",
-    galeri: ["/tiang1.jpeg", "/tiang3.jpeg"],
+    // tianglistrik.jpeg dipindah ke proyek PDAM (klien memasukkannya ke folder PAM/PDAM).
+    foto: "/tiang1.jpeg",
+    galeri: ["/tiang3.jpeg"],
   },
   {
     slug: "electrical-installation",
@@ -446,7 +455,13 @@ export const projects = [
     lokasi: "Perumahan Puri Griasadi 3 Cijeruk",
     deskripsi: "Pekerjaan cut and fill untuk pematangan lahan Perumahan Puri Griasadi 3 Cijeruk.",
     tahun: null,
-    foto: null,
+    // Dari folder klien "Cut And Fill"; lokasi persis menunggu konfirmasi.
+    foto: "/dokumentasi/tanah/cut-and-fill-1.jpg",
+    galeri: [
+      "/dokumentasi/tanah/cut-and-fill-2.jpg",
+      "/dokumentasi/tanah/cut-and-fill-3.jpg",
+      "/dokumentasi/tanah/cut-and-fill-4.jpg",
+    ],
   },
   {
     slug: "pengadaan-lahan-puri-angkasa-permata",
@@ -543,6 +558,9 @@ export const dokumentasi = [
   { src: "/dokumentasi/air/sumur-bor-2.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
   { src: "/dokumentasi/air/sumur-bor-3.jpg", kategori: K.air, keterangan: "Mesin bor sumur di lokasi pekerjaan" },
   { src: "/dokumentasi/air/sumur-bor-4.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
+  { src: "/dokumentasi/air/pam-pdam-1.jpg", kategori: K.air, keterangan: "Pengujian tekanan jaringan pipa air" },
+  { src: "/dokumentasi/air/pam-pdam-2.jpg", kategori: K.air, keterangan: "Pengadaan jaringan PAM mandiri dan PDAM di kawasan perumahan" },
+  { src: "/dokumentasi/air/pam-pdam-3.jpg", kategori: K.air, keterangan: "Pemasangan boks meter air di kawasan perumahan" },
 ];
 
 export const directors = [
