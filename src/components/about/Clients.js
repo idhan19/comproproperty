@@ -11,11 +11,11 @@ export default function Clients() {
                     eyebrow="Klien dan Mitra"
                     title="Dipercaya oleh Pengembang dan Institusi"
                 />
-                <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
                     {clients.map((client) => (
                         <li
                             key={client.name}
-                            className="flex min-h-28 flex-col items-center justify-center rounded-2xl border border-navy-100 p-6 text-center"
+                            className="flex min-h-24 flex-col items-center justify-center rounded-2xl border border-navy-100 p-4 text-center text-sm sm:p-6 sm:text-base"
                         >
                             {client.logo ? (
                                 <Image src={client.logo} alt={`Logo ${client.name}`} width={160} height={64} className="h-12 w-auto object-contain" />

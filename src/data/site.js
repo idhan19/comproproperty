@@ -10,6 +10,7 @@ export const SITE_URL = "https://www.ptponcoutama.com";
 export const company = {
   name: "PT Ponco Munaro Utama",
   shortName: "PMU",
+  region: "Kabupaten Bogor, Jawa Barat",
   address:
     "Jl. Jampang Hambulu, Kp. Tegal, Desa Tegal, Kec. Kemang, Kab. Bogor, Jawa Barat 16310",
   phone: "082120369004",
@@ -57,6 +58,9 @@ export const seo = {
 };
 
 export const hero = {
+  // Foto proyek nyata: pemasangan gardu trafo & panel, Alun-Alun Kota Depok.
+  image: "/Trafo3.jpeg",
+  imageAlt: "Tim PT Ponco Munaro Utama memasang gardu trafo dan panel listrik",
   headline: "Mitra Konstruksi dan Infrastruktur untuk Proyek Anda",
   subheadline:
     "Dari pembangunan perumahan, jaringan listrik, sumur bor, hingga pasokan material dan logistik proyek, semuanya kami kerjakan dalam satu atap.",
@@ -218,6 +222,7 @@ const K = {
 
 // `tahun`: null berarti belum dikonfirmasi klien dan tidak ditampilkan.
 // `foto`: null berarti belum ada dokumentasi; kartu memakai ikon kategori.
+// Atribusi foto mengikuti cap lokasi/isi foto (lihat CHANGES.md, Fase 6).
 // `unggulan`: tampil di beranda. `published: false`: disembunyikan dari website.
 // Slug lama (pdam-network, electric-pole, transformer-installation,
 // cubicle-installation, electrical-installation) dipertahankan agar link lama tetap jalan.
@@ -242,7 +247,7 @@ export const projects = [
     deskripsi: "Pemasangan kubikel untuk sistem distribusi daya listrik di area pabrik smelting.",
     tahun: null,
     foto: "/kubikel.jpeg",
-    galeri: ["/kubikel1.jpeg", "/kubikel2.jpeg", "/kubikel3.jpeg"],
+    galeri: ["/kubikel2.jpeg", "/kubikel3.jpeg"],
     unggulan: true,
   },
   {
@@ -254,7 +259,7 @@ export const projects = [
       "Pemasangan gardu trafo dan panel listrik untuk kebutuhan kelistrikan kawasan Alun-Alun Kota Depok.",
     tahun: null,
     foto: "/trafopanel.jpeg",
-    galeri: ["/Trafo1.jpeg", "/Trafo2.jpeg", "/Trafo3.jpeg"],
+    galeri: ["/Trafo3.jpeg"],
     unggulan: true,
   },
   {
@@ -266,7 +271,7 @@ export const projects = [
     deskripsi:
       "Pembangunan tower BTS tipe SST-42, SST-52, dan SST-62 bersama PT Helgalara Arutala Indonesia.",
     tahun: null,
-    foto: null,
+    foto: "/INSLISTRIK3.jpeg",
     unggulan: true,
   },
   {
@@ -286,8 +291,8 @@ export const projects = [
     lokasi: "Perumahan Puri Griasadi Ciseeng, Bogor",
     deskripsi: "Pengadaan jaringan air PDAM untuk kawasan perumahan.",
     tahun: null,
-    foto: "/PDAM1.jpeg",
-    galeri: ["/PDAMProject1.jpeg", "/PDAMProject2.jpeg", "/PDAMProject3.jpeg"],
+    foto: "/PDAMProject2.jpeg",
+    galeri: ["/PDAMProject1.jpeg", "/PDAMProject3.jpeg"],
     unggulan: true,
   },
 
@@ -326,7 +331,7 @@ export const projects = [
     lokasi: "Perumahan Puri Griasadi 3 Cijeruk",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi 3 Cijeruk.",
     tahun: null,
-    foto: null,
+    foto: "/INSLISTRIK2.jpeg",
   },
   {
     slug: "electric-pole",
@@ -336,7 +341,7 @@ export const projects = [
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Hawtha Inat Tajur Halang.",
     tahun: null,
     foto: "/tianglistrik.jpeg",
-    galeri: ["/tiang1.jpeg", "/tiang2.jpeg", "/tiang3.jpeg"],
+    galeri: ["/tiang1.jpeg", "/tiang3.jpeg"],
   },
   {
     slug: "electrical-installation",
@@ -345,8 +350,7 @@ export const projects = [
     lokasi: "Perumahan Puri Griasadi Cikande, Banten",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Cikande.",
     tahun: null,
-    foto: "/instalasilistrik.jpeg",
-    galeri: ["/INSLISTRIK1.jpeg", "/INSLISTRIK2.jpeg", "/INSLISTRIK3.jpeg"],
+    foto: null,
   },
   {
     slug: "jaringan-listrik-puri-griasadi-tamansari",
@@ -355,7 +359,7 @@ export const projects = [
     lokasi: "Perumahan Puri Griasadi Tamansari",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Tamansari.",
     tahun: null,
-    foto: null,
+    foto: "/Trafo1.jpeg",
   },
 
   // Konstruksi Bangunan
@@ -531,4 +535,17 @@ export const clients = [
   { name: "PT Cijantung Anugerah Sukses Mandiri" },
   { name: "RS Brawijaya Saharjo Tebet" },
   { name: "PT Helgalara Arutala Indonesia", note: "[KONFIRMASI KLIEN: izin menampilkan nama]" },
+];
+
+// Strip statistik di bawah hero. Jumlah proyek dan lini layanan dihitung dari
+// data agar selalu sinkron dengan daftar proyek dan layanan di website.
+export const stats = [
+  { value: String(publishedProjects.length), label: "Proyek Tercatat" },
+  {
+    value: "5",
+    label: "Provinsi",
+    detail: "Jawa Barat, Banten, DKI Jakarta, Jawa Tengah, Jawa Timur",
+  },
+  { value: "ISO 9001", label: "Sistem Manajemen Mutu" },
+  { value: String(services.length), label: "Lini Layanan" },
 ];

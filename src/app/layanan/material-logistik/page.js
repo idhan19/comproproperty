@@ -132,10 +132,10 @@ export default function MaterialLogistikPage() {
             <section aria-labelledby="komitmen" className="bg-brand-600 py-10 text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4 md:flex-row md:justify-between">
                     <h2 id="komitmen" className="text-sm font-semibold uppercase tracking-wider text-white/80">Komitmen Kami</h2>
-                    <ul className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-lg font-bold md:text-xl">
+                    <ul className="flex flex-col items-center gap-y-2 text-lg font-bold md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:text-xl">
                         {page.commitments.map((item, index) => (
                             <li key={item} className="flex items-center gap-3">
-                                {index > 0 && <span aria-hidden="true" className="text-accent">&bull;</span>}
+                                {index > 0 && <span aria-hidden="true" className="hidden text-accent md:inline">&bull;</span>}
                                 {item}
                             </li>
                         ))}

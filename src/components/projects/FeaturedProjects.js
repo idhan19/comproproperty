@@ -6,7 +6,7 @@ import { featuredProjects } from '@/data/site';
 
 export default function FeaturedProjects() {
     return (
-        <section id="projects" className="py-20 md:py-28 bg-white">
+        <section id="projects" className="py-20 md:py-28 bg-surface">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
                     eyebrow="Proyek"

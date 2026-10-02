@@ -64,6 +64,27 @@ Branch: `update-konten-ui`
 - `public/file profile.pdf` (50 MB, tidak dipakai di mana pun) dihapus.
 - `/profile` kini juga memuat Tim Manajemen dan Legalitas.
 
+## Fase 6: UI
+
+- Folder project Arthaloka tidak tersedia (path di brief masih placeholder), sehingga desain mengikuti arahan brief.
+- Navbar glass: melayang, latar putih semi transparan dengan `backdrop-filter: blur`, mengecil saat scroll. Menu mobile berupa drawer dari kanan (kunci scroll, tutup dengan Escape/klik latar, fokus dikelola, `aria-expanded`).
+- Hero: foto proyek nyata (`Trafo3.jpeg`, gardu trafo Alun-Alun Depok) via `next/image` dengan overlay navy gelap; tipografi besar. Foto stok Unsplash dihapus (beserta `remotePatterns` di `next.config.mjs`).
+- Strip statistik di bawah hero: Proyek Tercatat, 5 Provinsi, ISO 9001, 6 Lini Layanan.
+  - **Catatan:** brief menulis "18 Proyek Tercatat", tetapi daftar proyek di brief berjumlah 20 proyek tayang (21 dengan genset). Angka sekarang dihitung otomatis dari data (`publishedProjects.length` = 20) agar tidak bertentangan dengan halaman Semua Proyek. Lihat daftar konfirmasi.
+- Kartu layanan dan proyek: sudut membulat, border tipis, hover naik halus. Section berselang-seling putih/abu-abu muda.
+- Semua komponen kecuali Navbar, filter proyek, dan tombol WhatsApp melayang kini server component (framer-motion tidak dipakai lagi).
+- Aksesibilitas: alt text deskriptif di semua gambar, `focus-visible` outline merah, `prefers-reduced-motion`, breadcrumb dengan `aria-current`, filter proyek dengan `aria-pressed`. Teks putih di atas tombol memakai `#D10000` (kontras 5,7:1).
+- Halaman 404 kustom berbahasa Indonesia (`src/app/not-found.js`).
+- Dicek dengan screenshot di lebar 375, 768, dan 1280 px: beranda, `/projects`, detail proyek, dan `/layanan/material-logistik`. Tidak ada scroll horizontal.
+- **Atribusi foto proyek diperbaiki berdasarkan cap lokasi dan isi foto:**
+  - `Trafo1.jpeg` (= `instalasilistrik.jpeg`) bercap "Puri Griasadi, Kec. Tamansari, Kab. Bogor, 31 Jul 2025". Foto ini dipindah dari Gardu Trafo Depok dan Jaringan Listrik Cikande ke **Jaringan Listrik Puri Griasadi Tamansari**.
+  - `INSLISTRIK2.jpeg` bercap "Kecamatan Cijeruk". Dipindah dari Cikande ke **Jaringan Listrik Puri Griasadi 3 Cijeruk**.
+  - `INSLISTRIK3.jpeg` menampilkan erection tower BTS SST. Dipindah dari Cikande ke **Pembangunan Tower BTS SST**.
+  - `PDAM1.jpeg` menampilkan mesin bor sumur, bukan jaringan PDAM. Sampul proyek PDAM diganti `PDAMProject2.jpeg`. `PDAM1.jpeg` kini tidak dipakai.
+  - Jaringan Listrik Cikande kini tanpa foto. `INSLISTRIK1.jpeg` (instalasi conduit dalam gedung) tidak dipakai karena tidak jelas proyeknya.
+  - Duplikat dihapus dari galeri: `Trafo2` (= `trafopanel`), `kubikel1` (= `kubikel`), `tiang2` (= `tianglistrik`).
+  - Foto "Genset" (proyek disembunyikan) berisi panel/MCB, bukan unit genset.
+
 ## Daftar [KONFIRMASI KLIEN]
 
 Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` untuk menemukannya.
@@ -83,3 +104,7 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 | 11 | Legalitas: Badan Hukum, NIB, KBLI (`published: false`) | Izin klien untuk menampilkan data ini di website |
 | 12 | Klien: PT Helgalara Arutala Indonesia | Izin menampilkan nama |
 | 13 | `public/company-profile-pmu.pdf` | File company profile revisi (sementara memakai file lama lewat redirect) |
+| 14 | Statistik "Proyek Tercatat" | Brief menulis 18, data proyek di brief berjumlah 20. Mana yang benar? |
+| 15 | Atribusi foto proyek (lihat Fase 6) | Pemindahan foto berdasarkan cap lokasi: Tamansari, Cijeruk, Tower BTS, PDAM |
+| 16 | `PDAM1.jpeg`, `INSLISTRIK1.jpeg` | Foto ini milik proyek mana? (sekarang tidak dipakai) |
+| 17 | Proyek Genset | Foto yang ada berisi panel/MCB, bukan genset |

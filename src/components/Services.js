@@ -48,7 +48,7 @@ function ServiceCard({ service }) {
 
 export default function Services() {
     return (
-        <section id="services" className="py-20 md:py-28 bg-surface">
+        <section id="services" className="pt-20 pb-20 md:pt-28 md:pb-28 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading eyebrow="Layanan" title="Lini Layanan Kami" description={servicesIntro} />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

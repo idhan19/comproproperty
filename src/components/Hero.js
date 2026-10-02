@@ -1,62 +1,70 @@
-"use client";
-import React from 'react';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { hero, waLink } from '@/data/site';
+import { ArrowRight, MessageCircle } from 'lucide-react';
+import { company, hero, stats, waLink } from '@/data/site';
 
-const Hero = () => {
+export default function Hero() {
     return (
-        <div className="relative min-h-[90vh] flex items-center bg-zinc-950 overflow-hidden">
-            {/* Industrial Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a20_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0"></div>
+        <>
+            <section className="relative flex min-h-[88svh] items-center overflow-hidden bg-navy-950 pt-28 pb-32 md:pb-40">
+                <Image
+                    src={hero.image}
+                    alt={hero.imageAlt}
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/50" aria-hidden="true" />
 
-            {/* Background Image Overlay */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop")',
-                }}
-            >
-                <div className="absolute inset-0 bg-blue-950/80 mix-blend-multiply"></div>
-            </div>
-
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-                <div className="max-w-4xl">
-                    {/* Certifications Badge */}
-
-
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight font-sans">
-                        {hero.headline}
-                    </h1>
-
-                    <div className="flex items-start gap-4 mb-10 border-l-4 border-red-600 pl-6">
-                        <p className="text-zinc-300 text-lg md:text-2xl leading-relaxed max-w-3xl font-light">
-                            {hero.subheadline}
+                <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-3xl">
+                        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur">
+                            <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true" />
+                            {company.region}
                         </p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                        <a
-                            href={waLink()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 border border-red-600"
-                        >
-                            Konsultasi via WhatsApp
-                            <MessageCircle size={20} />
-                        </a>
-                        <Link href="#projects" className="bg-transparent text-white px-8 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 border border-blue-700/50 hover:border-blue-500">
-                            Lihat Proyek
-                            <ArrowRight size={20} />
-                        </Link>
+                        <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                            {hero.headline}
+                        </h1>
+                        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-100 md:text-xl">{hero.subheadline}</p>
+                        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                            <a
+                                href={waLink()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-4 font-semibold text-white transition-colors hover:bg-brand-700"
+                            >
+                                <MessageCircle size={20} aria-hidden="true" />
+                                Konsultasi via WhatsApp
+                            </a>
+                            <Link
+                                href="#projects"
+                                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur transition-colors hover:bg-white/15"
+                            >
+                                Lihat Proyek
+                                <ArrowRight size={20} aria-hidden="true" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/* Technical Stats Strip */}
-
-            </div>
-        </div>
+            {/* Strip statistik */}
+            <section aria-label="Ringkasan perusahaan" className="relative z-10 -mt-20 px-4 sm:px-6 lg:px-8 md:-mt-24">
+                <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-xl shadow-navy/10 md:grid-cols-4">
+                    {stats.map((stat) => (
+                        <div key={stat.label} className="flex flex-col-reverse justify-center bg-white p-5 text-center sm:p-7">
+                            <dt className="mt-1 text-sm text-navy/70 sm:text-base">
+                                {stat.label}
+                                {stat.detail && <span className="sr-only">: {stat.detail}</span>}
+                            </dt>
+                            <dd className="text-2xl font-bold tracking-tight text-navy sm:text-3xl lg:text-4xl" title={stat.detail}>
+                                {stat.value}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
+            </section>
+        </>
     );
-};
-
-export default Hero;
+}
