@@ -32,6 +32,19 @@ Branch: `update-konten-ui`
 - Subjudul section diganti sesuai brief.
 - Komponen baru: `Services`, `SectionHeading`, dan `Icon` (pemetaan nama ikon di data ke lucide-react). `TechnicalCapabilities` dihapus.
 
+## Fase 3: Halaman `/layanan/material-logistik`
+
+- Halaman baru: hero, paragraf pengantar, 6 kartu "Layanan Kami", 6 "Keunggulan Layanan", strip "Komitmen Kami", dan CTA penutup. Semua teks diambil dari `materialLogistik` di `site.js`.
+- Ikon memakai lucide-react. Tidak ada gambar stok. Slot foto diisi placeholder bergaris putus-putus.
+- Tombol WhatsApp di halaman ini (termasuk tombol melayang) memakai pesan prefilled khusus material.
+- Metadata title, description, canonical, dan Open Graph khusus halaman ini. Halaman ditambahkan ke sitemap.
+- Komponen `WithPlaceholders` menyorot teks `[KONFIRMASI KLIEN: ...]` dengan latar kuning agar mudah ditemukan saat review preview.
+
 ## Daftar [KONFIRMASI KLIEN]
 
-(diisi per fase)
+Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` untuk menemukannya.
+
+| No | Lokasi | Yang perlu dikonfirmasi |
+|---|---|---|
+| 1 | `/layanan/material-logistik`, slot foto | Foto armada/material milik perusahaan |
+| 2 | `/layanan/material-logistik`, kartu Supplier Batu Bara | Legalitas perdagangan batu bara sebelum tayang |

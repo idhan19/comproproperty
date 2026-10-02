@@ -1,15 +1,18 @@
 "use client";
 import React from 'react';
-import { waLink } from '@/data/site';
+import { usePathname } from 'next/navigation';
+import { materialLogistik, waLink, whatsapp } from '@/data/site';
 
 const FloatingWhatsApp = () => {
+    const pathname = usePathname();
+    const message = pathname === materialLogistik.slug ? whatsapp.messages.material : whatsapp.messages.umum;
     return (
         <a
-            href={waLink()}
+            href={waLink(message)}
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 transition-transform duration-300 hover:scale-110 drop-shadow-xl"
-            aria-label="Contact us on WhatsApp"
+            aria-label="Hubungi kami via WhatsApp"
         >
             {/* Use a simple image-like SVG approach for standard branding */}
             <svg

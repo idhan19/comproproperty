@@ -29,6 +29,8 @@ export const whatsapp = {
   number: "6282120369004",
   messages: {
     umum: "Halo PT Ponco Munaro Utama, saya tertarik berkonsultasi mengenai layanan [Konstruksi/Listrik/Sumur Bor/Material & Logistik]. Mohon informasi prosedur dan estimasi biayanya. Terima kasih.",
+    material:
+      "Halo PT Ponco Munaro Utama, saya tertarik dengan layanan Tracking Armada & Supplier Material. Mohon informasi ketersediaan material, prosedur, dan estimasi biayanya. Terima kasih.",
   },
 };
 
@@ -123,6 +125,76 @@ export const services = [
     href: "/layanan/material-logistik",
   },
 ];
+
+export const materialLogistik = {
+  slug: "/layanan/material-logistik",
+  meta: {
+    title: "Jasa Tracking Armada & Supplier Material",
+    description:
+      "Layanan tracking armada dan supplier material PT Ponco Munaro Utama: pasir silika, tanah clay, limestone, batu bara, dan jasa pengurugan dengan pengiriman terpantau ke lokasi proyek.",
+  },
+  title: "Jasa Tracking & Supplier Material",
+  subtitle: "Solusi Terintegrasi untuk Kebutuhan Material dan Logistik Proyek",
+  intro:
+    "Kami menyediakan layanan tracking armada dan pengadaan material untuk mendukung kebutuhan proyek konstruksi, industri, pertambangan, infrastruktur, dan pengurugan. Dengan dukungan jaringan supplier dan armada yang terkoordinasi, kami berkomitmen menyediakan material sesuai kebutuhan, kuantitas, kualitas, lokasi, dan jadwal pengiriman.",
+  imagePlaceholder: "[KONFIRMASI KLIEN: foto armada/material]",
+  items: [
+    {
+      icon: "MapPinned",
+      title: "Jasa Tracking Armada",
+      description:
+        "Pemantauan armada secara real-time untuk memastikan pengiriman material berjalan aman, terpantau, dan tepat waktu.",
+      list: [
+        "Monitoring posisi armada",
+        "Pemantauan rute perjalanan",
+        "Monitoring proses loading dan unloading",
+        "Monitoring perjalanan dari quarry atau sumber material ke lokasi proyek",
+        "Rekap dan laporan perjalanan armada",
+      ],
+    },
+    {
+      icon: "Gem",
+      title: "Supplier Pasir Silika",
+      description:
+        "Pasir silika untuk berbagai kebutuhan industri dan proyek dengan spesifikasi yang dapat disesuaikan dengan kebutuhan pelanggan.",
+    },
+    {
+      icon: "Layers",
+      title: "Supplier Tanah Clay",
+      description:
+        "Tanah clay untuk kebutuhan industri, konstruksi, pengolahan material, dan proyek lainnya dengan volume dan spesifikasi sesuai permintaan.",
+    },
+    {
+      icon: "Mountain",
+      title: "Supplier Limestone",
+      description:
+        "Limestone atau batu kapur untuk kebutuhan konstruksi, industri, pengurugan, maupun pengolahan material.",
+    },
+    {
+      icon: "Boxes",
+      title: "Supplier Batu Bara",
+      description:
+        "Batu bara untuk kebutuhan industri dan pengguna akhir sesuai spesifikasi, kualitas, kuantitas, dan kebutuhan pelanggan. [KONFIRMASI KLIEN: legalitas perdagangan batu bara sebelum tayang]",
+    },
+    {
+      icon: "Truck",
+      title: "Jasa Pengurugan",
+      description:
+        "Pengurugan lahan untuk pembangunan, kawasan industri, jalan, fasilitas proyek, dan pekerjaan cut and fill, termasuk penyediaan material serta dukungan armada angkutan.",
+    },
+  ],
+  advantages: [
+    { icon: "PackageCheck", text: "Material dan volume menyesuaikan kebutuhan proyek" },
+    { icon: "Route", text: "Pengiriman terkoordinasi dari sumber material ke lokasi" },
+    { icon: "MapPinned", text: "Monitoring armada dan pengiriman" },
+    { icon: "Building2", text: "Mendukung proyek skala kecil maupun besar" },
+    { icon: "ClipboardList", text: "Pengadaan material dan logistik dalam satu layanan" },
+    { icon: "Handshake", text: "Harga kompetitif dan proses kerja profesional" },
+  ],
+  commitments: ["Material Tepat", "Pengiriman Tepat Waktu", "Armada Terpantau", "Layanan Profesional"],
+  closing:
+    "Kami siap menjadi mitra pengadaan material dan logistik untuk mendukung kelancaran proyek Anda.",
+};
 
 export const projects = [
   {
