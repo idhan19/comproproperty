@@ -1,13 +1,20 @@
 import Image from 'next/image';
 import { Download } from 'lucide-react';
+import SectionBackdrop from '@/components/SectionBackdrop';
 import SectionHeading from '@/components/SectionHeading';
 import WithPlaceholders, { stripPlaceholders } from '@/components/WithPlaceholders';
 import { about, company, companyProfilePdf, directors, management, seo } from '@/data/site';
 
 export default function About() {
     return (
-        <section id="about" className="py-20 md:py-28 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            id="about"
+            className="relative overflow-hidden bg-[linear-gradient(160deg,#ffe4e4_0%,#fff6dc_45%,#dde2f1_100%)] py-20 md:py-28"
+        >
+            <SectionBackdrop
+                glows={['-right-40 top-20 h-[28rem] w-[28rem] bg-brand/20', '-left-40 bottom-40 h-[28rem] w-[28rem] bg-navy/25', 'left-1/3 top-1/2 h-72 w-72 bg-accent/30']}
+            />
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Profil, visi, misi */}
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
@@ -27,7 +34,7 @@ export default function About() {
                             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">Visi</p>
                             <blockquote className="text-xl leading-relaxed md:text-2xl">&ldquo;{about.visi}&rdquo;</blockquote>
                         </figure>
-                        <div className="rounded-2xl border border-navy-100 p-8 md:p-10">
+                        <div className="rounded-2xl border border-navy-100 bg-white/80 p-8 backdrop-blur md:p-10">
                             <p className="mb-5 text-sm font-semibold uppercase tracking-wider text-brand-600">Misi</p>
                             <ol className="space-y-4">
                                 {about.misi.map((item, index) => (
@@ -74,7 +81,7 @@ export default function About() {
                     <h3 className="mb-8 text-center text-xl font-bold text-navy">Tim Manajemen</h3>
                     <ul className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {management.map((person) => (
-                            <li key={person.name} className="rounded-2xl bg-surface p-6 text-center">
+                            <li key={person.name} className="rounded-2xl border border-white bg-white/70 p-6 text-center shadow-sm backdrop-blur">
                                 <p className="font-bold text-navy">{person.name}</p>
                                 <p className="mt-1 text-sm text-navy/70">{person.role}</p>
                             </li>

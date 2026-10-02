@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import SectionBackdrop from '@/components/SectionBackdrop';
 import { company, navLinks, services, waLink } from '@/data/site';
 
 const socialIcons = {
@@ -15,8 +16,13 @@ const socialIcons = {
 
 const Footer = () => {
     return (
-        <footer id="kontak" className="bg-navy-950 pt-20 pb-10 text-navy-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <footer
+            id="kontak"
+            className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-950 to-navy pt-20 pb-10 text-navy-100"
+        >
+            <SectionBackdrop glows={['-left-32 -top-32 h-96 w-96 bg-brand/20', 'right-0 bottom-0 h-80 w-80 bg-navy-800/60']} />
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand via-brand-600 to-accent" aria-hidden="true" />
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
                     <div className="lg:col-span-4">
                         <div className="mb-6 flex items-center gap-3">

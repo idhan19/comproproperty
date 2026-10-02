@@ -15,7 +15,9 @@ export default function Hero() {
                     sizes="100vw"
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/50" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/40" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-brand-700/20" aria-hidden="true" />
+                <div className="absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
 
                 <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="max-w-3xl">
@@ -50,7 +52,7 @@ export default function Hero() {
             </section>
 
             {/* Strip statistik */}
-            <section aria-label="Ringkasan perusahaan" className="relative z-10 -mt-20 px-4 sm:px-6 lg:px-8 md:-mt-24">
+            <section aria-label="Ringkasan perusahaan" className="relative z-10 -mt-20 bg-[linear-gradient(to_bottom,transparent_50%,#eef0f7_50%)] px-4 sm:px-6 lg:px-8 md:-mt-24">
                 <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-xl shadow-navy/10 md:grid-cols-4">
                     {stats.map((stat) => (
                         <div key={stat.label} className="flex flex-col-reverse justify-center bg-white p-5 text-center sm:p-7">

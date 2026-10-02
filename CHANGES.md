@@ -85,6 +85,23 @@ Branch: `update-konten-ui`
   - Duplikat dihapus dari galeri: `Trafo2` (= `trafopanel`), `kubikel1` (= `kubikel`), `tiang2` (= `tianglistrik`).
   - Foto "Genset" (proyek disembunyikan) berisi panel/MCB, bukan unit genset.
 
+## Revisi: Latar bergradasi per bagian
+
+Atas masukan bahwa latar putih terlalu polos, setiap bagian beranda kini memakai gradasi warna brand dan berselang-seling gelap/terang seperti desain lama:
+
+| Bagian | Latar |
+|---|---|
+| Beranda (hero) | Foto proyek + overlay navy dengan rona merah |
+| Layanan | Gradasi navy muda ke merah muda, pola grid halus |
+| Proyek | Gradasi navy gelap, pola titik, cahaya merah |
+| Tentang Kami | Gradasi hangat merah muda, krem, navy muda |
+| Legalitas | Gradasi navy, cahaya merah |
+| Klien | Gradasi navy muda ke merah muda, pola grid |
+| Kontak (footer) | Gradasi navy gelap, garis aksen merah ke kuning di atas |
+
+- Komponen baru  untuk pola dan cahaya dekoratif ().
+- Kartu tetap putih agar teks terbaca. Placeholder foto proyek memakai gradasi navy ke merah agar tidak tenggelam di latar navy.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.

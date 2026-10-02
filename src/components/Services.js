@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import Icon from '@/components/Icon';
+import SectionBackdrop from '@/components/SectionBackdrop';
 import SectionHeading from '@/components/SectionHeading';
 import { services, servicesIntro } from '@/data/site';
 
@@ -48,8 +49,15 @@ function ServiceCard({ service }) {
 
 export default function Services() {
     return (
-        <section id="services" className="pt-20 pb-20 md:pt-28 md:pb-28 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            id="services"
+            className="relative overflow-hidden bg-[linear-gradient(170deg,#eef0f7_0%,#d9deee_50%,#ffe1e1_100%)] py-20 md:py-28"
+        >
+            <SectionBackdrop
+                pattern="grid"
+                glows={['-left-40 top-1/3 h-96 w-96 bg-navy/25', '-right-32 bottom-0 h-96 w-96 bg-brand/25']}
+            />
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading eyebrow="Layanan" title="Lini Layanan Kami" description={servicesIntro} />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {services.map((service) => (

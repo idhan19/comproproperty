@@ -20,7 +20,7 @@ export function ProjectMedia({ project, sizes, priority = false, className = '' 
         );
     }
     return (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-navy text-white/70">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-navy-800 via-navy to-brand-700 text-white/80">
             <Icon name={categoryIcon(project.kategori)} size={44} strokeWidth={1.5} />
             <span className="text-xs">Dokumentasi menyusul</span>
         </div>
