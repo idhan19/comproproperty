@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TechnicalCapabilities from "@/components/TechnicalCapabilities";
+import Services from "@/components/Services";
 import ProjectPortfolio from "@/components/ProjectPortfolio";
 import LeadershipTeam from "@/components/about/LeadershipTeam";
 import Footer from "@/components/Footer";
@@ -22,7 +22,7 @@ export default function Home() {
     <main className="min-h-screen bg-white font-sans">
       <Navbar />
       <Hero />
-      <TechnicalCapabilities />
+      <Services />
       <ProjectPortfolio />
       <LeadershipTeam />
       <Footer />

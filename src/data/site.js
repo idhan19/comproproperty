@@ -63,34 +63,64 @@ export const about = {
 
 export const companyProfilePdf = "/profile-File.pdf";
 
+export const servicesIntro =
+  "Layanan kami mencakup konstruksi, mekanikal elektrikal, infrastruktur, hingga pasokan material untuk pengembang perumahan, industri, dan instansi.";
+
+// `title` juga dipakai sebagai nama kategori proyek (lihat `projects`).
+// `icon` adalah nama ikon lucide-react, dipetakan di src/components/Icon.js.
 export const services = [
   {
+    slug: "konstruksi-bangunan",
+    icon: "Building2",
+    title: "Konstruksi Bangunan",
+    description:
+      "Pembangunan perumahan subsidi dan komersil serta bangunan usaha seperti kafe dan food court.",
+    points: ["Rumah subsidi & komersil", "Bangunan komersial", "Pekerjaan struktur & finishing"],
+  },
+  {
+    slug: "mekanikal-elektrikal",
     icon: "Zap",
-    title: "Mechanical & Electrical",
+    title: "Mekanikal & Elektrikal",
     description:
-      "Specialized in high-voltage installations, transformer setups (up to 1MW), and industrial panel configurations. Ensuring power stability for critical infrastructures.",
-    points: ["High Voltage Installation", "Transformer Integration", "Industrial Panel Wiring"],
+      "Pengadaan jaringan listrik perumahan, pemasangan gardu trafo, panel, dan kubikel untuk kebutuhan hunian maupun industri.",
+    points: [
+      "Jaringan listrik jalur udara",
+      "Gardu trafo & panel (hingga 1 MW)",
+      "Pemasangan kubikel",
+    ],
   },
   {
-    icon: "Factory",
-    title: "Industrial Construction",
+    slug: "infrastruktur-air-bersih",
+    icon: "Droplets",
+    title: "Infrastruktur Air Bersih",
     description:
-      "End-to-end industrial building construction designed for heavy-duty operations. From reinforced foundations to steel structure assembly.",
-    points: ["Steel Structure Assembly", "Factory Foundation", "Warehouse Systems"],
+      "Pembuatan sumur bor dan pengadaan jaringan air PDAM untuk kawasan perumahan dan fasilitas publik.",
+    points: ["Sumur bor", "Jaringan air PDAM", "Instalasi pompa"],
   },
   {
-    icon: "Radio",
-    title: "Telecommunications",
-    description:
-      "Expert construction of BTS Towers (SST-42 to SST-62). delivering robust connectivity infrastructure across Java.",
-    points: ["BTS Tower Construction", "Site Acquisition", "Maintenance Services"],
+    slug: "telekomunikasi",
+    icon: "RadioTower",
+    title: "Telekomunikasi",
+    description: "Pembangunan tower BTS tipe SST untuk mendukung jaringan telekomunikasi.",
+    points: ["Tower BTS SST-42, SST-52, SST-62", "Pekerjaan pondasi tower", "Erection tower"],
   },
   {
-    icon: "Settings",
-    title: "Civil Engineering",
+    slug: "pekerjaan-tanah",
+    icon: "Shovel",
+    title: "Pekerjaan Tanah & Pengembangan Lahan",
     description:
-      "Comprehensive civil works aimed at public and private sector development, ensuring longevity and safety compliance.",
-    points: ["Public Infrastructure", "Roads & Bridges", "Drainage Systems"],
+      "Pekerjaan cut and fill, pengadaan lahan, dan pendampingan perizinan untuk pengembang perumahan.",
+    points: ["Cut and fill", "Pengadaan lahan", "Pengurusan perizinan perumahan"],
+  },
+  {
+    slug: "material-logistik",
+    icon: "Truck",
+    title: "Tracking Armada & Supplier Material",
+    description:
+      "Pengadaan material dan pemantauan armada pengiriman dari sumber material sampai lokasi proyek.",
+    points: ["Tracking armada", "Supplier material", "Jasa pengurugan"],
+    badge: "Baru",
+    href: "/layanan/material-logistik",
   },
 ];
 
