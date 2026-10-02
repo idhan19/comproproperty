@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import ProjectCard from '@/components/projects/ProjectCard';
+import Reveal from '@/components/motion/Reveal';
 
 const ALL = 'Semua';
 
@@ -21,7 +22,7 @@ export default function ProjectFilter({ projects, categories }) {
                             type="button"
                             aria-pressed={selected}
                             onClick={() => setActive(option)}
-                            className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                            className={`rounded-full border px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 ${
                                 selected
                                     ? 'border-navy bg-navy text-white'
                                     : 'border-navy-100 bg-white text-navy hover:border-navy/40'
@@ -36,8 +37,11 @@ export default function ProjectFilter({ projects, categories }) {
                 Menampilkan {visible.length} proyek
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {visible.map((project) => (
-                    <ProjectCard key={project.slug} project={project} />
+                {/* key memuat filter aktif agar animasi diputar ulang saat filter diganti. */}
+                {visible.map((project, index) => (
+                    <Reveal key={`${active}-${project.slug}`} animation="blur-in" delay={(index % 3) * 110} className="h-full">
+                        <ProjectCard project={project} />
+                    </Reveal>
                 ))}
             </div>
         </>

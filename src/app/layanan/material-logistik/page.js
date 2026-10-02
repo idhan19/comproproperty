@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Icon from '@/components/Icon';
 import SectionHeading from '@/components/SectionHeading';
+import Reveal from '@/components/motion/Reveal';
 import WithPlaceholders from '@/components/WithPlaceholders';
 import { SITE_URL, materialLogistik as page, waLink, whatsapp } from '@/data/site';
 
@@ -83,12 +84,16 @@ export default function MaterialLogistikPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading eyebrow="Material & Logistik" title="Layanan Kami" />
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {page.items.map((item) => (
-                            <article
+                        {page.items.map((item, index) => (
+                            <Reveal
+                                as="article"
                                 key={item.title}
-                                className="flex flex-col rounded-2xl border border-navy-100 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5"
+                                animation="flip-in-y"
+                                delay={(index % 3) * 120}
+                                className="h-full"
                             >
-                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                                <div className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-navy/10">
+                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white">
                                     <Icon name={item.icon} size={24} />
                                 </div>
                                 <h3 className="mb-3 text-xl font-bold text-navy">{item.title}</h3>
@@ -105,7 +110,8 @@ export default function MaterialLogistikPage() {
                                         ))}
                                     </ul>
                                 )}
-                            </article>
+                                </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -116,13 +122,20 @@ export default function MaterialLogistikPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading eyebrow="Mengapa Kami" title="Keunggulan Layanan" />
                     <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {page.advantages.map((item) => (
-                            <li key={item.text} className="flex items-start gap-4 rounded-2xl border border-navy-100 p-6">
+                        {page.advantages.map((item, index) => (
+                            <Reveal
+                                as="li"
+                                key={item.text}
+                                animation="fade-up"
+                                delay={(index % 3) * 100}
+                            >
+                                <div className="flex h-full items-start gap-4 rounded-2xl border border-navy-100 bg-white p-6 transition hover:-translate-y-0.5 hover:border-navy/20 hover:shadow-md">
                                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-white">
                                     <Icon name={item.icon} size={20} />
                                 </div>
                                 <p className="pt-1.5 font-medium leading-snug text-navy">{item.text}</p>
-                            </li>
+                                </div>
+                            </Reveal>
                         ))}
                     </ul>
                 </div>
@@ -146,7 +159,7 @@ export default function MaterialLogistikPage() {
             {/* CTA penutup */}
             <section className="py-20 md:py-28">
                 <div className="max-w-3xl mx-auto px-4 text-center sm:px-6 lg:px-8">
-                    <p className="text-2xl font-bold leading-snug text-navy md:text-3xl">{page.closing}</p>
+                    <Reveal as="p" animation="fade-up" className="text-2xl font-bold leading-snug text-navy md:text-3xl">{page.closing}</Reveal>
                     <WhatsAppButton className="mt-10" />
                 </div>
             </section>

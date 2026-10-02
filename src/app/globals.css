@@ -44,6 +44,119 @@ body {
   outline-offset: 2px;
 }
 
+/* ------------------------------------------------------------------
+ * Animasi
+ * Terinspirasi animasi scroll Flatsome (flipInY, blurIn, fadeInRight),
+ * dibuat ringan tanpa library. Elemen hanya disembunyikan bila JS aktif
+ * (kelas `js` dipasang di <html> oleh layout), sehingga tanpa JS konten
+ * tetap tampil.
+ * ------------------------------------------------------------------ */
+
+[data-reveal] {
+  --reveal-ease: cubic-bezier(0.22, 0.75, 0.2, 1);
+  transition:
+    opacity 0.8s var(--reveal-ease),
+    transform 0.9s var(--reveal-ease),
+    filter 0.9s var(--reveal-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal]:not([data-visible]) {
+  opacity: 0;
+}
+.js [data-reveal="fade-up"]:not([data-visible]) {
+  transform: translateY(28px);
+}
+.js [data-reveal="fade-right"]:not([data-visible]) {
+  transform: translateX(-28px);
+}
+.js [data-reveal="flip-in-y"]:not([data-visible]) {
+  transform: perspective(1200px) rotateY(55deg);
+  transform-origin: center;
+}
+.js [data-reveal="blur-in"]:not([data-visible]) {
+  filter: blur(14px);
+  transform: scale(1.03);
+}
+.js [data-reveal="zoom-in"]:not([data-visible]) {
+  transform: scale(0.94);
+}
+
+/* Garis aksen di bawah judul section, memanjang setelah judul muncul. */
+.heading-line {
+  transition: transform 0.9s cubic-bezier(0.22, 0.75, 0.2, 1) 0.35s;
+}
+.js [data-reveal]:not([data-visible]) .heading-line {
+  transform: scaleX(0);
+}
+
+/* Hero: teks masuk bertahap saat halaman dibuka. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+.hero-in {
+  animation: hero-in 0.9s cubic-bezier(0.22, 0.75, 0.2, 1) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+
+/* Hero: zoom lambat pada foto (efek Ken Burns). */
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.ken-burns {
+  animation: ken-burns 14s ease-out both;
+}
+
+/* Marquee klien: berjalan tanpa henti, berhenti saat di-hover/fokus. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Garis progres scroll di atas halaman (scroll-driven animation; browser
+ * yang belum mendukung cukup tidak menampilkannya). */
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.scroll-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    transform-origin: left;
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -53,5 +166,24 @@ body {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+  .js [data-reveal]:not([data-visible]) {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .ken-burns,
+  .hero-in,
+  .marquee-track {
+    animation: none;
+  }
+  /* Tanpa gerakan: marquee menjadi daftar biasa. */
+  .marquee-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .marquee-duplicate {
+    display: none;
   }
 }

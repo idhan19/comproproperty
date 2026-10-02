@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import Icon from '@/components/Icon';
-import SectionBackdrop from '@/components/SectionBackdrop';
 import SectionHeading from '@/components/SectionHeading';
+import Reveal from '@/components/motion/Reveal';
 import { services, servicesIntro } from '@/data/site';
 
 function ServiceCard({ service }) {
     const content = (
         <>
             <div className="flex items-start justify-between gap-4 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white">
                     <Icon name={service.icon} size={24} />
                 </div>
                 {service.badge && (
@@ -36,7 +36,7 @@ function ServiceCard({ service }) {
     );
 
     const className =
-        'group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-xl hover:shadow-navy/5';
+        'group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition duration-300 hover:-translate-y-1.5 hover:border-navy/20 hover:shadow-xl hover:shadow-navy/10';
 
     return service.href ? (
         <Link href={service.href} className={className}>
@@ -49,19 +49,14 @@ function ServiceCard({ service }) {
 
 export default function Services() {
     return (
-        <section
-            id="services"
-            className="relative overflow-hidden bg-[linear-gradient(170deg,#eef0f7_0%,#d9deee_50%,#ffe1e1_100%)] py-20 md:py-28"
-        >
-            <SectionBackdrop
-                pattern="grid"
-                glows={['-left-40 top-1/3 h-96 w-96 bg-navy/25', '-right-32 bottom-0 h-96 w-96 bg-brand/25']}
-            />
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="services" className="bg-gradient-to-b from-white to-surface py-20 md:py-28">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading eyebrow="Layanan" title="Lini Layanan Kami" description={servicesIntro} />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {services.map((service) => (
-                        <ServiceCard key={service.slug} service={service} />
+                    {services.map((service, index) => (
+                        <Reveal key={service.slug} animation="flip-in-y" delay={(index % 3) * 120} className="h-full">
+                            <ServiceCard service={service} />
+                        </Reveal>
                     ))}
                 </div>
             </div>

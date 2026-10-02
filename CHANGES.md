@@ -102,6 +102,30 @@ Atas masukan bahwa latar putih terlalu polos, setiap bagian beranda kini memakai
 - Komponen baru `SectionBackdrop` untuk pola dan cahaya dekoratif (`aria-hidden`).
 - Kartu tetap putih agar teks terbaca. Placeholder foto proyek memakai gradasi navy ke merah agar tidak tenggelam di latar navy.
 
+## Revisi: Warna disederhanakan dan animasi
+
+Atas masukan bahwa gradasi berwarna terlalu ramai, latar dikembalikan ke tone sebelumnya (putih, abu-abu muda `surface`, navy) dengan gradasi sederhana dua warna. Pola grid/titik, cahaya warna-warni, nuansa pink/krem, dan rona merah di hero dihapus (komponen `SectionBackdrop` dihapus).
+
+Animasi terinspirasi dari binanusa.co.id (tema Flatsome: `flipInY`, `blurIn`, `fadeInRight`, parallax, slider mitra), dibuat ulang tanpa library baru:
+
+| Animasi | Dipakai di |
+|---|---|
+| Teks hero masuk bertahap (geser + blur) | Hero |
+| Zoom lambat (Ken Burns) + parallax foto | Hero |
+| Angka menghitung naik | Strip statistik |
+| Judul section naik + garis aksen memanjang | Semua judul section |
+| Kartu berputar masuk (flip-in-y), bergiliran | Layanan, Direksi, Legalitas, kartu layanan material |
+| Kartu muncul dari blur (blur-in), bergiliran | Proyek unggulan, halaman Semua Proyek (diputar ulang saat filter diganti) |
+| Marquee berjalan, berhenti saat hover | Klien dan Mitra |
+| Hover: kartu naik, ikon berputar dan berganti warna, foto zoom | Kartu layanan, proyek, direksi, legalitas, tombol |
+| Garis progres scroll di atas halaman | Semua halaman (browser yang mendukung) |
+
+Catatan teknis:
+- Komponen baru di `src/components/motion/`: `Reveal` (IntersectionObserver), `CountUp`, `Parallax`. Definisi animasi ada di `globals.css`.
+- Elemen hanya disembunyikan sebelum animasi bila JavaScript aktif (kelas `js` di `<html>`). Tanpa JS, semua konten tetap tampil. Teks tetap ada di HTML (aman untuk SEO).
+- Semua animasi dimatikan bila pengunjung mengaktifkan "kurangi gerakan" (`prefers-reduced-motion`). Marquee berubah menjadi daftar biasa.
+- Diuji di Edge sungguhan (waktu nyata) di lebar 1280 dan 375 px: 34 dari 34 elemen animasi muncul setelah di-scroll, angka statistik berakhir di nilai yang benar.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.
