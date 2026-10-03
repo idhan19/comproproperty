@@ -263,7 +263,7 @@ export const projects = [
     judul: "Pemasangan Trafo 1 MW & Panel",
     lokasi: "Pabrik Smelting, Karawang",
     deskripsi:
-      'Pemasangan transformator berkapasitas 1 MW beserta panel distribusi [KONFIRMASI KLIEN: "Ipmdp" di profil maksudnya LVMDP?] untuk kebutuhan daya fasilitas produksi pabrik smelting.',
+      'Pemasangan transformator berkapasitas 1 MW beserta panel distribusi untuk kebutuhan daya fasilitas produksi pabrik smelting.',
     tahun: null,
     foto: null,
     unggulan: true,
