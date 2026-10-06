@@ -166,7 +166,7 @@ Sumber: folder unduhan Google Drive (Supplier Pasir Silika & Tanah Clay, video d
 
 Data tetap disimpan di `site.js` agar mudah ditampilkan lagi.
 
-- Kartu ISO 9001 disembunyikan (`published: false`). Karena tidak ada kartu legalitas lain yang tayang, section Legalitas dan Sertifikasi ikut hilang di beranda dan `/profile`. Angka "ISO 9001" di strip statistik masih tampil.
+- Kartu ISO 9001 disembunyikan (`published: false`). Karena tidak ada kartu legalitas lain yang tayang, section Legalitas dan Sertifikasi ikut hilang di beranda dan `/profile`. Angka "ISO 9001" di strip statistik juga dihapus dan diganti "Klien & Mitra" (dihitung otomatis dari daftar klien).
 - Tim Manajemen disembunyikan dari beranda dan `/profile` lewat saklar `showManagement = false`.
 - Proyek Kafe & Food Court Tempat Nongkrong disembunyikan (`published: false`). Halaman `/projects/kafe-food-court-tempat-nongkrong` kini 404 dan proyek ini keluar dari sitemap. Jumlah proyek di statistik otomatis menjadi 19.
 

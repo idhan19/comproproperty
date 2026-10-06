@@ -667,7 +667,7 @@ export const clients = [
   { name: "PT Helgalara Arutala Indonesia" },
 ];
 
-// Strip statistik di bawah hero. Jumlah proyek dan lini layanan dihitung dari
+// Strip statistik di bawah hero. Jumlah proyek, lini layanan, dan klien dihitung dari
 // data agar selalu sinkron dengan daftar proyek dan layanan di website.
 export const stats = [
   { value: String(publishedProjects.length), label: "Proyek Tercatat" },
@@ -676,6 +676,6 @@ export const stats = [
     label: "Provinsi",
     detail: "Jawa Barat, Banten, DKI Jakarta, Jawa Tengah, Jawa Timur",
   },
-  { value: "ISO 9001", label: "Sistem Manajemen Mutu" },
   { value: String(services.length), label: "Lini Layanan" },
+  { value: String(clients.length), label: "Klien & Mitra" },
 ];
