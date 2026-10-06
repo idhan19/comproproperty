@@ -416,6 +416,20 @@ export const projects = [
     foto: "/Trafo1.jpeg",
     galeri: ["/dokumentasi/listrik/tamansari-tiang.jpg", "/dokumentasi/listrik/tamansari-kwh-meter.jpg"],
   },
+  {
+    slug: "pemasangan-listrik-puri-permata-ciampea",
+    kategori: K.me,
+    judul: "Pemasangan Listrik Perumahan Puri Permata Ciampea",
+    lokasi: "Perumahan Puri Permata Ciampea",
+    deskripsi:
+      "Pemasangan jaringan listrik untuk kawasan Perumahan Puri Permata Ciampea, meliputi pendirian tiang dan penarikan kabel ke bangunan.",
+    tahun: null,
+    foto: "/dokumentasi/listrik/ciampea-jaringan-listrik.jpg",
+    galeri: [
+      "/dokumentasi/listrik/ciampea-penarikan-kabel.jpg",
+      "/dokumentasi/listrik/ciampea-penyambungan.jpg",
+    ],
+  },
 
   // Konstruksi Bangunan
   {
