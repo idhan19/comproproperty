@@ -254,7 +254,8 @@ const K = {
 // Atribusi foto mengikuti cap lokasi/isi foto (lihat CHANGES.md, Fase 6).
 // `unggulan`: tampil di beranda. `published: false`: disembunyikan dari website.
 // Slug lama (pdam-network, electric-pole, transformer-installation,
-// cubicle-installation, electrical-installation) dipertahankan agar link lama tetap jalan.
+// cubicle-installation) dipertahankan agar link lama tetap jalan. Slug lama yang
+// proyeknya diganti dialihkan lewat src/app/projects/<slug-lama>/page.js.
 export const projects = [
   // Proyek unggulan (beranda)
   {
@@ -386,13 +387,20 @@ export const projects = [
     galeri: ["/tiang3.jpeg"],
   },
   {
-    slug: "electrical-installation",
+    // Menggantikan proyek lama (slug "electrical-installation", dialihkan ke slug ini).
+    slug: "pemasangan-listrik-jalur-udara-puri-griasadi-cikande",
     kategori: K.me,
-    judul: "Jaringan Listrik Jalur Udara Perumahan Puri Griasadi Cikande",
+    judul: "Pemasangan Listrik Jalur Udara Perumahan Puri Griasadi Cikande",
     lokasi: "Perumahan Puri Griasadi Cikande, Banten",
-    deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Cikande.",
+    deskripsi:
+      "Pemasangan jaringan listrik jalur udara untuk kawasan Perumahan Puri Griasadi Cikande, mulai dari pendirian tiang, pemasangan gardu trafo dan panel, hingga penyambungan kWh meter ke rumah.",
     tahun: null,
-    foto: null,
+    foto: "/dokumentasi/listrik/cikande-jaringan-udara.jpg",
+    galeri: [
+      "/dokumentasi/listrik/cikande-pendirian-tiang.jpg",
+      "/dokumentasi/listrik/cikande-gardu-trafo.jpg",
+      "/dokumentasi/listrik/cikande-kwh-meter.jpg",
+    ],
   },
   {
     slug: "jaringan-listrik-puri-griasadi-tamansari",
@@ -510,7 +518,6 @@ const ILUSTRASI = {
   "jaringan-listrik-bumi-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
   "jaringan-listrik-bumi-griasadi-cihoe": "/ilustrasi/jaringan-listrik.svg",
   "jaringan-listrik-puri-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
-  "electrical-installation": "/ilustrasi/jaringan-listrik.svg",
   "kafe-food-court-tempat-nongkrong": "/ilustrasi/kafe.svg",
   "pengadaan-lahan-puri-angkasa-permata": "/ilustrasi/pengadaan-lahan.svg",
   "perizinan-perumahan-bogor": "/ilustrasi/perizinan.svg",
