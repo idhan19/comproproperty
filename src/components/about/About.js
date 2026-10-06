@@ -3,7 +3,7 @@ import { Download } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import Reveal from '@/components/motion/Reveal';
 import WithPlaceholders, { stripPlaceholders } from '@/components/WithPlaceholders';
-import { about, company, companyProfilePdf, directors, management, seo } from '@/data/site';
+import { about, company, companyProfilePdf, directors, management, seo, showManagement } from '@/data/site';
 
 export default function About() {
     return (
@@ -79,7 +79,8 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* Tim Manajemen */}
+                {/* Tim Manajemen (bisa disembunyikan lewat `showManagement` di site.js) */}
+                {showManagement && (
                 <div className="mt-20">
                     <Reveal as="h3" animation="fade-up" className="mb-8 text-center text-xl font-bold text-navy">
                         Tim Manajemen
@@ -100,6 +101,7 @@ export default function About() {
                         ))}
                     </ul>
                 </div>
+                )}
             </div>
         </section>
     );

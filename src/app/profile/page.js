@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WithPlaceholders from '@/components/WithPlaceholders';
 import {
-    SITE_URL, about, clients, company, companyProfilePdf, directors, management, publishedLegalitas, seo, services, waLink,
+    SITE_URL, about, clients, company, companyProfilePdf, directors, management, publishedLegalitas, showManagement, seo, services, waLink,
 } from '@/data/site';
 
 const description =
@@ -81,16 +81,18 @@ export default function ProfilePage() {
                     </ul>
                 </Section>
 
-                <Section title="Tim Manajemen">
-                    <ul className="grid gap-4 sm:grid-cols-2">
-                        {management.map((person) => (
-                            <li key={person.name}>
-                                <p className="font-bold text-navy">{person.name}</p>
-                                <p className="text-sm text-navy/70">{person.role}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </Section>
+                {showManagement && (
+                    <Section title="Tim Manajemen">
+                        <ul className="grid gap-4 sm:grid-cols-2">
+                            {management.map((person) => (
+                                <li key={person.name}>
+                                    <p className="font-bold text-navy">{person.name}</p>
+                                    <p className="text-sm text-navy/70">{person.role}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </Section>
+                )}
 
                 {publishedLegalitas.length > 0 && (
                     <Section title="Legalitas dan Sertifikasi">

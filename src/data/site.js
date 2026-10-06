@@ -425,6 +425,8 @@ export const projects = [
     deskripsi: "Pembangunan bangunan usaha kafe dan food court Tempat Nongkrong.",
     tahun: null,
     foto: null,
+    // Disembunyikan atas permintaan klien.
+    published: false,
   },
 
   // Infrastruktur Air Bersih
@@ -594,6 +596,8 @@ export const directors = [
 ];
 
 // Tim manajemen: nama dan jabatan saja, tanpa foto.
+// Disembunyikan atas permintaan klien; ubah ke `true` untuk menampilkan lagi.
+export const showManagement = false;
 export const management = [
   { name: "Mukhlis Abdillah", role: "Manager Teknik" },
   { name: "Rohmatullah", role: "Manager Operasional" },
@@ -616,6 +620,8 @@ export const legalitas = [
       "Ruang lingkup: Construction of Mechanical and Electrical Installations",
       "Berlaku hingga 17 Juni 2027",
     ],
+    // Disembunyikan atas permintaan klien.
+    published: false,
   },
   {
     icon: "Scale",
