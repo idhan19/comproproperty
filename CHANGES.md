@@ -177,6 +177,7 @@ Data tetap disimpan di `site.js` agar mudah ditampilkan lagi.
 - Setiap angka diberi keterangan singkat dan bisa diklik ke buktinya (Semua Proyek, Layanan, Klien).
 - Tata letak: 6 kolom di desktop, 3 kolom di tablet, 2 kolom di mobile. Animasi hitung naik kini mendukung akhiran "+".
 - Saran berikutnya: ganti angka yang lebih lemah dengan data volume pekerjaan dari klien (lihat konfirmasi no. 24).
+- Slot `dataVolume.rumahTeraliriListrik` di `site.js`: selama `null`, tampil "Kawasan Perumahan". Setelah diisi angka asli dari klien, berganti otomatis menjadi "±[angka] Rumah Teraliri Listrik" dengan keterangan "Di [n] kawasan perumahan". Animasi hitung naik mendukung format ribuan ("±2.000"). Angka 2.000 hanya contoh dan tidak dipasang.
 
 ## Fase 7: Pengecekan akhir
 

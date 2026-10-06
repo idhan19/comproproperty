@@ -671,6 +671,13 @@ export const clients = [
 // dengan daftar proyek, layanan, dan klien di website. Jangan menggelembungkan
 // angka: ganti dengan data volume pekerjaan dari klien bila sudah tersedia.
 
+// Data volume pekerjaan dari klien. Isi dengan angka ASLI (jangan perkiraan
+// tanpa dasar). Selama `null`, strip statistik memakai angka dari data proyek.
+export const dataVolume = {
+  // Total unit rumah yang jaringan listriknya dikerjakan PMU, mis. 2000.
+  rumahTeraliriListrik: null,
+};
+
 // Kawasan perumahan unik dari lokasi proyek yang tayang.
 const kawasanPerumahan = new Set(
   publishedProjects
@@ -698,12 +705,20 @@ export const stats = [
     detail: "Konstruksi, M&E, air bersih, telekomunikasi",
     href: "/projects",
   },
-  {
-    value: String(kawasanPerumahan.size),
-    label: "Kawasan Perumahan",
-    detail: "Jaringan listrik, air bersih, dan konstruksi",
-    href: "/projects",
-  },
+  dataVolume.rumahTeraliriListrik
+    ? {
+        // Contoh tampilan: "±2.000" Rumah Teraliri Listrik
+        value: `±${dataVolume.rumahTeraliriListrik.toLocaleString("id-ID")}`,
+        label: "Rumah Teraliri Listrik",
+        detail: `Di ${kawasanPerumahan.size} kawasan perumahan`,
+        href: "/projects",
+      }
+    : {
+        value: String(kawasanPerumahan.size),
+        label: "Kawasan Perumahan",
+        detail: "Jaringan listrik, air bersih, dan konstruksi",
+        href: "/projects",
+      },
   {
     value: `${kabKotaMinimal}+`,
     label: "Kabupaten/Kota",
