@@ -334,6 +334,8 @@ export const projects = [
       "/dokumentasi/pdam/pdam-ciseeng-6.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-7.jpg",
       "/tianglistrik.jpeg",
+      // Dikonfirmasi klien: pengerjaan PDAM Puri Griasadi Ciseeng.
+      "/tiang1.jpeg",
     ],
     unggulan: true,
   },
@@ -382,8 +384,9 @@ export const projects = [
     lokasi: "Perumahan Hawtha Inat Tajur Halang, Bogor",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Hawtha Inat Tajur Halang.",
     tahun: null,
-    // tianglistrik.jpeg dipindah ke proyek PDAM (klien memasukkannya ke folder PAM/PDAM).
-    foto: "/tiang1.jpeg",
+    // tianglistrik.jpeg dan tiang1.jpeg dipindah ke proyek PDAM Puri Griasadi Ciseeng
+    // (dikonfirmasi klien). Sampul memakai ilustrasi sampai ada foto asli.
+    foto: null,
     galeri: ["/tiang3.jpeg"],
   },
   {
@@ -518,6 +521,7 @@ const ILUSTRASI = {
   "jaringan-listrik-bumi-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
   "jaringan-listrik-bumi-griasadi-cihoe": "/ilustrasi/jaringan-listrik.svg",
   "jaringan-listrik-puri-griasadi-ciseeng": "/ilustrasi/jaringan-listrik.svg",
+  "electric-pole": "/ilustrasi/jaringan-listrik.svg",
   "kafe-food-court-tempat-nongkrong": "/ilustrasi/kafe.svg",
   "pengadaan-lahan-puri-angkasa-permata": "/ilustrasi/pengadaan-lahan.svg",
   "perizinan-perumahan-bogor": "/ilustrasi/perizinan.svg",
