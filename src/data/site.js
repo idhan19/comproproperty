@@ -446,8 +446,17 @@ export const projects = [
     lokasi: "Perumahan Bumi Griasadi Ciseeng, Bogor",
     deskripsi: "Pembangunan rumah subsidi di kawasan Perumahan Bumi Griasadi Ciseeng.",
     tahun: null,
-    // Dari folder klien "Rumah Subsidi Bogor"; lokasi persis menunggu konfirmasi.
-    foto: "/dokumentasi/konstruksi/rumah-subsidi-bogor-1.jpg",
+    foto: null,
+  },
+  {
+    slug: "rumah-subsidi-puri-griasadi-kemang",
+    kategori: K.konstruksi,
+    judul: "Pembangunan Rumah Subsidi Perumahan Puri Griasadi Kemang",
+    lokasi: "Perumahan Puri Griasadi Kemang, Bogor",
+    deskripsi: "Pembangunan rumah subsidi di kawasan Perumahan Puri Griasadi Kemang.",
+    tahun: null,
+    // Dikonfirmasi klien: foto ini dari Perumahan Puri Griasadi Kemang, Bogor.
+    foto: "/dokumentasi/konstruksi/rumah-subsidi-puri-griasadi-kemang.jpg",
   },
   {
     slug: "kafe-food-court-tempat-nongkrong",
@@ -546,6 +555,7 @@ const ILUSTRASI = {
   "kafe-food-court-tempat-nongkrong": "/ilustrasi/kafe.svg",
   "pengadaan-lahan-puri-angkasa-permata": "/ilustrasi/pengadaan-lahan.svg",
   "perizinan-perumahan-bogor": "/ilustrasi/perizinan.svg",
+  "rumah-subsidi-bumi-griasadi-ciseeng": "/ilustrasi/rumah-subsidi.svg",
 };
 for (const project of projects) {
   if (!project.foto && ILUSTRASI[project.slug]) project.ilustrasi = ILUSTRASI[project.slug];
