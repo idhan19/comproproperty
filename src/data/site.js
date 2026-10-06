@@ -319,22 +319,29 @@ export const projects = [
     kategori: K.air,
     judul: "Pengadaan Jaringan Air PDAM",
     lokasi: "Perumahan Puri Griasadi Ciseeng, Bogor",
-    deskripsi: "Pengadaan jaringan air PDAM untuk kawasan perumahan.",
-    tahun: null,
-    foto: "/PDAMProject2.jpeg",
+    // Data teknis dari papan pengetesan pipa pada foto dokumentasi.
+    deskripsi:
+      "Pengadaan jaringan pipa air bersih HDPE PN10 SDR17 untuk kawasan Perumahan Puri Griasadi Ciseeng. Pengetesan pipa dilakukan pada 13 sampai 14 Agustus 2024 selama 1 × 24 jam dengan tekanan 10 bar, disahkan bersama Perumda Air Minum Tirta Kahuripan Kabupaten Bogor.",
+    tahun: "2024",
+    foto: "/dokumentasi/pdam/pdam-2024-pengukuran-lokasi.jpg",
     galeri: [
+      // Dikonfirmasi klien: pengerjaan PDAM Puri Griasadi Ciseeng.
+      "/dokumentasi/pdam/pdam-2024-koordinasi.jpg",
+      "/dokumentasi/pdam/pdam-2024-pengesahan-1.jpg",
+      "/dokumentasi/pdam/pdam-2024-pengesahan-2.jpg",
+      "/dokumentasi/pdam/pdam-2024-pengetesan-tekanan.jpg",
+      "/dokumentasi/pdam/pdam-2024-pembilasan-pipa.jpg",
+      "/dokumentasi/pdam/pdam-2024-boks-meter.jpg",
+      "/dokumentasi/pdam/pdam-2024-katup.jpg",
+      // Dokumentasi lain dari kegiatan yang sama (duplikat foto di atas sudah dibuang).
       "/PDAMProject1.jpeg",
       "/PDAMProject3.jpeg",
-      // Dokumentasi Agustus 2024 (kegiatan yang sama dengan foto PDAMProject).
       "/dokumentasi/pdam/pdam-ciseeng-1.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-2.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-3.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-4.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-5.jpg",
-      "/dokumentasi/pdam/pdam-ciseeng-6.jpg",
       "/dokumentasi/pdam/pdam-ciseeng-7.jpg",
-      "/tianglistrik.jpeg",
-      // Dikonfirmasi klien: pengerjaan PDAM Puri Griasadi Ciseeng.
       "/tiang1.jpeg",
     ],
     unggulan: true,
@@ -384,7 +391,7 @@ export const projects = [
     lokasi: "Perumahan Hawtha Inat Tajur Halang, Bogor",
     deskripsi: "Pengadaan jaringan listrik jalur udara untuk kawasan Perumahan Hawtha Inat Tajur Halang.",
     tahun: null,
-    // tianglistrik.jpeg dan tiang1.jpeg dipindah ke proyek PDAM Puri Griasadi Ciseeng
+    // Foto lama proyek ini (tianglistrik.jpeg, tiang1.jpeg) adalah dokumentasi PDAM Puri Griasadi Ciseeng
     // (dikonfirmasi klien). Sampul memakai ilustrasi sampai ada foto asli.
     foto: null,
     galeri: ["/tiang3.jpeg"],
@@ -607,7 +614,6 @@ export const dokumentasi = [
   { src: "/dokumentasi/air/sumur-bor-4.jpg", kategori: K.air, keterangan: "Pembuatan sumur bor" },
   { src: "/dokumentasi/air/pam-pdam-1.jpg", kategori: K.air, keterangan: "Pengujian tekanan jaringan pipa air" },
   { src: "/dokumentasi/air/pam-pdam-2.jpg", kategori: K.air, keterangan: "Pengadaan jaringan PAM mandiri dan PDAM di kawasan perumahan" },
-  { src: "/dokumentasi/air/pam-pdam-3.jpg", kategori: K.air, keterangan: "Pemasangan boks meter air di kawasan perumahan" },
 ];
 
 export const directors = [
