@@ -170,6 +170,14 @@ Data tetap disimpan di `site.js` agar mudah ditampilkan lagi.
 - Tim Manajemen disembunyikan dari beranda dan `/profile` lewat saklar `showManagement = false`.
 - Proyek Kafe & Food Court Tempat Nongkrong disembunyikan (`published: false`). Halaman `/projects/kafe-food-court-tempat-nongkrong` kini 404 dan proyek ini keluar dari sitemap. Jumlah proyek di statistik otomatis menjadi 19.
 
+## Revisi: Strip statistik diperkaya
+
+- Dari 4 menjadi 6 angka, semuanya dihitung dari data (tidak digelembungkan): 19 Proyek Tercatat, 8 Kawasan Perumahan, 7+ Kabupaten/Kota, 5 Provinsi, 6 Lini Layanan, 8 Klien & Mitra.
+- "7+ Kabupaten/Kota": 5 pasti dari lokasi proyek (Kab. Bogor, Kab. Karawang, Kota Depok, Jakarta Selatan, Kab. Serang/Cikande), ditambah minimal 1 di Jawa Tengah dan 1 di Jawa Timur (proyek tower BTS). Ditulis dengan "+" sebagai batas bawah.
+- Setiap angka diberi keterangan singkat dan bisa diklik ke buktinya (Semua Proyek, Layanan, Klien).
+- Tata letak: 6 kolom di desktop, 3 kolom di tablet, 2 kolom di mobile. Animasi hitung naik kini mendukung akhiran "+".
+- Saran berikutnya: ganti angka yang lebih lemah dengan data volume pekerjaan dari klien (lihat konfirmasi no. 24).
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.
@@ -210,3 +218,4 @@ Semua placeholder berada di `src/data/site.js`. Cari teks `KONFIRMASI KLIEN` unt
 | 21 | Foto proyek Rumah Subsidi Bumi Griasadi Ciseeng | Foto dari folder "Rumah Subsidi Bogor" dipasang ke proyek ini (satu-satunya proyek rumah subsidi). Benar Bumi Griasadi Ciseeng, atau perumahan lain (brosur di folder menyebut Puri Griasadi Kemang dan Griasadi 6)? |
 | 22 | Foto proyek Cut and Fill Puri Griasadi 3 Cijeruk | Foto dari folder "Cut And Fill" dipasang ke proyek ini (satu-satunya proyek cut and fill). Benar lokasinya Cijeruk? |
 | 23 | Proyek Jaringan Listrik Hawtha Inat Tajur Halang | `tianglistrik.jpeg` (sampul lama) ternyata ada di folder PAM/PDAM klien dan isinya inspeksi berompi PDAM, jadi dipindah ke galeri PDAM Ciseeng. Sampul kini `tiang1.jpeg`. Apakah `tiang1` dan `tiang3` benar dari Hawtha Inat? |
+| 24 | Data volume pekerjaan untuk strip statistik | Total unit rumah yang jaringan listriknya dikerjakan; jumlah tower BTS; jumlah titik sumur bor; jumlah armada dan tenaga kerja; volume material terkirim; tahun mulai beroperasi. Angka ini akan menggantikan statistik yang lebih lemah |

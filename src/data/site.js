@@ -667,15 +667,65 @@ export const clients = [
   { name: "PT Helgalara Arutala Indonesia" },
 ];
 
-// Strip statistik di bawah hero. Jumlah proyek, lini layanan, dan klien dihitung dari
-// data agar selalu sinkron dengan daftar proyek dan layanan di website.
+// Strip statistik di bawah hero. Angka dihitung dari data agar selalu sinkron
+// dengan daftar proyek, layanan, dan klien di website. Jangan menggelembungkan
+// angka: ganti dengan data volume pekerjaan dari klien bila sudah tersedia.
+
+// Kawasan perumahan unik dari lokasi proyek yang tayang.
+const kawasanPerumahan = new Set(
+  publishedProjects
+    .map((project) => project.lokasi ?? "")
+    .filter((lokasi) => lokasi.startsWith("Perumahan "))
+    .map((lokasi) => lokasi.replace(/,.*$/, "")),
+);
+
+// Kabupaten/kota yang pasti dari data lokasi proyek. Proyek tower BTS di
+// Jawa Tengah & Jawa Timur mencakup minimal satu kab/kota di tiap provinsi,
+// sehingga ditampilkan sebagai "+" (batas bawah, bukan angka pasti).
+const kabupatenKota = [
+  "Kabupaten Bogor",
+  "Kabupaten Karawang",
+  "Kota Depok",
+  "Kota Jakarta Selatan",
+  "Kabupaten Serang (Cikande)",
+];
+const kabKotaMinimal = kabupatenKota.length + 2; // + Jawa Tengah, Jawa Timur
+
 export const stats = [
-  { value: String(publishedProjects.length), label: "Proyek Tercatat" },
+  {
+    value: String(publishedProjects.length),
+    label: "Proyek Tercatat",
+    detail: "Konstruksi, M&E, air bersih, telekomunikasi",
+    href: "/projects",
+  },
+  {
+    value: String(kawasanPerumahan.size),
+    label: "Kawasan Perumahan",
+    detail: "Jaringan listrik, air bersih, dan konstruksi",
+    href: "/projects",
+  },
+  {
+    value: `${kabKotaMinimal}+`,
+    label: "Kabupaten/Kota",
+    detail: "Bogor, Depok, Karawang, Jakarta, dan lainnya",
+    href: "/projects",
+  },
   {
     value: "5",
     label: "Provinsi",
-    detail: "Jawa Barat, Banten, DKI Jakarta, Jawa Tengah, Jawa Timur",
+    detail: "Jawa Barat hingga Jawa Timur",
+    href: "/projects",
   },
-  { value: String(services.length), label: "Lini Layanan" },
-  { value: String(clients.length), label: "Klien & Mitra" },
+  {
+    value: String(services.length),
+    label: "Lini Layanan",
+    detail: "Konstruksi hingga supplier material",
+    href: "/#services",
+  },
+  {
+    value: String(clients.length),
+    label: "Klien & Mitra",
+    detail: "Pengembang, rumah sakit, telekomunikasi",
+    href: "/#klien",
+  },
 ];

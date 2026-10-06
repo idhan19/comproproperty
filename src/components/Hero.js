@@ -68,19 +68,23 @@ export default function Hero() {
                 className="relative z-10 -mt-20 bg-[linear-gradient(to_bottom,transparent_50%,#ffffff_50%)] px-4 sm:px-6 lg:px-8 md:-mt-24"
             >
                 <Reveal animation="fade-up" delay={300}>
-                    <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-xl shadow-navy/10 md:grid-cols-4">
+                    {/* Setiap angka menautkan ke buktinya (daftar proyek, layanan, klien). */}
+                    <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-xl shadow-navy/10 sm:grid-cols-3 lg:grid-cols-6">
                         {stats.map((stat) => (
-                            <div key={stat.label} className="flex flex-col-reverse justify-center bg-white p-5 text-center sm:p-7">
-                                <dt className="mt-1 text-sm text-navy/70 sm:text-base">
-                                    {stat.label}
-                                    {stat.detail && <span className="sr-only">: {stat.detail}</span>}
-                                </dt>
-                                <dd className="text-2xl font-bold tracking-tight text-navy tabular-nums sm:text-3xl lg:text-4xl" title={stat.detail}>
-                                    <CountUp value={stat.value} />
-                                </dd>
-                            </div>
+                            <li key={stat.label} className="bg-white">
+                                <Link
+                                    href={stat.href}
+                                    className="group flex h-full flex-col items-center justify-center px-3 py-5 text-center transition-colors hover:bg-surface sm:px-4 sm:py-6"
+                                >
+                                    <span className="text-3xl font-bold tracking-tight text-navy tabular-nums transition-colors group-hover:text-brand-600 lg:text-4xl">
+                                        <CountUp value={stat.value} />
+                                    </span>
+                                    <span className="mt-1 text-sm font-semibold text-navy">{stat.label}</span>
+                                    <span className="mt-1 text-xs leading-snug text-navy/55">{stat.detail}</span>
+                                </Link>
+                            </li>
                         ))}
-                    </dl>
+                    </ul>
                 </Reveal>
             </section>
         </>
