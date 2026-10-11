@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { Download } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import Reveal from '@/components/motion/Reveal';
 import WithPlaceholders, { stripPlaceholders } from '@/components/WithPlaceholders';
-import { about, company, companyProfilePdf, directors, management, seo, showManagement } from '@/data/site';
+import { about, company, directors, management, seo, showManagement } from '@/data/site';
 
 export default function About() {
     return (
@@ -15,14 +14,6 @@ export default function About() {
                         <SectionHeading eyebrow="Tentang Kami" title="Membangun Negeri Bersama Mitra" align="left" />
                         <Reveal animation="fade-right" delay={150}>
                             <p className="-mt-4 text-lg leading-relaxed text-navy/80">{seo.description}</p>
-                            <a
-                                href={companyProfilePdf}
-                                download
-                                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-navy-800"
-                            >
-                                <Download size={18} aria-hidden="true" className="transition-transform group-hover:translate-y-0.5" />
-                                Unduh Company Profile
-                            </a>
                         </Reveal>
                     </div>
                     <div className="space-y-6">

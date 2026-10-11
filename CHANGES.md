@@ -179,6 +179,12 @@ Data tetap disimpan di `site.js` agar mudah ditampilkan lagi.
 - Saran berikutnya: ganti angka yang lebih lemah dengan data volume pekerjaan dari klien (lihat konfirmasi no. 24).
 - Slot `dataVolume.rumahTeraliriListrik` di `site.js`: selama `null`, tampil "Kawasan Perumahan". Setelah diisi angka asli dari klien, berganti otomatis menjadi "±[angka] Rumah Teraliri Listrik" dengan keterangan "Di [n] kawasan perumahan". Animasi hitung naik mendukung format ribuan ("±2.000"). Angka 2.000 hanya contoh dan tidak dipasang.
 
+## Revisi: Company Profile PDF dihapus
+
+- Tombol "Unduh Company Profile" dihapus dari section Tentang Kami dan dari halaman `/profile` (halaman teks `/profile` tetap ada).
+- File `public/profile-File.pdf` dihapus, beserta konstanta `companyProfilePdf` di `site.js` dan logika redirect PDF di `next.config.mjs`. URL `/profile-File.pdf` kini 404.
+- Konfirmasi no. 13 (file company profile revisi) tidak berlaku lagi.
+
 ## Fase 7: Pengecekan akhir
 
 - `npm run build` dan `npm run lint` lolos tanpa error dan warning.

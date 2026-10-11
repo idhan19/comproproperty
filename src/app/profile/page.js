@@ -1,9 +1,9 @@
-import { Download, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WithPlaceholders from '@/components/WithPlaceholders';
 import {
-    SITE_URL, about, clients, company, companyProfilePdf, directors, management, publishedLegalitas, showManagement, seo, services, waLink,
+    SITE_URL, about, clients, company, directors, management, publishedLegalitas, showManagement, seo, services, waLink,
 } from '@/data/site';
 
 const description =
@@ -34,15 +34,7 @@ export default function ProfilePage() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <p className="text-accent font-semibold tracking-wider uppercase text-sm mb-3">Company Profile</p>
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{company.name}</h1>
-                    <p className="text-lg text-navy-100 leading-relaxed mb-8">{seo.description}</p>
-                    <a
-                        href={companyProfilePdf}
-                        download
-                        className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
-                    >
-                        <Download size={18} aria-hidden="true" />
-                        Unduh Company Profile (PDF)
-                    </a>
+                    <p className="text-lg text-navy-100 leading-relaxed">{seo.description}</p>
                 </div>
             </header>
 

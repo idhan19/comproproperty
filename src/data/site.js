@@ -76,10 +76,6 @@ export const about = {
   ],
 };
 
-// Selama /company-profile-pmu.pdf belum ada di folder public, URL ini
-// diarahkan ke file lama lewat redirect di next.config.mjs.
-export const companyProfilePdf = "/company-profile-pmu.pdf";
-
 export const servicesIntro =
   "Layanan kami mencakup konstruksi, mekanikal elektrikal, infrastruktur, hingga pasokan material untuk pengembang perumahan, industri, dan instansi.";
 
