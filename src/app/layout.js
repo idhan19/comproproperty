@@ -15,9 +15,6 @@ export const metadata = {
     template: `%s | ${company.name}`,
   },
   description: seo.description,
-  icons: {
-    icon: company.logo,
-  },
   openGraph: {
     siteName: company.name,
     locale: "id_ID",
