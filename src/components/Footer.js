@@ -103,7 +103,7 @@ const Footer = () => {
                 </Reveal>
 
                 <div className="border-t border-white/10 pt-8 text-center text-sm text-navy-100/70">
-                    <p>&copy; {new Date().getFullYear()} {company.name}. Hak cipta dilindungi.</p>
+                    <p>&copy; {new Date().getFullYear()} {company.name}. Hak cipta dilindungi-Unlogic2.0</p>
                 </div>
             </div>
         </footer>
