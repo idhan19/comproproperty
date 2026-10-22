@@ -176,7 +176,6 @@ export const materialLogistik = {
     { src: "/dokumentasi/material/sumber-clay-silika-2.jpg", keterangan: "Ekskavator di lokasi sumber tanah clay dan pasir silika" },
     { src: "/dokumentasi/material/sumber-clay-silika-1.jpg", keterangan: "Lokasi sumber tanah clay dan pasir silika" },
     { src: "/dokumentasi/material/sumber-clay-silika-3.jpg", keterangan: "Lokasi sumber tanah clay dan pasir silika" },
-    { src: "/dokumentasi/material/sumber-clay-silika-5.jpg", keterangan: "Peninjauan lokasi sumber tanah clay dan pasir silika" },
   ],
   items: [
     {
